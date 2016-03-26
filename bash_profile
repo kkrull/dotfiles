@@ -1,2 +1,4 @@
-echo "bash_profile `date`" >> /tmp/bash-status
+
+#ls colors
+export CLICOLOR=1
 
