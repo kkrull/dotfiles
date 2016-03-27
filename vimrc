@@ -1,7 +1,7 @@
 "" Vundle (must go first)
 set nocompatible 
 filetype off                 " required
-set rtp+=~/git/dotfiles/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'   " required
   
