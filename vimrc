@@ -18,7 +18,7 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
   Plugin 'tfnico/vim-gradle'
   Plugin 'tpope/vim-cucumber'
-  Plugin 'Valloric/YouCompleteMe'
+"  Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
