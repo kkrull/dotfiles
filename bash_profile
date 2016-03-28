@@ -7,6 +7,12 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+#git
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Default
+  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+fi
+
 #less
 export LESS='-iXR --shift 2'
 
@@ -14,7 +20,7 @@ export LESS='-iXR --shift 2'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-#Tab completion [brew bash-completion]
+#Tab completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
