@@ -14,3 +14,8 @@ export LESS='-iXR --shift 2'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+#Tab completion [brew bash-completion]
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
