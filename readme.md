@@ -2,6 +2,7 @@
 
 You know what to do.  Make symlinks from wherever files need to be to right here.  Then get your groove on.
 
+
 ## bash
 
 Make symlinks for the following:
@@ -18,7 +19,10 @@ Make a symlink `$HOME/.gitconfig -> gitconfig`.
 ## tmux
 
 Create a symlink `$HOME/.tmux.conf` -> `tmux.conf`.  On OSX, use `^a + fn + up/down` on the MBP keyboard or `^a + [ + pgup/pgdn` on a PC
-keyboard to scroll up and down.
+keyboard to scroll up and down.  
+
+In OSX Terminal, make sure `$TERM` is set to `xterm-256color` as in the default profile and the 
+[Solarized Profiles](https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized/xterm-256color).
 
 
 ## vim
