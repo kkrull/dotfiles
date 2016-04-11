@@ -58,6 +58,10 @@ set guifont=Source\ Code\ Pro\ 12
 " Markdown
 let g:vim_markdown_initial_foldlevel=1
 
+" Modelines
+set modeline
+set modelines=5
+
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
