@@ -10,7 +10,8 @@ call vundle#begin()
   Plugin 'plasticboy/vim-markdown'
 
   Plugin 'bling/vim-airline'
-  Plugin 'derekwyatt/vim-scala'  
+  Plugin 'derekwyatt/vim-scala'
+  Plugin 'ekalinin/dockerfile.vim'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'roalddevries/yaml.vim'
   Plugin 'rodjek/vim-puppet'
