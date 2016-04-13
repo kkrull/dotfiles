@@ -56,6 +56,12 @@ vnoremap <F9> zf
 " Font
 set guifont=Source\ Code\ Pro\ 12
 
+" Key bindings
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " Markdown
 let g:vim_markdown_initial_foldlevel=1
 
