@@ -10,7 +10,8 @@ call vundle#begin()
   Plugin 'plasticboy/vim-markdown'
 
   Plugin 'bling/vim-airline'
-  Plugin 'derekwyatt/vim-scala'  
+  Plugin 'derekwyatt/vim-scala'
+  Plugin 'ekalinin/dockerfile.vim'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'roalddevries/yaml.vim'
   Plugin 'rodjek/vim-puppet'
@@ -54,6 +55,12 @@ vnoremap <F9> zf
 
 " Font
 set guifont=Source\ Code\ Pro\ 12
+
+" Key bindings
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " Markdown
 let g:vim_markdown_initial_foldlevel=1
