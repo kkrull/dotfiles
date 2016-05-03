@@ -11,6 +11,16 @@ Make symlinks for the following:
     $HOME/.bash_profile -> bash_profile
 
 
+## bin directory
+
+`bash_profile` adds `$HOME/bin` to your `$PATH`, if it exists.  Make some symlinks in `$HOME/bin` to 
+`<this repository>/bin/<useful script>`.  In other words: 
+
+```bash
+find-git -> /Users/krull/git/dotfiles/bin/find-git
+```
+
+
 ## git
 
 Make a symlink `$HOME/.gitconfig -> gitconfig`.
