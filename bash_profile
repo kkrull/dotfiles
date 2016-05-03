@@ -13,6 +13,13 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
+function find-git() {
+  local cmd="$1"
+  [ -z "$cmd" ] && echo "Usage: $0 <command>" && return 1
+
+  find `pwd` -maxdepth 2 -type d -name '.git' -print -execdir "$1" \;
+}
+
 #less
 export LESS='-iXR --shift 2'
 
