@@ -3,7 +3,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-#Editor
+#bin
+[ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
+
+#editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -20,7 +23,7 @@ export LESS='-iXR --shift 2'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-#Tab completion
+#tab completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi

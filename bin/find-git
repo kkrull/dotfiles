@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+where="$1"
+shift 1
+
+[ "$where" = "" ] && echo "Usage: $0 <base directory> <command> ..." && exit 1
+[ "$1" = "" ] && echo "Missing command" && exit 2
+
+find "$where" -maxdepth 2 -type d -name '.git' -print -execdir "$@" \;
+
