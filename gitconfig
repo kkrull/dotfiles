@@ -1,3 +1,5 @@
 [user]
 	email = kyle.krull@here.com
 	name = Kyle Krull
+[gitreview]
+	remote = origin
