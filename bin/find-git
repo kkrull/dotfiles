@@ -2,9 +2,17 @@
 
 where="$1"
 shift 1
+[ "$where" = "" ] && echo "Usage: $0 <base directory> [-print] <command> ..." && exit 1
 
-[ "$where" = "" ] && echo "Usage: $0 <base directory> <command> ..." && exit 1
+if [[ "$1" == "-print" ]]
+then
+  print_option="$1"
+  shift 1
+else
+  print_option=""
+fi
+
 [ "$1" = "" ] && echo "Missing command" && exit 2
 
-find "$where" -maxdepth 2 -type d -name '.git' -execdir "$@" \;
+find "$where" -maxdepth 2 -type d -name '.git' "$print_option" -execdir "$@" \;
 
