@@ -13,6 +13,7 @@ call vundle#begin()
   Plugin 'confluencewiki.vim'
   Plugin 'derekwyatt/vim-scala'
   Plugin 'ekalinin/dockerfile.vim'
+  Plugin 'elzr/vim-json'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'qualiabyte/vim-colorstepper'
   Plugin 'roalddevries/yaml.vim'
