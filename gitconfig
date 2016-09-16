@@ -3,3 +3,5 @@
 	name = Kyle Krull
 [gitreview]
 	remote = origin
+[core]
+	excludesfile = ~/.gitignore
