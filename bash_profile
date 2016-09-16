@@ -3,6 +3,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+#AWS
+[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
+
 #bin
 [ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
 
@@ -16,6 +19,10 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Default
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
+
+#GNU coreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+alias ls='ls --color'
 
 #less
 export LESS='-iXR --shift 2'
