@@ -43,3 +43,5 @@ fi
 [ -d $HOME/git/cornerstone/scripts ] && export PATH=$HOME/git/cornerstone/scripts:$PATH
 [ -d $HOME/git/tdc/scripts ] && export PATH=$HOME/git/tdc/scripts:$PATH
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
