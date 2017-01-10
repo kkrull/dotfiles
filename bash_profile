@@ -4,7 +4,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #AWS
-[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
+#[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
 
 #bin
 [ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
