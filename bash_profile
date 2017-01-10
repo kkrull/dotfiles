@@ -36,3 +36,10 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+#virtualenvwrapper
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+
+#Project scripts
+[ -d $HOME/git/cornerstone/scripts ] && export PATH=$HOME/git/cornerstone/scripts:$PATH
+[ -d $HOME/git/tdc/scripts ] && export PATH=$HOME/git/tdc/scripts:$PATH
+
