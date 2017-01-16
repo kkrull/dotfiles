@@ -14,10 +14,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #git
-if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+if [ -f "/usr/local/share/gitprompt.sh" ]; then
   GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_THEME=Default
-  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+  source "/usr/local/share/gitprompt.sh"
 fi
 
 #GNU coreutils
