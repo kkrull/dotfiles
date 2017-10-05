@@ -4,4 +4,4 @@
 [gitreview]
 	remote = origin
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/krull/.gitignore

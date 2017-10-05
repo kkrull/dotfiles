@@ -39,10 +39,16 @@ fi
 #virtualenvwrapper
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
+#YAML
+yaml2json () {
+        ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
+}
+
 #Project scripts
 [ -d $HOME/git/cornerstone/scripts ] && export PATH=$HOME/git/cornerstone/scripts:$PATH
 [ -d $HOME/git/tdc/scripts ] && export PATH=$HOME/git/tdc/scripts:$PATH
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-#source ~/.profile
+source ~/.profile
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
