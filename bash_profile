@@ -14,15 +14,15 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #git
-if [ -f "/usr/local/share/gitprompt.sh" ]; then
-  GIT_PROMPT_FETCH_REMOTE_STATUS=0
-  GIT_PROMPT_THEME=Default
-  source "/usr/local/share/gitprompt.sh"
-fi
+#if [ -f "/usr/local/share/gitprompt.sh" ]; then
+#  GIT_PROMPT_FETCH_REMOTE_STATUS=0
+#  GIT_PROMPT_THEME=Default
+#  source "/usr/local/share/gitprompt.sh"
+#fi
 
 #GNU coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-alias ls='ls --color'
+#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#alias ls='ls --color'
 
 #less
 export LESS='-iXR --shift 2'
@@ -44,11 +44,7 @@ yaml2json () {
         ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
 }
 
-#Project scripts
-[ -d $HOME/git/cornerstone/scripts ] && export PATH=$HOME/git/cornerstone/scripts:$PATH
-[ -d $HOME/git/tdc/scripts ] && export PATH=$HOME/git/tdc/scripts:$PATH
-
-
+#RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 source ~/.profile
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
