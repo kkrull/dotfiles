@@ -1,10 +1,8 @@
 #Aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 #AWS
-#[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
+[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
 
 #bin
 [ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
@@ -20,21 +18,24 @@ if [ -f "/usr/local/share/gitprompt.sh" ]; then
   source "/usr/local/share/gitprompt.sh"
 fi
 
-#GNU coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-alias ls='ls --color'
-
 #less
 export LESS='-iXR --shift 2'
 
 #ls colors
+#alias ls='ls --color'
+alias ls='ls -G'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+#RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #tab completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+
+#tcl-tk
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 #virtualenvwrapper
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
@@ -44,11 +45,5 @@ yaml2json () {
         ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
 }
 
-#Project scripts
-[ -d $HOME/git/cornerstone/scripts ] && export PATH=$HOME/git/cornerstone/scripts:$PATH
-[ -d $HOME/git/tdc/scripts ] && export PATH=$HOME/git/tdc/scripts:$PATH
+[ -f ~/.profile ] && source ~/.profile
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.profile
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
