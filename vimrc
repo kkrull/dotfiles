@@ -3,25 +3,25 @@ set nocompatible
 filetype off                 " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  Plugin 'gmarik/Vundle.vim'   " required
+  Plugin 'VundleVim/Vundle.vim' " required
   
   " Markdown plugin: order matters
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
 
   Plugin 'bling/vim-airline'
-  Plugin 'confluencewiki.vim'
-  Plugin 'derekwyatt/vim-scala'
+  " Plugin 'confluencewiki.vim'
+  " Plugin 'derekwyatt/vim-scala'
   Plugin 'ekalinin/dockerfile.vim'
   Plugin 'elzr/vim-json'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'qualiabyte/vim-colorstepper'
   Plugin 'roalddevries/yaml.vim'
-  Plugin 'rodjek/vim-puppet'
+  " Plugin 'rodjek/vim-puppet'
   Plugin 'scrooloose/nerdtree'
-  Plugin 'tfnico/vim-gradle'
+  " Plugin 'tfnico/vim-gradle'
   Plugin 'tpope/vim-cucumber'
-"  Plugin 'Valloric/YouCompleteMe'
+  " Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
