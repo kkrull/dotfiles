@@ -18,6 +18,13 @@ if [ -f "/usr/local/share/gitprompt.sh" ]; then
   source "/usr/local/share/gitprompt.sh"
 fi
 
+#go
+go version >/dev/null 2>&1
+if (( $? == 0 ))
+then
+  export PATH="$PATH:$(go env GOPATH)/bin"
+fi
+
 #less
 export LESS='-iXR --shift 2'
 
