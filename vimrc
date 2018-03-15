@@ -41,8 +41,8 @@ syntax on
 
 " File types
 "au BufRead,BufNewFile *.md set filetype=markdown
-"au BufRead,BufNewFile Gemfile set filetype=ruby
-"au BufRead,BufNewFile Guardfile set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
 
 " Files
 nnoremap <silent> <F12> :bn<CR>
