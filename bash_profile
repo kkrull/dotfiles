@@ -42,7 +42,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 
 #tcl-tk
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/tcl-tk/bin"
 
 #virtualenvwrapper
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
