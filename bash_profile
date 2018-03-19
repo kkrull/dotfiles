@@ -4,6 +4,9 @@
 #AWS
 [ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
 
+#bash completion
+[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+
 #bin
 [ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
 
