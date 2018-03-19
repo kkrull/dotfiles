@@ -15,6 +15,7 @@ call vundle#begin()
   Plugin 'ekalinin/dockerfile.vim'
   Plugin 'elzr/vim-json'
   Plugin 'flazz/vim-colorschemes'
+  Plugin 'jiangmiao/auto-pairs'
   Plugin 'qualiabyte/vim-colorstepper'
   Plugin 'roalddevries/yaml.vim'
   " Plugin 'rodjek/vim-puppet'
