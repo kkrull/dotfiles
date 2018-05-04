@@ -41,3 +41,8 @@ In OSX Terminal, make sure `$TERM` is set to `xterm-256color` as in the default 
 - Install [vundle](https://github.com/gmarik/Vundle.vim): ` git clone https://github.com/gmarik/Vundle.vim.git ~/git/vim/bundle/Vundle.vim`
 - Open vim and run `:PluginInstall`
 
+
+## vim in JetBrains IDEs
+
+Symlink `$HOME/.ideavimrc`
+
