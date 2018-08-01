@@ -28,6 +28,11 @@ then
   export PATH="$PATH:$(go env GOPATH)/bin"
 fi
 
+#HTTP
+parse_location() { 
+  cat - | grep 'Location' | perl -p -e 's/Location:\s*(.*)$/\1/g'
+}
+
 #less
 export LESS='-iXR --shift 2'
 
@@ -60,7 +65,7 @@ export PATH="$PATH:/usr/local/opt/tcl-tk/bin"
 
 #YAML
 yaml2json () {
-        ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
+  ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
 }
 
 [ -f ~/.profile ] && source ~/.profile
