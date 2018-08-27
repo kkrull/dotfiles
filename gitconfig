@@ -1,6 +1,6 @@
 [user]
-	email = kyle.krull@here.com
 	name = Kyle Krull
+	useConfigOnly = true
 [gitreview]
 	remote = origin
 [core]
