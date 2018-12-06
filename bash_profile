@@ -7,6 +7,9 @@
 #bash completion
 [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 
+#bash history
+shopt -s histappend
+
 #bin
 [ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
 
