@@ -4,7 +4,7 @@
 [gitreview]
 	remote = origin
 [core]
-	excludesfile = /Users/krull/.gitignore
+  excludesfile = ~/.gitignore
 [diff]
 	tool = diffmerge
 [difftool "diffmerge"]
