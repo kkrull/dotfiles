@@ -63,8 +63,12 @@ fi
 #tcl-tk
 export PATH="$PATH:/usr/local/opt/tcl-tk/bin"
 
-#virtualenvwrapper
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+#virtualenvwrapper for Python 3
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]
+then
+  export VIRTUALENVWRAPPER_PYTHON=`which python3`
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 #YAML
 yaml2json () {
