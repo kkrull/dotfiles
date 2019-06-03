@@ -5,3 +5,4 @@ alias glt1='LESS=$LESS"S" git log --oneline --graph --decorate'
 alias gd="git diff --word-diff=color --word-diff-regex='[A-z0-9_]+|[^[:space:]]'"
 alias glso='git ls-files -o --exclude=*.iml --exclude=.idea'
 alias splitpath="tr : '\n'"
+alias tmux-source='tmux source-file'
