@@ -36,6 +36,11 @@ parse_location() {
   cat - | grep 'Location' | perl -p -e 's/Location:\s*(.*)$/\1/g'
 }
 
+#JSON
+json2yaml() {
+  ruby -r yaml -r json -e 'puts JSON.load($stdin.read).to_yaml'
+}
+
 #less
 export LESS='-iXR --shift 2'
 
