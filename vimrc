@@ -5,10 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim' " required
   
-  " Markdown plugin: order matters
   Plugin 'godlygeek/tabular'
-  Plugin 'plasticboy/vim-markdown'
-
+  Plugin 'plasticboy/vim-markdown' " plugin order matters here
   Plugin 'bling/vim-airline'
   " Plugin 'confluencewiki.vim'
   " Plugin 'derekwyatt/vim-scala'
@@ -17,6 +15,7 @@ call vundle#begin()
   Plugin 'elzr/vim-json'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'jiangmiao/auto-pairs'
+  Plugin 'leafgarland/typescript-vim'
   Plugin 'qualiabyte/vim-colorstepper'
   Plugin 'roalddevries/yaml.vim'
   " Plugin 'rodjek/vim-puppet'
