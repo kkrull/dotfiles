@@ -89,4 +89,4 @@ set shiftwidth=2
 set expandtab
 
 " Wrapping
-set textwidth=120
+set textwidth=100
