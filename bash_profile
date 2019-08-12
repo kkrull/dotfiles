@@ -83,3 +83,6 @@ yaml2json () {
 
 [ -f ~/.profile ] && source ~/.profile
 
+#direnv (yes this must be at the end)
+#https://direnv.net/docs/hook.md
+eval "$(direnv hook bash)"
