@@ -57,7 +57,7 @@ then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  [ -s "$HOME/git/dotfiles/bash_profile.d/nvm.sh" ] && \. "$HOME/git/dotfiles/bash_profile.d/nvm.sh"
+  #[ -s "$HOME/git/dotfiles/bash_profile.d/nvm.sh" ] && \. "$HOME/git/dotfiles/bash_profile.d/nvm.sh"
 fi
 
 #RVM
