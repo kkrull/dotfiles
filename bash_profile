@@ -11,14 +11,33 @@
 shopt -s histappend
 
 #bin
-[ -d ~/bin ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+
+#cassandra
+if [ -d /usr/local/opt/cassandra@2.2 ]
+then
+  export CASSANDRA_CONTACTPOINTS=172.10.10.1
+  export PATH="/usr/local/opt/cassandra@2.2/bin:$PATH"
+fi
+
+#dockhub
+if [ -d "$HOME/grubhub/dockhub" ]
+then
+  #https://github.com/GrubhubProd/dockhub/blob/master/docs/cassandra.md
+  #alias cqlsh="docker exec -i -t cassandra cqlsh"
+  #export DOCKHUB_SINGLE_CASS_NODE=true
+
+  #https://github.com/GrubhubProd/dockhub/blob/master/docs/environment.md#set-path-and-environment-variables
+  export PATH="$PATH:$HOME/grubhub/dockhub"
+fi
 
 #editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #git
-if [ -f "/usr/local/share/gitprompt.sh" ]; then
+if [ -f "/usr/local/share/gitprompt.sh" ]
+then
   GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_THEME=Default
   source "/usr/local/share/gitprompt.sh"
@@ -45,11 +64,13 @@ json2yaml() {
 export LESS='-iXR --shift 2'
 
 #ls colors
-#alias ls='ls --color'
 alias ls='ls -G'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+#mysql
+[ -d '/usr/local/opt/mysql@5.7' ] && export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
 
 #nvm
 export NVM_DIR="$HOME/.nvm"
