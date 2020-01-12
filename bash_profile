@@ -14,15 +14,13 @@ shopt -s histappend
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 
 #cassandra
-if [ -d /usr/local/opt/cassandra@2.2 ]
-then
+if [ -d /usr/local/opt/cassandra@2.2 ]; then
   export CASSANDRA_CONTACTPOINTS=172.10.10.1
   export PATH="/usr/local/opt/cassandra@2.2/bin:$PATH"
 fi
 
 #dockhub
-if [ -d "$HOME/grubhub/dockhub" ]
-then
+if [ -d "$HOME/grubhub/dockhub" ]; then
   #https://github.com/GrubhubProd/dockhub/blob/master/docs/environment.md#set-path-and-environment-variables
   export PATH="$PATH:$HOME/grubhub/dockhub/bin"
 fi
@@ -32,16 +30,14 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #git
-if [ -f "/usr/local/share/gitprompt.sh" ]
-then
+if [ -f "/usr/local/share/gitprompt.sh" ]; then
   GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_THEME=Default
   source "/usr/local/share/gitprompt.sh"
 fi
 
 #gh-dev
-if [ -d "$HOME/grubhub/gh-dev" ]
-then
+if [ -d "$HOME/grubhub/gh-dev" ]; then
   for f in $HOME/grubhub/gh-dev/etc/*; do
     source $f
   done
@@ -49,13 +45,12 @@ fi
 
 #go
 go version >/dev/null 2>&1
-if (( $? == 0 ))
-then
+if (($? == 0)); then
   export PATH="$PATH:$(go env GOPATH)/bin"
 fi
 
 #HTTP
-parse_location() { 
+parse_location() {
   cat - | grep 'Location' | perl -p -e 's/Location:\s*(.*)$/\1/g'
 }
 
@@ -94,14 +89,13 @@ ulimit -n 8192
 export PATH="$PATH:/usr/local/opt/tcl-tk/bin"
 
 #virtualenvwrapper for Python 3
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-  export VIRTUALENVWRAPPER_PYTHON=`which python3`
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 #YAML
-yaml2json () {
+yaml2json() {
   ruby -r yaml -r json -e 'puts YAML.load($stdin.read).to_json'
 }
 
