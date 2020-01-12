@@ -23,12 +23,8 @@ fi
 #dockhub
 if [ -d "$HOME/grubhub/dockhub" ]
 then
-  #https://github.com/GrubhubProd/dockhub/blob/master/docs/cassandra.md
-  #alias cqlsh="docker exec -i -t cassandra cqlsh"
-  #export DOCKHUB_SINGLE_CASS_NODE=true
-
   #https://github.com/GrubhubProd/dockhub/blob/master/docs/environment.md#set-path-and-environment-variables
-  export PATH="$PATH:$HOME/grubhub/dockhub"
+  export PATH="$PATH:$HOME/grubhub/dockhub/bin"
 fi
 
 #editor
@@ -41,6 +37,14 @@ then
   GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_THEME=Default
   source "/usr/local/share/gitprompt.sh"
+fi
+
+#gh-dev
+if [ -d "$HOME/grubhub/gh-dev" ]
+then
+  for f in $HOME/grubhub/gh-dev/etc/*; do
+    source $f
+  done
 fi
 
 #go
