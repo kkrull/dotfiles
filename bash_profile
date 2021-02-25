@@ -89,10 +89,10 @@ ulimit -n 8192
 export PATH="$PATH:/usr/local/opt/tcl-tk/bin"
 
 #virtualenvwrapper for Python 3
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
+#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+#  source /usr/local/bin/virtualenvwrapper.sh
+#fi
 
 #YAML
 yaml2json() {
