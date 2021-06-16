@@ -1,16 +1,6 @@
+[core]
+  excludesfile = ~/.gitignore
+
 [user]
 	name = Kyle Krull
 	useConfigOnly = true
-[gitreview]
-	remote = origin
-[core]
-  excludesfile = ~/.gitignore
-[diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
-[merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	trustExitCode = true
-	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
