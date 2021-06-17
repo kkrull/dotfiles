@@ -45,3 +45,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+
+## pyenv
+
+eval "$(pyenv init -)"
