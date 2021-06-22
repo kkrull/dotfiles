@@ -1,6 +1,9 @@
 [core]
   excludesfile = ~/.gitignore
 
+[init]
+	defaultBranch = main
+
 [user]
 	name = Kyle Krull
 	useConfigOnly = true
