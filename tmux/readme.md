@@ -7,6 +7,7 @@ PC keyboard to scroll up and down.
 
 In OSX Terminal.app, make sure:
 
+* Keyboard sends Option key as Meta
 * `$TERM` is set to `xterm-256color` as in
   * the default profile
   * the [Solarized
