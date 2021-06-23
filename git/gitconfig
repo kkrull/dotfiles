@@ -1,5 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
 
 [init]
 	defaultBranch = main
