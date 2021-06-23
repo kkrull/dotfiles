@@ -47,6 +47,14 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
-## pyenv
+## Python
 
+# pyenv with user-local binaries (pipenv)
 eval "$(pyenv init -)"
+python_user_local="$HOME/.local/bin"
+if [[ -d "$python_user_local" ]]
+then
+  path=("$python_user_local" $path)
+  export PATH
+fi
+
