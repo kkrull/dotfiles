@@ -50,17 +50,20 @@ source $ZSH/oh-my-zsh.sh
 ## Python
 
 # pyenv with user-local binaries (pipenv)
-eval "$(pyenv init -)"
-python_user_local="$HOME/.local/bin"
-if [[ -d "$python_user_local" ]]
-then
-  path=("$python_user_local" $path)
-  export PATH
+if type pyenv >/dev/null; then
+  eval "$(pyenv init -)"
+  python_user_local="$HOME/.local/bin"
+  if [[ -d "$python_user_local" ]]
+  then
+    path=("$python_user_local" $path)
+    export PATH
+  fi
 fi
 
 
 ## Terraform
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-
+if type terraform >/dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /usr/local/bin/terraform terraform
+fi
