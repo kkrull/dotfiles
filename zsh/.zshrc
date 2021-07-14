@@ -74,3 +74,10 @@ if type terraform >/dev/null; then
   autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
+
+
+## direnv (yes this has to be at the end)
+
+if type direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
