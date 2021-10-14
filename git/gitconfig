@@ -6,6 +6,9 @@
 [init]
 	defaultBranch = main
 
+[pull]
+	ff = only
+
 [user]
 	name = Kyle Krull
 	useConfigOnly = true
