@@ -1,4 +1,3 @@
-
 ## zsh-completions: path completion for homebrew (git et al)
 if type brew &>/dev/null; then
   # must be called before compinit and oh-my-zsh.sh and after homebrew init
@@ -45,6 +44,16 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 plugins+=(zsh-nvm)
 source $ZSH/oh-my-zsh.sh
+
+
+## Dotnet
+
+dotnet_home="$HOME/.dotnet"
+if [[ -d "$dotnet_home/tools" ]]
+then
+  path=("$dotnet_home/tools" $path)
+  export PATH
+fi
 
 
 ## Less
