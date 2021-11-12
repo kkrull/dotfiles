@@ -56,6 +56,16 @@ then
 fi
 
 
+## Java
+
+jenv_home="$HOME/.jenv"
+if [[ -d "$jenv_home" ]]
+then
+  path=("$jenv_home/bin" $path)
+  eval "$(jenv init -)"
+fi
+
+
 ## Less
 
 #Keep less from blanking the screen after exiting
