@@ -87,6 +87,13 @@ if type pyenv >/dev/null; then
 fi
 
 
+## Salesforce
+
+if type sfdx >/dev/null; then
+  export SFDX_AUTOUPDATE_DISABLE='true'
+fi
+
+
 ## Terraform
 
 if type terraform >/dev/null; then
