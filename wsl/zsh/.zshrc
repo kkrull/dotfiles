@@ -112,6 +112,15 @@ then
   eval "$(jenv init -)"
 fi
 
+## Podman for Windows
+
+podman_home="/mnt/c/Program\ Files/RedHat/Podman"
+if [[ -d "$podman_home" ]]
+then
+  path+=("$podman_home")
+  alias docker='podman.exe'
+fi
+
 ## zsh
 
 export PROMPT_EOL_MARK=''
