@@ -112,6 +112,10 @@ then
   eval "$(jenv init -)"
 fi
 
+## zsh
+
+export PROMPT_EOL_MARK=''
+
 ## direnv (keep this at the end)
 
 if type direnv >/dev/null; then
