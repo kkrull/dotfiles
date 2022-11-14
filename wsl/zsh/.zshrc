@@ -1,3 +1,5 @@
+echo "zsh"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -75,6 +77,7 @@ plugins=(git ssh-agent)
 #https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin
 plugins+=(zsh-nvm)
 
+echo "+oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -108,15 +111,17 @@ source $ZSH/oh-my-zsh.sh
 jenv_home="$HOME/.jenv"
 if [[ -d "$jenv_home" ]]
 then
+  echo "+Java"
   path=("$jenv_home/bin" $path)
   eval "$(jenv init -)"
 fi
 
 ## Podman for Windows
 
-podman_home="/mnt/c/Program\ Files/RedHat/Podman"
-if [[ -d "$podman_home" ]]
+podman_home='/mnt/c/Program Files/RedHat/Podman'
+if [[ -d $podman_home ]]
 then
+  echo "+Podman"
   path+=("$podman_home")
   alias docker='podman.exe'
 fi
@@ -128,6 +133,7 @@ export PROMPT_EOL_MARK=''
 ## direnv (keep this at the end)
 
 if type direnv >/dev/null; then
+  echo "+direnv"
   eval "$(direnv hook zsh)"
 fi
 
