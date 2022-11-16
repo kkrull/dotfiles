@@ -124,6 +124,7 @@ then
   echo "+podman"
   path+=("$podman_home")
   alias docker='podman.exe'
+  alias podman='podman.exe'
 fi
 
 ## zsh
