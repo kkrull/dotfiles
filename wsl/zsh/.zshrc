@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 jenv_home="$HOME/.jenv"
 if [[ -d "$jenv_home" ]]
 then
-  echo "+Java"
+  echo "+java"
   path=("$jenv_home/bin" $path)
   eval "$(jenv init -)"
 fi
@@ -121,7 +121,7 @@ fi
 podman_home='/mnt/c/Program Files/RedHat/Podman'
 if [[ -d $podman_home ]]
 then
-  echo "+Podman"
+  echo "+podman"
   path+=("$podman_home")
   alias docker='podman.exe'
 fi
