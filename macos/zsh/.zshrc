@@ -1,5 +1,6 @@
 ## zsh-completions: path completion for homebrew (git et al)
-if type brew &>/dev/null; then
+if type brew &>/dev/null
+then
   # must be called before compinit and oh-my-zsh.sh and after homebrew init
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
@@ -75,7 +76,8 @@ export LESS='-iXR --shift 2'
 ## Python
 
 # pyenv with user-local binaries (pipenv)
-if type pyenv >/dev/null; then
+if type pyenv >/dev/null
+then
   eval "$(pyenv init -)"
   python_user_local="$HOME/.local/bin"
   if [[ -d "$python_user_local" ]]
@@ -88,14 +90,16 @@ fi
 
 ## Salesforce
 
-if type sfdx >/dev/null; then
+if type sfdx >/dev/null
+then
   export SFDX_AUTOUPDATE_DISABLE='true'
 fi
 
 
 ## Terraform
 
-if type terraform >/dev/null; then
+if type terraform >/dev/null
+then
   autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
