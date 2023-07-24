@@ -1,0 +1,46 @@
+#Aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
+#AWS
+[ -f ~/.aws/credentials.env ] && source ~/.aws/credentials.env
+
+#bash history
+shopt -s histappend
+
+#bin
+[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+
+#editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#git
+if [ -f "/usr/local/share/gitprompt.sh" ]; then
+  GIT_PROMPT_FETCH_REMOTE_STATUS=0
+  GIT_PROMPT_THEME=Default
+  source "/usr/local/share/gitprompt.sh"
+fi
+
+#HTTP
+parse_location() {
+  cat - | grep 'Location' | perl -p -e 's/Location:\s*(.*)$/\1/g'
+}
+
+#less
+export LESS='-iXR --shift 2'
+
+#ls colors
+alias ls='ls -G'
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+#mysql
+[ -d '/usr/local/opt/mysql@5.7' ] && export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
+
+#nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+[ -f ~/.profile ] && source ~/.profile
