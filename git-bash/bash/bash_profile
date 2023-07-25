@@ -30,10 +30,9 @@ parse_location() {
 export LESS='-iXR --shift 2'
 
 #ls colors
-alias ls='ls -G'
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#https://stackoverflow.com/questions/14049896/setting-colors-for-ls-in-git-bash-on-windows
+alias ls='ls -F --color'
+eval $(dircolors -b /etc/DIR_COLORS)
 
 #mysql
 [ -d '/usr/local/opt/mysql@5.7' ] && export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
