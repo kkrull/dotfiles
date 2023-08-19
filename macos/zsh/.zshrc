@@ -76,16 +76,21 @@ export LESS='-iXR --shift 2'
 ## Python
 
 # pyenv with user-local binaries (pipenv)
-if type pyenv >/dev/null
-then
-  eval "$(pyenv init -)"
-  python_user_local="$HOME/.local/bin"
-  if [[ -d "$python_user_local" ]]
-  then
-    path=("$python_user_local" $path)
-    export PATH
-  fi
-fi
+#if type pyenv >/dev/null
+#then
+#  eval "$(pyenv init -)"
+#  python_user_local="$HOME/.local/bin"
+#  if [[ -d "$python_user_local" ]]
+#  then
+#    path=("$python_user_local" $path)
+#    export PATH
+#  fi
+#fi
+
+# pyenv 2023.08
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 
 ## Salesforce
