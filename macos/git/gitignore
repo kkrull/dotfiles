@@ -1,7 +1,10 @@
 #The global file, configured as in http://stackoverflow.com/questions/7335420/global-git-ignore
 
-#MacOS
+# Jetbrains
+.idea/
+
+# MacOS
 .DS_Store
 
-#vim
+# vim
 *.swp

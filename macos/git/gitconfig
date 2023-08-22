@@ -1,6 +1,6 @@
 [core]
-  excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore
 	pager = less -x1,5
 
 [init]
