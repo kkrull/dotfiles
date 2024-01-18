@@ -5,3 +5,9 @@ need to configure.
 
 Files are organized by program.  See the `README` in each directory for details
 on how to apply its configuration.
+
+## TODO
+
+- [ ] Add pre-check with markdown, shellcheck, cspell
+- [ ] Add `.symlink` files and install script
+- [ ] Describe distinction between `.zsh` and `.sh` files

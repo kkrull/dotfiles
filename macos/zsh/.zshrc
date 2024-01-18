@@ -1,127 +1,42 @@
-## zsh-completions: path completion for homebrew (git et al)
-if type brew &>/dev/null
-then
-  # must be called before compinit and oh-my-zsh.sh and after homebrew init
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+function source_module() {
+  local name="$1"
+  local module_path="$2"
 
-  autoload -Uz compinit
-  compinit
-fi
+  printf "+$name: "
+  source "$module_path" && echo "OK" || echo "FAIL"
+}
 
-## oh-my-zsh
+function run_initializer() {
+  local name="$1"
+  local script="$2"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+  printf "+$name: "
+  "$script" && echo "OK" || echo "FAIL"
+}
 
-# Set name of the theme to load
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+## Main
 
-# Completion options
-# CASE_SENSITIVE="true"
-# HYPHEN_INSENSITIVE="true"
+# Updates to fpath (tab completion) and path
+source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
+source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
+source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
+source_module "homebrew" "$ZDOTDIR/.zshrc.d/homebrew.zsh"
+source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
+source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
+source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
+source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
+source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 
-# Auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-# DISABLE_UPDATE_PROMPT="true"
-# export UPDATE_ZSH_DAYS=13
+# $plugins dependencies
+source "$ZSH/oh-my-zsh.sh"
 
-# Misc configuration
-# DISABLE_MAGIC_FUNCTIONS="true"
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
+# $fpath dependencies: https://stackoverflow.com/a/63661686/112682
+autoload -Uz compinit
+compinit
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# compinit dependencies
+run_initializer "jenv initializer" "$ZDOTDIR/.zshrc.d/jenv-init.sh"
+source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(chruby git zsh-nvm)
-source $ZSH/oh-my-zsh.sh
-
-
-## Dotnet
-
-dotnet_home="$HOME/.dotnet"
-if [[ -d "$dotnet_home/tools" ]]
-then
-  path=("$dotnet_home/tools" $path)
-  export PATH
-fi
-
-
-## Java
-
-jenv_home="$HOME/.jenv"
-if [[ -d "$jenv_home" ]]
-then
-  path=("$jenv_home/bin" $path)
-  eval "$(jenv init -)"
-fi
-
-
-## Less
-
-#Keep less from blanking the screen after exiting
-#https://unix.stackexchange.com/questions/38634/is-there-any-way-to-exit-less-without-clearing-the-screen
-export LESS='-iXR --shift 2'
-
-
-## Python
-
-# pyenv with user-local binaries (pipenv)
-#if type pyenv >/dev/null
-#then
-#  eval "$(pyenv init -)"
-#  python_user_local="$HOME/.local/bin"
-#  if [[ -d "$python_user_local" ]]
-#  then
-#    path=("$python_user_local" $path)
-#    export PATH
-#  fi
-#fi
-
-# pyenv 2023.08
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-
-## Salesforce
-
-if type sfdx >/dev/null
-then
-  export SFDX_AUTOUPDATE_DISABLE='true'
-fi
-
-
-## Terraform
-
-if type terraform >/dev/null
-then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C /usr/local/bin/terraform terraform
-fi
-
-
-## direnv (yes this has to be at the end)
-
-if type direnv >/dev/null
-then
-  ## direnv with nvm
-  if [[ -d "$HOME/.nvm/versions/node" ]]
-  then
-    #https://github.com/direnv/direnv/wiki/Node#export-path
-    #https://stackoverflow.com/a/44443016/112682
-    export NODE_VERSIONS=$HOME/.nvm/versions/node
-    export NODE_VERSION_PREFIX=v
-  fi
-
-  eval "$(direnv hook zsh)"
-fi
+# direnv (yes this has to be at the end)
+source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
