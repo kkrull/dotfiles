@@ -116,6 +116,12 @@ then
   eval "$(jenv init -)"
 fi
 
+## Node
+
+#direnv support for Node via nvm
+export NODE_VERSIONS=~/.nvm/versions/node
+export NODE_VERSION_PREFIX=v
+
 ## Podman for Windows
 
 podman_home='/mnt/c/Program Files/RedHat/Podman'
