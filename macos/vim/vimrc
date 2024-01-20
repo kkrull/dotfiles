@@ -1,10 +1,10 @@
 "" Vundle (must go first)
-set nocompatible 
+set nocompatible
 filetype off                 " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim' " required
-  
+
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown' " plugin order matters here
   Plugin 'bling/vim-airline'
@@ -31,7 +31,7 @@ filetype plugin indent on    " required
 " Colors
 set t_Co=256
 set background=dark
-colorscheme blazer 
+colorscheme blazer
 
 " Copy / Paste
 set pastetoggle=<F2>
@@ -83,7 +83,7 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 set timeoutlen=50
 
-" Whitespace 
+" Whitespace
 set tabstop=2
 set shiftwidth=2
 set expandtab

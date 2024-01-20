@@ -11,6 +11,7 @@ find-up () {
 }
 
 cdnvm(){
+    # shellcheck disable=SC2164
     cd "$@";
     nvm_path=$(find-up .nvmrc | tr -d '[:space:]')
 
@@ -41,6 +42,7 @@ cdnvm(){
         # If there are multiple matching versions, take the latest one
         # Remove the `->` and `*` characters and spaces
         # `locally_resolved_nvm_version` will be `N/A` if no local versions are found
+        # shellcheck disable=SC2046
         locally_resolved_nvm_version=$(nvm ls --no-colors $(<"./.nvmrc") | tail -1 | tr -d '\->*' | tr -d '[:space:]')
 
         # If it is not already installed, install it

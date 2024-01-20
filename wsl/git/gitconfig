@@ -1,9 +1,12 @@
 [core]
-	editor = /usr/bin/vim
-	pager = less -F -X
+  editor = /usr/bin/vim
+  pager = less -F -X
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
 [pull]
-	ff = only
+  ff = only
+
 [user]
-	name = Kyle Krull
+  name = Kyle Krull
