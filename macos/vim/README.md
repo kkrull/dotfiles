@@ -3,10 +3,11 @@
 - Create a symlink `$HOME/.vimrc` -> `<repository>/vimrc`.
 - Install [vundle](https://github.com/gmarik/Vundle.vim):
 
+    ```shell
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    ```
 
 - Open vim and run `:PluginInstall`
-
 
 ## vim in JetBrains IDEs
 

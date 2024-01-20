@@ -19,10 +19,10 @@ repos:
       - id: cspell
 
   # https://github.com/DavidAnson/markdownlint-cli2#pre-commit
-  # - repo: https://github.com/DavidAnson/markdownlint-cli2
-  #   rev: v0.12.1
-  #   hooks:
-  #     - id: markdownlint-cli2
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.12.1
+    hooks:
+      - id: markdownlint-cli2
 
   # https://github.com/tcort/markdown-link-check#run-as-a-pre-commit-hook
   # - repo: https://github.com/tcort/markdown-link-check

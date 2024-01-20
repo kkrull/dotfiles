@@ -1,6 +1,6 @@
 # ZSH for WSL
 
-These directions: https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/
+These directions: <https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/>
 
 1. Make `$HOME/.zshenv` with contents
 

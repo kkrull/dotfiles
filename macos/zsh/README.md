@@ -8,7 +8,7 @@ This means doing a few things.
 1. Set `ZDOTDIR` to the path containing this file, by creating `$HOME/.zshenv` with [these sole
   contents](https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/):
 
-    ```
+    ```shell
     ZDOTDIR=<path to this repo>/zsh
     . $ZDOTDIR/.zshenv
     ```
@@ -20,7 +20,7 @@ This means doing a few things.
 
 4. Install `nvm` and `zsh-nvm`
 
-    ```
+    ```shell
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
     git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
     ```
