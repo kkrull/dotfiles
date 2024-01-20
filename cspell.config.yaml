@@ -1,0 +1,74 @@
+dictionaries: []
+dictionaryDefinitions: []
+enableFiletypes:
+  - shellscript
+ignorePaths:
+  - .gitignore
+  - vimrc
+ignoreWords: []
+import: []
+version: "0.2"
+words:
+  - agnoster
+  - ARCHFLAGS
+  - autoload
+  - automount
+  - AUTOUPDATE
+  - bashcompinit
+  - Bxegedabagaced
+  - cdnvm
+  - chruby
+  - chsh
+  - CLICOLOR
+  - compinit
+  - CONTACTPOINTS
+  - coreutils
+  - dircolors
+  - direnv
+  - dockhub
+  - Dotfiles
+  - envrc
+  - excludesfile
+  - fpath
+  - gitprompt
+  - gloga
+  - glso
+  - gnubin
+  - GOPATH
+  - grubhub
+  - histappend
+  - ideavimrc
+  - jenv
+  - Jetbrains
+  - kkrull
+  - Krull
+  - libexec
+  - LSCOLORS
+  - Makefiles
+  - MANPATH
+  - markdownlint
+  - mvim
+  - nvmrc
+  - ohmyzsh
+  - oneline
+  - pgdn
+  - pgup
+  - pyenv
+  - robbyrussell
+  - sfdx
+  - SFDX
+  - shellcheck
+  - shopt
+  - showmode
+  - splitpath
+  - strftime
+  - urldecode
+  - urlencode
+  - urllib
+  - vimrc
+  - virtualenvwrapper
+  - vundle
+  - Vundle
+  - ZDOTDIR
+  - zshconfig
+  - zstyle
