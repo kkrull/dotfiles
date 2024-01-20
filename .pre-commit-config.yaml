@@ -8,6 +8,12 @@ repos:
       - id: check-yaml
       - id: trailing-whitespace
 
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: "2.7.3"
+    hooks:
+      - id: editorconfig-checker
+        alias: ec
+
   # https://github.com/DavidAnson/markdownlint-cli2#pre-commit
   # - repo: https://github.com/DavidAnson/markdownlint-cli2
   #   rev: v0.12.1

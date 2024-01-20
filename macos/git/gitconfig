@@ -1,14 +1,14 @@
 [core]
-	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore
-	pager = less -x1,5
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
+  pager = less -x1,5
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [pull]
-	ff = only
+  ff = only
 
 [user]
-	name = Kyle Krull
-	useConfigOnly = true
+  name = Kyle Krull
+  useConfigOnly = true
