@@ -2,7 +2,7 @@ function source_module() {
   local name="$1"
   local module_path="$2"
 
-  printf "+$name: "
+  printf "+%s: " "$name"
   source "$module_path" && echo "OK" || echo "FAIL"
 }
 
@@ -10,7 +10,7 @@ function run_initializer() {
   local name="$1"
   local script="$2"
 
-  printf "+$name: "
+  printf "+%s: " "$name"
   "$script" && echo "OK" || echo "FAIL"
 }
 

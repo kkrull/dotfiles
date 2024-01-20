@@ -32,7 +32,7 @@ repos:
       - id: trailing-whitespace
 
   # https://github.com/shellcheck-py/shellcheck-py#as-a-pre-commit-hook
-  # - repo: https://github.com/shellcheck-py/shellcheck-py
-  #   rev: v0.9.0.6
-  #   hooks:
-  #     - id: shellcheck
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.9.0.6
+    hooks:
+      - id: shellcheck

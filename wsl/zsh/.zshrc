@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# shellcheck disable=SC2034
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -78,7 +79,7 @@ plugins=(git ssh-agent)
 plugins+=(zsh-nvm)
 
 echo "+oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -112,7 +113,7 @@ jenv_home="$HOME/.jenv"
 if [[ -d "$jenv_home" ]]
 then
   echo "+java"
-  path=("$jenv_home/bin" $path)
+  path=("$jenv_home/bin" "$path")
   eval "$(jenv init -)"
 fi
 
