@@ -1,3 +1,9 @@
+# vim
 *.swp
 vim/bundle/
-wsl/zsh/.zcompdump*
+
+# zsh
+.zcompdump
+.zcompdump-*
+.zsh_history
+.zsh_sessions
