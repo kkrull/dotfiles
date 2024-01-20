@@ -29,3 +29,7 @@ This means doing a few things.
 
 * `nvm`: <https://github.com/nvm-sh/nvm#installing-and-updating>
 * `zsh-nvm`: <https://github.com/lukechilds/zsh-nvm>
+
+## TODO
+
+* [ ] Describe distinction between `.zsh` and `.sh` files

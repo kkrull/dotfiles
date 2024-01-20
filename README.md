@@ -8,5 +8,4 @@ on how to apply its configuration.
 
 ## TODO
 
-- [ ] Add `.symlink` files and install script
-- [ ] Describe distinction between `.zsh` and `.sh` files
+- [ ] Add `.symlink` files and install scripts
