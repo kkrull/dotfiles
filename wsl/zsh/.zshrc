@@ -1,145 +1,45 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+function source_module() {
+  local name="$1"
+  local module_path="$2"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+  printf "+%s: " "$name"
+  source "$module_path" && echo "OK" || echo "FAIL"
+}
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# shellcheck disable=SC2034
-ZSH_THEME="robbyrussell"
+function run_initializer() {
+  local name="$1"
+  local script="$2"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+  printf "+%s: " "$name"
+  "$script" && echo "OK" || echo "FAIL"
+}
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+## Main
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Updates to fpath (tab completion) and path
+# source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
+# source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
+source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
+# source_module "homebrew" "$ZDOTDIR/.zshrc.d/homebrew.zsh"
+# source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
+source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
+source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
+source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
+source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
+# source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
+source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
+source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh-agent)
-
-#https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin
-plugins+=(zsh-nvm)
-
-echo "+oh-my-zsh"
+# $plugins dependencies
 source "$ZSH/oh-my-zsh.sh"
 
-# User configuration
+# $fpath dependencies: https://stackoverflow.com/a/63661686/112682
+autoload -Uz compinit
+compinit
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# compinit dependencies
+# run_initializer "jenv initializer" "$ZDOTDIR/.zshrc.d/jenv-init.sh"
+# source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-## Java
-
-jenv_home="$HOME/.jenv"
-if [[ -d "$jenv_home" ]]
-then
-  echo "+java"
-  path=("$jenv_home/bin" "$path")
-  eval "$(jenv init -)"
-fi
-
-## Node
-
-#direnv support for Node via nvm
-export NODE_VERSIONS=~/.nvm/versions/node
-export NODE_VERSION_PREFIX=v
-
-## Podman for Windows
-
-podman_home='/mnt/c/Program Files/RedHat/Podman'
-if [[ -d $podman_home ]]
-then
-  echo "+podman"
-  path+=("$podman_home")
-  alias docker='podman.exe'
-  alias podman='podman.exe'
-fi
-
-## zsh
-
-export PROMPT_EOL_MARK=''
-
-## direnv (keep this at the end)
-
-if type direnv >/dev/null; then
-  echo "+direnv"
-  eval "$(direnv hook zsh)"
-fi
-
+# direnv (yes this has to be at the end)
+source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
