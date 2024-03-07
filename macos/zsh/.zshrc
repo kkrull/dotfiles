@@ -36,7 +36,7 @@ autoload -Uz compinit
 compinit
 
 # compinit dependencies
-run_initializer "jenv initializer" "$ZDOTDIR/.zshrc.d/jenv-init.sh"
+eval "$(jenv init -)" #Must be done here, instead of in a separate file
 source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
 # direnv (yes this has to be at the end)
