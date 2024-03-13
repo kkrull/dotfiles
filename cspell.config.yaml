@@ -23,6 +23,7 @@ words:
   - compinit
   - CONTACTPOINTS
   - coreutils
+  - CPATH
   - dircolors
   - direnv
   - dockhub
