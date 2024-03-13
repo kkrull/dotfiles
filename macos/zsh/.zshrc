@@ -27,6 +27,7 @@ source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
 source_module "local-bin" "$ZDOTDIR/.zshrc.d/local-bin.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
+source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
 source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 
 # $plugins dependencies
