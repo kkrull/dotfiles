@@ -57,6 +57,7 @@ words:
   - pyenv
   - realpath
   - robbyrussell
+  - SDKROOT
   - sfdx
   - SFDX
   - shellcheck
