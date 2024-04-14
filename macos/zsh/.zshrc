@@ -2,16 +2,26 @@ function source_module() {
   local name="$1"
   local module_path="$2"
 
-  printf "+%s: " "$name"
-  source "$module_path" && echo "OK" || echo "FAIL"
+  if [ -v DOTFILES_SILENT ]
+  then
+    source "$module_path"
+  else
+    printf "+%s: " "$name"
+    source "$module_path" && echo "OK" || echo "FAIL"
+  fi
 }
 
 function run_initializer() {
   local name="$1"
   local script="$2"
 
-  printf "+%s: " "$name"
-  "$script" && echo "OK" || echo "FAIL"
+  if [ -v DOTFILES_SILENT ]
+  then
+    "$script"
+  else
+    printf "+%s: " "$name"
+    "$script" && echo "OK" || echo "FAIL"
+  fi
 }
 
 ## Main
