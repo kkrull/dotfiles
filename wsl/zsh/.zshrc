@@ -31,15 +31,18 @@ DOTFILES_SILENT=''
 ## Main
 
 # Updates to fpath (tab completion) and path
-# source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
-# source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
+source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
+source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
 source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
 # source_module "homebrew" "$ZDOTDIR/.zshrc.d/homebrew.zsh"
-# source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
+source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
 source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
+source_module "local-bin" "$ZDOTDIR/.zshrc.d/local-bin.zsh"
+source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
+source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
 # source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
@@ -52,8 +55,12 @@ autoload -Uz compinit
 compinit
 
 # compinit dependencies
-# run_initializer "jenv initializer" "$ZDOTDIR/.zshrc.d/jenv-init.sh"
-# source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
+if type jenv >/dev/null
+then
+  eval "$(jenv init -)" #Must be done here, instead of in a separate file
+fi
+
+source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
 # direnv (yes this has to be at the end)
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"

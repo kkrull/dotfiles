@@ -1,38 +1,35 @@
-# ZSH for WSL
+# Dotfiles for zsh
 
-These directions: <https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/>
+It's already installed on OSX, but completions need to be
+[installed](https://stackoverflow.com/a/62060648/112682).
 
-1. Make `$HOME/.zshenv` with contents
+This means doing a few things.
+
+1. Set `ZDOTDIR` to the path containing this file, by creating `$HOME/.zshenv` with [these sole
+  contents](https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/):
 
     ```shell
-    ZDOTDIR=$HOME/dotfiles/wsl/zsh
+    ZDOTDIR=<path to this repo>/zsh
     . $ZDOTDIR/.zshenv
     ```
 
-1. Make `dotfiles/wsl/zsh/.zshenv`.  It can be empty.
+2. Install the package with `brew install zsh-completions`.
 
-## Installing NVM as oh-my-zsh plugin
+3. Set permissions for completion, as instructed when you install
+  `zsh-completions`: `chmod -R go-w "$(brew --prefix)/share"`.
 
-Install tools needed to build node.js <https://github.com/nvm-sh/nvm#important-notes>
+4. Install `nvm` and `zsh-nvm`
 
-```shell
-apt-get install build-essential libssl-dev
-```
+    ```shell
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+    git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+    ```
 
-Clone `zsh-nvm` into your custom plugins repo
+## Reference
 
-```shell
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-```
+* `nvm`: <https://github.com/nvm-sh/nvm#installing-and-updating>
+* `zsh-nvm`: <https://github.com/lukechilds/zsh-nvm>
 
-Then load as a plugin in your `.zshrc`
+## TODO
 
-```shell
-plugins+=(zsh-nvm)
-```
-
-then restart the shell and
-
-```shell
-nvm upgrade
-```
+* [ ] Describe distinction between `.zsh` and `.sh` files
