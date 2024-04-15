@@ -1,5 +1,6 @@
 [core]
   editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
   pager = less -F -X
 
 [init]
@@ -10,3 +11,4 @@
 
 [user]
   name = Kyle Krull
+  useConfigOnly = true
