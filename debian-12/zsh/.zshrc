@@ -31,7 +31,6 @@ function run_initializer() {
 ## Main
 
 # Updates to fpath (tab completion) and path
-source_module "ang" "$ZDOTDIR/.zshrc.d/ang.zsh"
 source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
 source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
 source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
