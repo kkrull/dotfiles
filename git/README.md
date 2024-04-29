@@ -1,26 +1,11 @@
 # `git` dotfiles
 
-## Installation
+## Task Automation
 
-```sh
-ln -s $(git rev-parse --show-toplevel)/git/gitconfig "$HOME/.gitconfig"
-ln -s $(git rev-parse --show-toplevel)/git/gitignore "$HOME/.gitignore"
-```
+### `make git-install`
 
-## Removal
+Back up any existing Git dotfiles in your home directory, then install symbolic links to these.
 
-```sh
-function preserve_original() {
-  for source in "$@"
-  do
-    local target="$1.orig"
-    [ ! -f "$source" ] || mv "$source" "$target"
+### `make git-remove`
 
-    shift
-  done
-}
-
-rm -f "$HOME/.gitconfig.orig" "$HOME/.gitignore.orig"
-preserve_original "$HOME/.gitconfig" "$HOME/.gitignore"
-rm -f "$HOME/.gitconfig" "$HOME/.gitignore"
-```
+Remove symbolic links to Git's dotfiles in your home directory.
