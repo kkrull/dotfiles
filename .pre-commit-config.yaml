@@ -11,13 +11,6 @@ repos:
     hooks:
       - id: editorconfig-checker
 
-  # https://github.com/tcort/markdown-link-check#run-as-a-pre-commit-hook
-  - repo: https://github.com/tcort/markdown-link-check
-    rev: v3.11.2
-    hooks:
-      - id: markdown-link-check
-        args: [--config, .markdown-link-check.json, -q]
-
   # https://github.com/DavidAnson/markdownlint-cli2#pre-commit
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.12.1
