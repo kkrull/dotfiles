@@ -1,0 +1,11 @@
+# System-specific configuration:
+# http://stackoverflow.com/questions/7335420/global-git-ignore
+
+# Jetbrains
+.idea/
+
+# MacOS
+.DS_Store
+
+# vim
+*.swp

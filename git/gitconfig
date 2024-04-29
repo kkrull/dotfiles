@@ -1,0 +1,16 @@
+# https://git-scm.com/docs/git-config#_configuration_file
+[core]
+editor = /usr/bin/vim
+excludesfile = ~/.gitignore
+pager = less -x1,5
+
+[init]
+defaultBranch = main
+
+[pull]
+ff = only
+
+# Configure email address for each repository, instead of a global one that is often incorrect.
+[user]
+name = Kyle Krull
+useConfigOnly = true
