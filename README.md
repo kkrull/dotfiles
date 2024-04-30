@@ -9,7 +9,6 @@ Configuration for shells and other things I use on the command line.
 
 ## Future work
 
-- [ ] Standardize `tmux`
 - [ ] Standardize `zsh`
 
 ## Installation and removal
