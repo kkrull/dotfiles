@@ -2,14 +2,18 @@
 
 default: tmux-install
 
-## git
+## tmux
+
+CONF_LINK := $(HOME)/.tmux.conf
+CONF_LINK_BACKUP := $(CONF_LINK).orig
+CONF_TARGET := $(shell git rev-parse --show-toplevel)/tmux/tmux.conf
 
 .PHONY: tmux-install
 tmux-install:
-	rm -f "$(HOME)/.tmux.conf.orig"
-	[ ! -f "$(HOME)/.tmux.conf" ] || mv "$(HOME)/.tmux.conf" "$(HOME)/.tmux.conf.orig"
-	ln -s $$(git rev-parse --show-toplevel)/tmux/tmux.conf "$(HOME)/.tmux.conf"
+	rm -f "$(CONF_LINK_BACKUP)"
+	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
+	ln -s "$(CONF_TARGET)" "$(CONF_LINK)"
 
 .PHONY: tmux-remove
 tmux-remove:
-	rm -f "$(HOME)/.tmux.conf"
+	rm -f "$(CONF_LINK)"
