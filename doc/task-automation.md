@@ -8,6 +8,14 @@ Task automation works with GNU Make.
 
 Run all checks.
 
+### `make install`
+
+Run `make install` for each tool that has its own `Makefile`.
+
+### `make remove`
+
+Run `make remove` for each tool that has its own `Makefile`.
+
 ## `pre-commit` tasks
 
 ### `make pre-commit-check`

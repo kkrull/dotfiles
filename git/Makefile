@@ -1,6 +1,6 @@
 ## Top-level tasks
 
-default: git-install
+default: install
 
 ## git
 
@@ -12,8 +12,8 @@ IGNORE_LINK := $(HOME)/.gitignore
 IGNORE_LINK_BACKUP := $(IGNORE_LINK).orig
 IGNORE_TARGET := $(shell git rev-parse --show-toplevel)/git/gitignore
 
-.PHONY: git-install
-git-install:
+.PHONY: install
+install:
 	rm -f "$(CONF_LINK_BACKUP)" "$(IGNORE_LINK_BACKUP)"
 
 	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
@@ -22,6 +22,6 @@ git-install:
 	[ ! -f "$(IGNORE_LINK)" ] || mv "$(IGNORE_LINK)" "$(IGNORE_LINK_BACKUP)"
 	ln -s "$(IGNORE_TARGET)" "$(IGNORE_LINK)"
 
-.PHONY: git-remove
-git-remove:
+.PHONY: remove
+remove:
 	rm -f "$(CONF_LINK)" "$(IGNORE_LINK)"

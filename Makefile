@@ -5,6 +5,16 @@ default: check
 .PHONY: check
 check: pre-commit-check
 
+.PHONY: install
+install:
+	$(MAKE) -C git $@
+	$(MAKE) -C tmux $@
+
+.PHONY: remove
+remove:
+	$(MAKE) -C git $@
+	$(MAKE) -C tmux $@
+
 ## pre-commit
 
 .PHONY: pre-commit-check

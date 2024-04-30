@@ -2,13 +2,11 @@
 
 ## Task Automation
 
-Create a symlink `$HOME/.tmux.conf` -> `tmux.conf`.
-
-### `make tmux-install`
+### `make install`
 
 Back up any existing dotfiles in your home directory, then install symbolic links to these.
 
-### `make tmux-remove`
+### `make remove`
 
 Remove symbolic links to dotfiles in your home directory.
 
