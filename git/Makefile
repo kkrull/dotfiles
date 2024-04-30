@@ -4,15 +4,24 @@ default: git-install
 
 ## git
 
+CONF_LINK := $(HOME)/.gitconfig
+CONF_LINK_BACKUP := $(CONF_LINK).orig
+CONF_TARGET := $(shell git rev-parse --show-toplevel)/git/gitconfig
+
+IGNORE_LINK := $(HOME)/.gitignore
+IGNORE_LINK_BACKUP := $(IGNORE_LINK).orig
+IGNORE_TARGET := $(shell git rev-parse --show-toplevel)/git/gitignore
+
 .PHONY: git-install
 git-install:
-	rm -f "$(HOME)/.gitconfig.orig" "$(HOME)/.gitignore.orig"
-	[ ! -f "$(HOME)/.gitconfig" ] || mv "$(HOME)/.gitconfig" "$(HOME)/.gitconfig.orig"
-	[ ! -f "$(HOME)/.gitignore" ] || mv "$(HOME)/.gitignore" "$(HOME)/.gitignore.orig"
+	rm -f "$(CONF_LINK_BACKUP)" "$(IGNORE_LINK_BACKUP)"
 
-	ln -s $$(git rev-parse --show-toplevel)/git/gitconfig "$(HOME)/.gitconfig"
-	ln -s $$(git rev-parse --show-toplevel)/git/gitignore "$(HOME)/.gitignore"
+	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
+	ln -s "$(CONF_TARGET)" "$(CONF_LINK)"
+
+	[ ! -f "$(IGNORE_LINK)" ] || mv "$(IGNORE_LINK)" "$(IGNORE_LINK_BACKUP)"
+	ln -s "$(IGNORE_TARGET)" "$(IGNORE_LINK)"
 
 .PHONY: git-remove
 git-remove:
-	rm -f "$(HOME)/.gitconfig" "$(HOME)/.gitignore"
+	rm -f "$(CONF_LINK)" "$(IGNORE_LINK)"
