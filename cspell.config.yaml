@@ -65,6 +65,7 @@ words:
   - showmode
   - splitpath
   - strftime
+  - toplevel
   - urldecode
   - urlencode
   - urllib
