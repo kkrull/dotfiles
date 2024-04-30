@@ -41,9 +41,12 @@ source_module "local-bin" "$ZDOTDIR/.zshrc.d/local-bin.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
+source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
 source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
+source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
+source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
 
 # $plugins dependencies
 source "$ZSH/oh-my-zsh.sh"
@@ -53,8 +56,11 @@ autoload -Uz compinit
 compinit
 
 # compinit dependencies
-eval "$(jenv init -)" #Must be done here, instead of in a separate file
-jenv enable-plugin export #VSCode extensions need JDK_HOME to be set
+if type jenv >/dev/null
+then
+  eval "$(jenv init -)" #Must be done here, instead of in a separate file
+  jenv enable-plugin export #VSCode extensions need JDK_HOME to be set
+fi
 source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
 # direnv (yes this has to be at the end)
