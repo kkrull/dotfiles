@@ -4,8 +4,8 @@
 
 ### `make git-install`
 
-Back up any existing Git dotfiles in your home directory, then install symbolic links to these.
+Back up any existing dotfiles in your home directory, then install symbolic links to these.
 
 ### `make git-remove`
 
-Remove symbolic links to Git's dotfiles in your home directory.
+Remove symbolic links to dotfiles in your home directory.
