@@ -59,7 +59,7 @@ compinit
 if type jenv >/dev/null
 then
   eval "$(jenv init -)" #Must be done here, instead of in a separate file
-  jenv enable-plugin export #VSCode extensions need JDK_HOME to be set
+  jenv enable-plugin export > /dev/null #VSCode extensions need JDK_HOME to be set
 fi
 source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
