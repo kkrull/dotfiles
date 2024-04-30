@@ -1,15 +1,5 @@
 # `tmux` dotfiles
 
-## Task Automation
-
-### `make install`
-
-Back up any existing dotfiles in your home directory, then install symbolic links to these.
-
-### `make remove`
-
-Remove symbolic links to dotfiles in your home directory.
-
 ## Compatibility
 
 ### MacOS Terminal
@@ -21,3 +11,13 @@ In Terminal.app, make sure:
   - the default profile
   - the [Solarized
     Profiles](https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized/xterm-256color)
+
+## Task Automation
+
+### `make install`
+
+Back up any existing `.tmux.conf` in your home directory, then make a symbolic link to this one.
+
+### `make remove`
+
+Remove `.tmux.conf` in your home directory.
