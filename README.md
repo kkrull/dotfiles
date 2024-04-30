@@ -4,12 +4,12 @@ Configuration for shells and other things I use on the command line.
 
 ## Contents
 
-- `bash`
+- `bash`:
   - for [`git-bash`](./bash/git-bash/README.md)
   - for [MacOS](./bash/macos/README.md)
 - [`git`](./git/README.md)
 - [`tmux`](./tmux/README.md)
-- `vim`
+- `vim`:
   - for [MacOS](./vim/macos/README.md)
   - for [Windows Subsystem for Linux](./vim/wsl/README.md)
 - [`zsh`](./zsh/README.md)

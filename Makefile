@@ -9,11 +9,13 @@ check: pre-commit-check
 install:
 	$(MAKE) -C git $@
 	$(MAKE) -C tmux $@
+	$(MAKE) -C zsh $@
 
 .PHONY: remove
 remove:
 	$(MAKE) -C git $@
 	$(MAKE) -C tmux $@
+	$(MAKE) -C zsh $@
 
 ## pre-commit
 
