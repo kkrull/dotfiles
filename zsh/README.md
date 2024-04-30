@@ -28,6 +28,15 @@ Documentation:
 - `nvm`: <https://github.com/nvm-sh/nvm#installing-and-updating>
 - `zsh-nvm`: <https://github.com/lukechilds/zsh-nvm>
 
+## Environment Variables
+
+### `DOTFILES_SILENT`
+
+Set this in `$HOME/.zshenv`:
+
+- `true`: Suppress log statements when loading modules from `.zshrc.d/`.
+- unset: Log which modules are loaded from `.zshrc.d/`.
+
 ## Task Automation
 
 ### `make install`

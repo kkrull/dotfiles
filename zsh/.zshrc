@@ -24,10 +24,6 @@ function run_initializer() {
   fi
 }
 
-## Configuration
-
-#DOTFILES_SILENT=''
-
 ## Main
 
 # Updates to fpath (tab completion) and path
