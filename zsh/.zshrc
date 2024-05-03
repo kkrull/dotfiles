@@ -37,6 +37,7 @@ source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
 source_module "local-bin" "$ZDOTDIR/.zshrc.d/local-bin.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
+plugins+=(zsh-nvm)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
