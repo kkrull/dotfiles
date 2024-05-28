@@ -30,6 +30,7 @@ function run_initializer() {
 source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
 source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
 source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
+source_module "gpg" "$ZDOTDIR/.zshrc.d/gpg.zsh"
 source_module "homebrew" "$ZDOTDIR/.zshrc.d/homebrew.zsh"
 source_module "homebrew (standard user)" "$ZDOTDIR/.zshrc.d/homebrew-standard-user.zsh"
 source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
