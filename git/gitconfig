@@ -10,7 +10,6 @@ defaultBranch = main
 [pull]
 ff = only
 
-# Configure email address for each repository, instead of a global one that is often incorrect.
 [user]
-name = Kyle Krull
+name = Kyle Krull # Email changes often; configure per-repository
 useConfigOnly = true
