@@ -11,46 +11,36 @@ default: all
 
 ### Sources
 
+subdirs := git tmux zsh
+
 #. STANDARD TARGETS
 
 .PHONY: all
 all: #> Build all sources (if any)
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 .PHONY: check
 check: pre-commit-check #> Run self-tests
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 .PHONY: clean
 clean: pre-commit-gc #> Remove local build files (if any)
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 .PHONY: install
 install: #> Install configuration
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 #. OTHER TARGETS
 
 .PHONY: debug
 .NOTPARALLEL: debug
 debug: #> Show build information
-	$(MAKE) -C git $@
-	$(MAKE) -C tmux $@
-	$(MAKE) -C zsh $@
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help
@@ -62,10 +52,9 @@ help: #> Show this help
 	| column -ts : | sed -e 's/_margin_//'
 
 .PHONY: help-all
+.NOTPARALLEL: help-all
 help-all: help #> Show help for all Makefiles
-	$(MAKE) -C git help
-	$(MAKE) -C tmux help
-	$(MAKE) -C zsh help
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) help &&) true
 
 #. PRE-COMMIT TARGETS
 
