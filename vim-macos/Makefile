@@ -7,14 +7,23 @@ default: all
 
 ### Paths
 
-conf_dest := $(HOME)/.vimrc
-conf_backup := $(conf_dest).orig
+home_conf_dest := $(HOME)/.vimrc
+home_conf_backup := $(home_conf_dest).orig
+
+neovim_conf_dir := $(HOME)/.config/nvim
+neovim_conf_dest := $(neovim_conf_dir)/init.vim
+neovim_conf_backup := $(home_conf_dest).orig
+
+$(neovim_conf_dir):
+	mkdir -p $(neovim_conf_dir)
 
 .PHONY: debug-paths
 debug-paths:
 	$(info vim_paths:)
-	$(info - conf_backup: $(conf_backup))
-	$(info - conf_dest: $(conf_dest))
+	$(info - home_conf_backup: $(home_conf_backup))
+	$(info - home_conf_dest: $(home_conf_dest))
+	$(info - neovim_conf_backup: $(neovim_conf_backup))
+	$(info - neovim_conf_dest: $(neovim_conf_dest))
 	@:
 
 ### Programs
@@ -46,15 +55,18 @@ clean: #> Remove local build files (if any)
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	rm -f "$(conf_backup)"
+install: | $(neovim_conf_dir) #> Install configuration
+	rm -f "$(home_conf_backup)" "$(neovim_conf_backup)"
 
-	[ ! -f "$(conf_dest)" ] || mv "$(conf_dest)" "$(conf_backup)"
-	ln -s "$(conf_source)" "$(conf_dest)"
+	[ ! -f "$(home_conf_dest)" ] || mv "$(home_conf_dest)" "$(home_conf_backup)"
+	ln -s "$(conf_source)" "$(home_conf_dest)"
+
+	[ ! -f "$(neovim_conf_dest)" ] || mv "$(neovim_conf_dest)" "$(neovim_conf_backup)"
+	ln -s "$(conf_source)" "$(neovim_conf_dest)"
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(conf_dest)"
+	rm -f "$(home_conf_dest)"
 
 #. OTHER TARGETS
 
