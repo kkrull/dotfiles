@@ -45,6 +45,13 @@ uninstall: #> Uninstall configuration
 
 #. OTHER TARGETS
 
+.PHONY: debug
+.NOTPARALLEL: debug
+debug: #> Show build information
+	$(MAKE) -C git $@
+	$(MAKE) -C tmux $@
+	$(MAKE) -C zsh $@
+
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help
 help: #> Show this help

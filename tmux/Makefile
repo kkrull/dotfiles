@@ -7,14 +7,27 @@ default: all
 
 ### Paths
 
-CONF_LINK := $(HOME)/.tmux.conf
-CONF_LINK_BACKUP := $(CONF_LINK).orig
+conf_dest := $(HOME)/.tmux.conf
+conf_backup := $(conf_dest).orig
+
+.PHONY: debug-paths
+debug-paths: #> Show information about paths
+	$(info Paths:)
+	$(info - conf_backup: $(conf_backup))
+	$(info - conf_dest: $(conf_dest))
 
 ### Programs
 
 ### Sources
 
-CONF_TARGET := $(shell git rev-parse --show-toplevel)/tmux/tmux.conf
+srcdir := $(abspath .)
+conf_source := $(srcdir)/tmux.conf
+
+.PHONY: debug-sources
+debug-sources: #> Show information about source files
+	$(info Sources:)
+	$(info - srcdir: $(srcdir))
+	$(info - conf_source: $(conf_source))
 
 #. STANDARD TARGETS
 
@@ -32,15 +45,20 @@ clean: #> Remove local build files (if any)
 
 .PHONY: install
 install: #> Install configuration
-	rm -f "$(CONF_LINK_BACKUP)"
-	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
-	ln -s "$(CONF_TARGET)" "$(CONF_LINK)"
+	rm -f "$(conf_backup)"
+	[ ! -f "$(conf_dest)" ] || mv "$(conf_dest)" "$(conf_backup)"
+	ln -s "$(conf_source)" "$(conf_dest)"
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(CONF_LINK)"
+	rm -f "$(conf_dest)"
 
 #. OTHER TARGETS
+
+.PHONY: debug
+.NOTPARALLEL: debug
+debug: debug-paths debug-sources #> Show build information
+	@:
 
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help

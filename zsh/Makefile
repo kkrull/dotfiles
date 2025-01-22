@@ -7,13 +7,23 @@ default: all
 
 ### Paths
 
-ENV_FILE := $(HOME)/.zshenv
+env_dest := $(HOME)/.zshenv
+
+.PHONY: debug-paths
+debug-paths: #> Show information about paths
+	$(info Paths:)
+	$(info - env_dest: $(env_dest))
 
 ### Programs
 
 ### Sources
 
-RC_PATH := $(shell git rev-parse --show-toplevel)/zsh
+srcdir := $(abspath .)
+
+.PHONY: debug-sources
+debug-sources: #> Show information about source files
+	$(info Sources:)
+	$(info - srcdir: $(srcdir))
 
 #. STANDARD TARGETS
 
@@ -31,15 +41,20 @@ clean: #> Remove local build files (if any)
 
 .PHONY: install
 install: #> Install configuration
-	$(file >$(ENV_FILE),ZDOTDIR=$(RC_PATH))
-	$(file >>$(ENV_FILE),source $$ZDOTDIR/.zshenv)
-	@echo Created $(ENV_FILE)
+	$(file >$(env_dest),ZDOTDIR=$(srcdir))
+	$(file >>$(env_dest),source $$ZDOTDIR/.zshenv)
+	@echo Created $(env_dest)
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(ENV_FILE)"
+	rm -f "$(env_dest)"
 
 #. OTHER TARGETS
+
+.PHONY: debug
+.NOTPARALLEL: debug
+debug: debug-paths debug-sources #> Show build information
+	@:
 
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help

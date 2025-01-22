@@ -7,19 +7,34 @@ default: all
 
 ### Paths
 
-CONF_LINK := $(HOME)/.gitconfig
-CONF_LINK_BACKUP := $(CONF_LINK).orig
+conf_dest := $(HOME)/.gitconfig
+conf_backup := $(conf_dest).orig
 
-IGNORE_LINK := $(HOME)/.gitignore
-IGNORE_LINK_BACKUP := $(IGNORE_LINK).orig
+ignore_dest := $(HOME)/.gitignore
+ignore_backup := $(ignore_dest).orig
+
+.PHONY: debug-paths
+debug-paths: #> Show information about paths
+	$(info Paths:)
+	$(info - conf_backup: $(conf_backup))
+	$(info - conf_dest: $(conf_dest))
+	$(info - ignore_backup: $(ignore_backup))
+	$(info - ignore_dest: $(ignore_dest))
 
 ### Programs
 
 ### Sources
 
-SRC := $(shell git rev-parse --show-toplevel)/git
-CONF_TARGET := $(SRC)/gitconfig
-IGNORE_TARGET := $(SRC)/gitignore
+srcdir := $(abspath .)
+conf_source := $(srcdir)/gitconfig
+ignore_source := $(srcdir)/gitignore
+
+.PHONY: debug-sources
+debug-sources: #> Show information about source files
+	$(info Sources:)
+	$(info - srcdir: $(srcdir))
+	$(info - conf_source: $(conf_source))
+	$(info - ignore_source: $(ignore_source))
 
 #. STANDARD TARGETS
 
@@ -37,19 +52,24 @@ clean: #> Remove local build files (if any)
 
 .PHONY: install
 install: #> Install configuration
-	rm -f "$(CONF_LINK_BACKUP)" "$(IGNORE_LINK_BACKUP)"
+	rm -f "$(conf_backup)" "$(ignore_backup)"
 
-	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
-	ln -s "$(CONF_TARGET)" "$(CONF_LINK)"
+	[ ! -f "$(conf_dest)" ] || mv "$(conf_dest)" "$(conf_backup)"
+	ln -s "$(conf_source)" "$(conf_dest)"
 
-	[ ! -f "$(IGNORE_LINK)" ] || mv "$(IGNORE_LINK)" "$(IGNORE_LINK_BACKUP)"
-	ln -s "$(IGNORE_TARGET)" "$(IGNORE_LINK)"
+	[ ! -f "$(ignore_dest)" ] || mv "$(ignore_dest)" "$(ignore_backup)"
+	ln -s "$(ignore_source)" "$(ignore_dest)"
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(CONF_LINK)" "$(IGNORE_LINK)"
+	rm -f "$(conf_dest)" "$(ignore_dest)"
 
 #. OTHER TARGETS
+
+.PHONY: debug
+.NOTPARALLEL: debug
+debug: debug-paths debug-sources #> Show build information
+	@:
 
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help
