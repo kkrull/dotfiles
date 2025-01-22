@@ -13,6 +13,7 @@ env_dest := $(HOME)/.zshenv
 debug-paths:
 	$(info zsh_paths:)
 	$(info - env_dest: $(env_dest))
+	@:
 
 ### Programs
 
@@ -24,6 +25,7 @@ srcdir := $(abspath .)
 debug-sources:
 	$(info zsh_sources:)
 	$(info - srcdir: $(srcdir))
+	@:
 
 #. STANDARD TARGETS
 

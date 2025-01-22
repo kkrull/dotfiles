@@ -6,12 +6,19 @@ default: all
 ## Environment
 
 uname_s := $(shell uname -s)
+ifeq ($(OS),Windows_NT)
+	detected_os := Windows
+else
+	detected_os := $(uname_s)
+endif
 
 .PHONY: debug-env
 debug-env:
 	$(info environment:)
+	$(info - detected_os: $(detected_os))
 	$(info - OS: $(OS))
 	$(info - uname_s: $(uname_s))
+	@:
 
 ### Paths
 
@@ -25,6 +32,7 @@ subdirs := git tmux zsh
 debug-sources:
 	$(info sources:)
 	$(info - subdirs: $(subdirs))
+	@:
 
 #. STANDARD TARGETS
 

@@ -15,6 +15,7 @@ debug-paths:
 	$(info tmux_paths:)
 	$(info - conf_backup: $(conf_backup))
 	$(info - conf_dest: $(conf_dest))
+	@:
 
 ### Programs
 
@@ -28,6 +29,7 @@ debug-sources:
 	$(info tmux_sources:)
 	$(info - srcdir: $(srcdir))
 	$(info - conf_source: $(conf_source))
+	@:
 
 #. STANDARD TARGETS
 

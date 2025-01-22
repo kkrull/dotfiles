@@ -20,6 +20,7 @@ debug-paths:
 	$(info - conf_dest: $(conf_dest))
 	$(info - ignore_backup: $(ignore_backup))
 	$(info - ignore_dest: $(ignore_dest))
+	@:
 
 ### Programs
 
@@ -35,6 +36,7 @@ debug-sources:
 	$(info - srcdir: $(srcdir))
 	$(info - conf_source: $(conf_source))
 	$(info - ignore_source: $(ignore_source))
+	@:
 
 #. STANDARD TARGETS
 
