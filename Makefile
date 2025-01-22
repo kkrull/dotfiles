@@ -17,7 +17,6 @@ debug-env:
 	$(info environment:)
 	$(info - detected_os: $(detected_os))
 	$(info - OS: $(OS))
-	$(info - uname_s: $(uname_s))
 	@:
 
 ### Paths
@@ -26,7 +25,10 @@ debug-env:
 
 ### Sources
 
-subdirs := git tmux zsh
+subdirs := git tmux vim-macos zsh
+ifeq ($(detected_os),Windows)
+ 	subdirs := git tmux vim-wsl zsh
+endif
 
 .PHONY: debug-sources
 debug-sources:
@@ -60,7 +62,7 @@ uninstall: #> Uninstall configuration
 
 .PHONY: debug
 .NOTPARALLEL: debug
-debug: debug-env debug-sources #> Show project build information
+debug: debug-env debug-sources #> Show build information for project
 	@:
 
 .PHONY: debug-all
