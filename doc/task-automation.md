@@ -12,9 +12,9 @@ Run all checks.
 
 Run `make install` for each tool that has its own `Makefile`.
 
-### `make remove`
+### `make uninstall`
 
-Run `make remove` for each tool that has its own `Makefile`.
+Run `make uninstall` for each tool that has its own `Makefile`.
 
 ## `pre-commit` tasks
 

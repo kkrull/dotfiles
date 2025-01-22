@@ -14,6 +14,6 @@ install:
 	[ ! -f "$(CONF_LINK)" ] || mv "$(CONF_LINK)" "$(CONF_LINK_BACKUP)"
 	ln -s "$(CONF_TARGET)" "$(CONF_LINK)"
 
-.PHONY: remove
-remove:
+.PHONY: uninstall
+uninstall:
 	rm -f "$(CONF_LINK)"

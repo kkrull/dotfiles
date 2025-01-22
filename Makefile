@@ -11,8 +11,8 @@ install:
 	$(MAKE) -C tmux $@
 	$(MAKE) -C zsh $@
 
-.PHONY: remove
-remove:
+.PHONY: uninstall
+uninstall:
 	$(MAKE) -C git $@
 	$(MAKE) -C tmux $@
 	$(MAKE) -C zsh $@

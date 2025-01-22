@@ -13,6 +13,6 @@ install:
 	$(file >>$(ENV_FILE),source $$ZDOTDIR/.zshenv)
 	@echo Created $(ENV_FILE)
 
-.PHONY: remove
-remove:
+.PHONY: uninstall
+uninstall:
 	rm -f "$(ENV_FILE)"

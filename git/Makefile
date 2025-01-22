@@ -22,6 +22,6 @@ install:
 	[ ! -f "$(IGNORE_LINK)" ] || mv "$(IGNORE_LINK)" "$(IGNORE_LINK_BACKUP)"
 	ln -s "$(IGNORE_TARGET)" "$(IGNORE_LINK)"
 
-.PHONY: remove
-remove:
+.PHONY: uninstall
+uninstall:
 	rm -f "$(CONF_LINK)" "$(IGNORE_LINK)"
