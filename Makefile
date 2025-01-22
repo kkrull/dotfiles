@@ -1,6 +1,10 @@
+default: all
+
 ## Top-level tasks
 
-default: check
+.PHONY: all
+all:
+	@:
 
 .PHONY: check
 check: pre-commit-check

@@ -1,16 +1,22 @@
+default: all
+
 ## Top-level tasks
 
-default: install
+.PHONY: all
+all:
+	@:
 
 ## git
 
+SRC := $(shell git rev-parse --show-toplevel)/git
+
 CONF_LINK := $(HOME)/.gitconfig
 CONF_LINK_BACKUP := $(CONF_LINK).orig
-CONF_TARGET := $(shell git rev-parse --show-toplevel)/git/gitconfig
+CONF_TARGET := $(SRC)/gitconfig
 
 IGNORE_LINK := $(HOME)/.gitignore
 IGNORE_LINK_BACKUP := $(IGNORE_LINK).orig
-IGNORE_TARGET := $(shell git rev-parse --show-toplevel)/git/gitignore
+IGNORE_TARGET := $(SRC)/gitignore
 
 .PHONY: install
 install:

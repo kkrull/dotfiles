@@ -1,6 +1,10 @@
+default: all
+
 ## Top-level tasks
 
-default: install
+.PHONY: all
+all:
+	@:
 
 ## zsh
 
