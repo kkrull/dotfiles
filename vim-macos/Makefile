@@ -7,19 +7,14 @@ default: all
 
 ### Paths
 
-conf_dest := $(HOME)/.gitconfig
+conf_dest := $(HOME)/.vimrc
 conf_backup := $(conf_dest).orig
-
-ignore_dest := $(HOME)/.gitignore
-ignore_backup := $(ignore_dest).orig
 
 .PHONY: debug-paths
 debug-paths:
 	$(info vim_paths:)
 	$(info - conf_backup: $(conf_backup))
 	$(info - conf_dest: $(conf_dest))
-	$(info - ignore_backup: $(ignore_backup))
-	$(info - ignore_dest: $(ignore_dest))
 	@:
 
 ### Programs
@@ -27,15 +22,13 @@ debug-paths:
 ### Sources
 
 srcdir := $(abspath .)
-conf_source := $(srcdir)/gitconfig
-ignore_source := $(srcdir)/gitignore
+conf_source := $(srcdir)/vimrc
 
 .PHONY: debug-sources
 debug-sources:
 	$(info vim_sources:)
 	$(info - srcdir: $(srcdir))
 	$(info - conf_source: $(conf_source))
-	$(info - ignore_source: $(ignore_source))
 	@:
 
 #. STANDARD TARGETS
@@ -54,17 +47,14 @@ clean: #> Remove local build files (if any)
 
 .PHONY: install
 install: #> Install configuration
-	rm -f "$(conf_backup)" "$(ignore_backup)"
+	rm -f "$(conf_backup)"
 
 	[ ! -f "$(conf_dest)" ] || mv "$(conf_dest)" "$(conf_backup)"
 	ln -s "$(conf_source)" "$(conf_dest)"
 
-	[ ! -f "$(ignore_dest)" ] || mv "$(ignore_dest)" "$(ignore_backup)"
-	ln -s "$(ignore_source)" "$(ignore_dest)"
-
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(conf_dest)" "$(ignore_dest)"
+	rm -f "$(conf_dest)"
 
 #. OTHER TARGETS
 
