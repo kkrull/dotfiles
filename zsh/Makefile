@@ -10,7 +10,7 @@ default: all
 env_dest := $(HOME)/.zshenv
 
 .PHONY: debug-paths
-debug-paths: #> Show information about paths
+debug-paths:
 	$(info Paths:)
 	$(info - env_dest: $(env_dest))
 
@@ -21,7 +21,7 @@ debug-paths: #> Show information about paths
 srcdir := $(abspath .)
 
 .PHONY: debug-sources
-debug-sources: #> Show information about source files
+debug-sources:
 	$(info Sources:)
 	$(info - srcdir: $(srcdir))
 

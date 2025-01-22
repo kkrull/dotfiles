@@ -11,7 +11,7 @@ conf_dest := $(HOME)/.tmux.conf
 conf_backup := $(conf_dest).orig
 
 .PHONY: debug-paths
-debug-paths: #> Show information about paths
+debug-paths:
 	$(info Paths:)
 	$(info - conf_backup: $(conf_backup))
 	$(info - conf_dest: $(conf_dest))
@@ -24,7 +24,7 @@ srcdir := $(abspath .)
 conf_source := $(srcdir)/tmux.conf
 
 .PHONY: debug-sources
-debug-sources: #> Show information about source files
+debug-sources:
 	$(info Sources:)
 	$(info - srcdir: $(srcdir))
 	$(info - conf_source: $(conf_source))
