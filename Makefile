@@ -5,6 +5,14 @@ default: all
 
 ## Environment
 
+uname_s := $(shell uname -s)
+
+.PHONY: debug-env
+debug-env:
+	$(info - environment:)
+	$(info   - OS: $(OS))
+	$(info   - uname_s: $(uname_s))
+
 ### Paths
 
 ### Programs
@@ -17,29 +25,30 @@ subdirs := git tmux zsh
 
 .PHONY: all
 all: #> Build all sources (if any)
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w $@ &&) true
 
 .PHONY: check
 check: pre-commit-check #> Run self-tests
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w $@ &&) true
 
 .PHONY: clean
 clean: pre-commit-gc #> Remove local build files (if any)
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w $@ &&) true
 
 .PHONY: install
 install: #> Install configuration
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w $@ &&) true
 
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w $@ &&) true
 
 #. OTHER TARGETS
 
 .PHONY: debug
 .NOTPARALLEL: debug
-debug: #> Show build information
+debug: debug-env #> Show build information
+	$(info dotfiles:)
 	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
 
 # https://stackoverflow.com/a/47107132/112682
@@ -54,7 +63,7 @@ help: #> Show this help
 .PHONY: help-all
 .NOTPARALLEL: help-all
 help-all: help #> Show help for all Makefiles
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) help &&) true
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) -w help &&) true
 
 #. PRE-COMMIT TARGETS
 
