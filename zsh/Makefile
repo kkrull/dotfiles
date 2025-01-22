@@ -11,8 +11,8 @@ env_dest := $(HOME)/.zshenv
 
 .PHONY: debug-paths
 debug-paths:
-	$(info - paths:)
-	$(info -- env_dest: $(env_dest))
+	$(info zsh_paths:)
+	$(info - env_dest: $(env_dest))
 
 ### Programs
 
@@ -22,8 +22,8 @@ srcdir := $(abspath .)
 
 .PHONY: debug-sources
 debug-sources:
-	$(info - sources:)
-	$(info -- srcdir: $(srcdir))
+	$(info zsh_sources:)
+	$(info - srcdir: $(srcdir))
 
 #. STANDARD TARGETS
 

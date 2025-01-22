@@ -9,9 +9,9 @@ uname_s := $(shell uname -s)
 
 .PHONY: debug-env
 debug-env:
-	$(info - environment:)
-	$(info   - OS: $(OS))
-	$(info   - uname_s: $(uname_s))
+	$(info environment:)
+	$(info - OS: $(OS))
+	$(info - uname_s: $(uname_s))
 
 ### Paths
 
@@ -20,6 +20,11 @@ debug-env:
 ### Sources
 
 subdirs := git tmux zsh
+
+.PHONY: debug-sources
+debug-sources:
+	$(info sources:)
+	$(info - subdirs: $(subdirs))
 
 #. STANDARD TARGETS
 
@@ -47,9 +52,13 @@ uninstall: #> Uninstall configuration
 
 .PHONY: debug
 .NOTPARALLEL: debug
-debug: debug-env #> Show build information
-	$(info dotfiles:)
-	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) $@ &&) true
+debug: debug-env debug-sources #> Show project build information
+	@:
+
+.PHONY: debug-all
+.NOTPARALLEL: debug-all
+debug-all: debug #> Show build information for subsystems
+	$(foreach dir,$(subdirs),$(MAKE) -C $(dir) debug &&) true
 
 # https://stackoverflow.com/a/47107132/112682
 .PHONY: help

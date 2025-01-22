@@ -15,11 +15,11 @@ ignore_backup := $(ignore_dest).orig
 
 .PHONY: debug-paths
 debug-paths:
-	$(info - paths:)
-	$(info -- conf_backup: $(conf_backup))
-	$(info -- conf_dest: $(conf_dest))
-	$(info -- ignore_backup: $(ignore_backup))
-	$(info -- ignore_dest: $(ignore_dest))
+	$(info vim_paths:)
+	$(info - conf_backup: $(conf_backup))
+	$(info - conf_dest: $(conf_dest))
+	$(info - ignore_backup: $(ignore_backup))
+	$(info - ignore_dest: $(ignore_dest))
 
 ### Programs
 
@@ -31,10 +31,10 @@ ignore_source := $(srcdir)/gitignore
 
 .PHONY: debug-sources
 debug-sources:
-	$(info - sources:)
-	$(info -- srcdir: $(srcdir))
-	$(info -- conf_source: $(conf_source))
-	$(info -- ignore_source: $(ignore_source))
+	$(info vim_sources:)
+	$(info - srcdir: $(srcdir))
+	$(info - conf_source: $(conf_source))
+	$(info - ignore_source: $(ignore_source))
 
 #. STANDARD TARGETS
 

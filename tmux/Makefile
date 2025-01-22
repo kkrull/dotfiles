@@ -12,9 +12,9 @@ conf_backup := $(conf_dest).orig
 
 .PHONY: debug-paths
 debug-paths:
-	$(info - paths:)
-	$(info -- conf_backup: $(conf_backup))
-	$(info -- conf_dest: $(conf_dest))
+	$(info tmux_paths:)
+	$(info - conf_backup: $(conf_backup))
+	$(info - conf_dest: $(conf_dest))
 
 ### Programs
 
@@ -25,9 +25,9 @@ conf_source := $(srcdir)/tmux.conf
 
 .PHONY: debug-sources
 debug-sources:
-	$(info - sources:)
-	$(info -- srcdir: $(srcdir))
-	$(info -- conf_source: $(conf_source))
+	$(info tmux_sources:)
+	$(info - srcdir: $(srcdir))
+	$(info - conf_source: $(conf_source))
 
 #. STANDARD TARGETS
 
