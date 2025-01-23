@@ -43,6 +43,7 @@ plugins+=(zsh-nvm)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
+source_module "rust" "$ZDOTDIR/.zshrc.d/rust.zsh"
 source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
