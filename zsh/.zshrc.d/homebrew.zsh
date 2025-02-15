@@ -1,6 +1,6 @@
 if [[ -d /opt/homebrew ]]
 then
-  path+=(/opt/homebrew/bin)
+  path=(/opt/homebrew/bin $path)
 fi
 
 if type brew &>/dev/null
