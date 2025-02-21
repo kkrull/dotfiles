@@ -64,5 +64,10 @@ then
 fi
 source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
+if type nvm >/dev/null
+then
+  nvm use default
+fi
+
 # direnv (yes this has to be at the end)
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
