@@ -81,5 +81,14 @@ source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.z
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
 # SDKMAN!
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+if ! type brew &>/dev/null
+then
+elif ! brew list sdkman-cli &>/dev/null
+then
+else
+  printf "+%s: " "sdkman"
+  export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+  [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] \
+    && source "${SDKMAN_DIR}/bin/sdkman-init.sh" \
+    && echo "OK" || echo "FAIL"
+fi
