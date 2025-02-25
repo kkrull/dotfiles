@@ -38,6 +38,7 @@ words:
   - GOPATH
   - grubhub
   - histappend
+  - homebrewdep
   - ideavimrc
   - jenv
   - Jetbrains
@@ -57,6 +58,7 @@ words:
   - pyenv
   - realpath
   - robbyrussell
+  - SDKMAN
   - SDKROOT
   - sfdx
   - SFDX

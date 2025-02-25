@@ -57,18 +57,29 @@ source "$ZSH/oh-my-zsh.sh"
 autoload -Uz compinit
 compinit
 
-# compinit dependencies
+## compinit dependencies
+
+# jenv
 if type jenv >/dev/null
 then
   eval "$(jenv init -)" #Must be done here, instead of in a separate file
   jenv enable-plugin export > /dev/null #VSCode extensions need JDK_HOME to be set
 fi
-source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
+# nvm
 if type nvm >/dev/null
 then
   nvm use default
 fi
 
+# terraform
+source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
+
+## End matter
+
 # direnv (yes this has to be at the end)
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
+
+# SDKMAN!
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
