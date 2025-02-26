@@ -80,7 +80,16 @@ source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.z
 # direnv (yes this has to be at the end)
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
-# SDKMAN!
+# SDKMAN! *nix
+SDKMAN_DIR="$HOME/.sdkman"
+if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]
+then
+  printf "+%s: " "sdkman"
+  export SDKMAN_DIR
+  source "$SDKMAN_DIR/bin/sdkman-init.sh" && echo "OK" || echo "FAIL"
+fi
+
+# SDKMAN! Homebrew
 if ! type brew &>/dev/null
 then
 elif ! brew list sdkman-cli &>/dev/null
