@@ -59,6 +59,8 @@ compinit
 
 ## compinit dependencies
 
+source_module "gnu-make" "$ZDOTDIR/.zshrc.d/gnu-make.zsh"
+
 # jenv
 if type jenv >/dev/null
 then
