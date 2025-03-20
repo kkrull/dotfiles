@@ -1,4 +1,8 @@
 if has('nvim')
+  set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×
+  "set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+  "set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:·
+  set list
 else
   "" Vundle (must go first)
   set nocompatible
