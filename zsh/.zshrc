@@ -82,6 +82,12 @@ source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.z
 # direnv (yes this has to be at the end)
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
+# pyenv
+if type pyenv >/dev/null
+then
+  eval "$(pyenv init - zsh)"
+fi
+
 # SDKMAN! *nix
 SDKMAN_DIR="$HOME/.sdkman"
 if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]

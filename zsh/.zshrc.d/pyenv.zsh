@@ -1,6 +1,7 @@
 
-pyenv_home="$HOME/.pyenv"
-if [[ -d "$pyenv_home" ]]
+PYENV_HOME="$HOME/.pyenv"
+if [[ -d "$PYENV_HOME" ]]
 then
-  path=("$pyenv_home/bin" "$pyenv_home/shims" $path)
+  export PYENV_HOME
+  path=("$PYENV_HOME/bin" "$PYENV_HOME/shims" $path)
 fi
