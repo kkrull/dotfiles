@@ -74,6 +74,9 @@ then
   nvm use default
 fi
 
+# oh-my-zsh
+unsetopt AUTO_CD
+
 # terraform
 source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
