@@ -61,6 +61,12 @@ compinit
 
 source_module "gnu-make" "$ZDOTDIR/.zshrc.d/gnu-make.zsh"
 
+# completions
+for fn in $(find $ZDOTDIR/completion -type f)
+do
+  source_module "${fn:t:r} completions" "$fn"
+done
+
 # jenv
 if type jenv >/dev/null
 then
