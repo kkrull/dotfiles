@@ -12,9 +12,6 @@ ff = only
 [user]
 name = Kyle Krull # Email changes often; configure per-repository
 useConfigOnly = true
-[apply]
-	whitespace = nowarn
-[url "https://github.com/"]
-	insteadOf = git@github.com:
-[url "https://"]
-	insteadOf = git://
+
+[includeIf "gitdir:~/Work/_git/"]
+  path = ~/.gitconfig.d/rn.inc
