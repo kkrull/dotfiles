@@ -49,6 +49,7 @@ source_module "rust" "$ZDOTDIR/.zshrc.d/rust.zsh"
 source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
+source_module "work" "$ZDOTDIR/.zshrc.d/work.zsh"
 source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
 
 # $plugins dependencies
