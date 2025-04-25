@@ -30,4 +30,18 @@ words:
   - libexecdirpkg
   - Makefiles
   - minphony
+  - mybatis
+  - nvmrc
+  - ohmyzsh
+  - oneline
+  - pgdn
+  - pgup
+  - pipx
+  - pyenv
+  - realpath
+  - robbyrussell
+  - SDKMAN
+  - SDKROOT
+  - sfdx
+  - SFDX
   - shellcheck
