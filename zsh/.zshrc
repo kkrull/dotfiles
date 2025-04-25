@@ -41,7 +41,7 @@ source_module "linuxbrew" "$ZDOTDIR/.zshrc.d/linuxbrew.zsh"
 source_module "mybatis" "$ZDOTDIR/.zshrc.d/mybatis.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
-plugins+=(zsh-nvm)
+plugins+=(zsh-nvm zsh-syntax-highlighting)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 #source_module "python3" "$ZDOTDIR/.zshrc.d/python3.zsh"
