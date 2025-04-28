@@ -52,6 +52,7 @@ source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
 source_module "work" "$ZDOTDIR/.zshrc.d/work.zsh"
 source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
+#source_module "rn/alias" "$ZDOTDIR/.zshrc.d/rn/alias.zsh"
 
 # $plugins dependencies
 source "$ZSH/oh-my-zsh.sh"
