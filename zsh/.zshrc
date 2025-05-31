@@ -37,6 +37,7 @@ source_module "homebrew (standard user)" "$ZDOTDIR/.zshrc.d/homebrew-standard-us
 source_module "homebrewdep-go" "$ZDOTDIR/.zshrc.d/homebrewdep-go.zsh"
 source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
 source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
+source_module "linuxbrew" "$ZDOTDIR/.zshrc.d/linuxbrew.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
 plugins+=(zsh-nvm)
