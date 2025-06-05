@@ -11,8 +11,8 @@ include ../make.d/help.mk
 
 srcdir := $(realpath .)
 
-.PHONY: source-info
-source-info:
+.PHONY: debug-sources
+debug-sources:
 	$(info Sources:)
 	$(info - srcdir: $(srcdir))
 	@:
