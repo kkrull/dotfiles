@@ -21,8 +21,12 @@ words:
   - automount
   - checkmake
   - chsh
+  - datadirpkg
   - direnv
+  - envrc
   - kkrull
   - Krull
+  - libexecdirpkg
+  - Makefiles
   - minphony
   - shellcheck

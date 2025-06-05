@@ -10,8 +10,8 @@ Configuration for shells and other things I use on the command line.
 
 ## Documentation
 
-- [Task Automation](./doc/task-automation.md)
-- [Windows Subsystem for Linux](./doc/wsl.md)
+- [Tools](./doc/tools.md) used in this repository
+- [Windows Subsystem for Linux](./doc/wsl.md) configuration
 
 ## Installation and removal
 
