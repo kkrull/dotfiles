@@ -1,5 +1,4 @@
-# https://EditorConfig.org
-
+# https://editorconfig.org
 root = true
 
 [*]
@@ -10,11 +9,28 @@ indent_size = 2
 indent_style = space
 trim_trailing_whitespace = false
 
-[Makefile]
-indent_style = tab
+[LICENSE]
+indent_size = unset
 
 [*.bat]
 end_of_line = crlf
 
+## GNU Make
+
+# Indentation outside of a target's commands must be spaces, leading to mixed tabs/spaces
+# https://stackoverflow.com/a/4713737/112682
+
+[Makefile]
+indent_size =
+indent_style =
+
+[*.mk]
+indent_size =
+indent_style =
+
+## Markdown
+
 [*.md]
-indent_size = 2
+indent_size = unset
+max_line_length = unset
+trim_trailing_whitespace = false

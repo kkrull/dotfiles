@@ -1,83 +1,32 @@
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
 dictionaries: []
 dictionaryDefinitions: []
 enableFiletypes:
+  - github-actions-workflow
+  - json
+  - makefile
+  - markdown
+  - plaintext
   - shellscript
+  - text
+  - yaml
 ignorePaths:
+  - .envrc.local
   - .gitignore
-  - vimrc
+  - cspell.config.yaml
 ignoreWords: []
 import: []
 version: "0.2"
 words:
-  - agnoster
-  - ARCHFLAGS
-  - argcomplete
-  - autoload
   - automount
-  - AUTOUPDATE
-  - bashcompinit
-  - Bxegedabagaced
-  - cdnvm
-  - chruby
+  - checkmake
   - chsh
-  - CLICOLOR
-  - compinit
-  - CONTACTPOINTS
-  - coreutils
-  - CPATH
-  - dircolors
+  - datadirpkg
   - direnv
-  - dockhub
-  - Dotfiles
   - envrc
-  - excludesfile
-  - fpath
-  - gitprompt
-  - gloga
-  - glso
-  - gnubin
-  - GOPATH
-  - grubhub
-  - histappend
-  - homebrewdep
-  - ideavimrc
-  - jenv
-  - Jetbrains
   - kkrull
   - Krull
-  - libexec
-  - LSCOLORS
+  - libexecdirpkg
   - Makefiles
-  - MANPATH
-  - markdownlint
-  - mvim
-  - nvmrc
-  - ohmyzsh
-  - oneline
-  - pgdn
-  - pgup
-  - pipx
-  - pyenv
-  - realpath
-  - robbyrussell
-  - SDKMAN
-  - SDKROOT
-  - sfdx
-  - SFDX
+  - minphony
   - shellcheck
-  - shopt
-  - showmode
-  - sode
-  - splitpath
-  - strftime
-  - toplevel
-  - urldecode
-  - urlencode
-  - urllib
-  - vimrc
-  - virtualenvwrapper
-  - vundle
-  - Vundle
-  - ZDOTDIR
-  - zshconfig
-  - zstyle

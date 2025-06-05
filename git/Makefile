@@ -62,6 +62,10 @@ install: #> Install configuration
 	[ ! -f "$(ignore_dest)" ] || mv "$(ignore_dest)" "$(ignore_backup)"
 	ln -s "$(ignore_source)" "$(ignore_dest)"
 
+.PHONY: test
+test:
+	@:
+
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	rm -f "$(conf_dest)" "$(ignore_dest)"

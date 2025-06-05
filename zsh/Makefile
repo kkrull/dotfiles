@@ -47,6 +47,10 @@ install: #> Install configuration
 	$(file >>$(env_dest),source $$ZDOTDIR/.zshenv)
 	@echo Created $(env_dest)
 
+.PHONY: test
+test:
+	@:
+
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	rm -f "$(env_dest)"

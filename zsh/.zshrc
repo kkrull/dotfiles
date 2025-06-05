@@ -63,7 +63,8 @@ compinit
 source_module "gnu-make" "$ZDOTDIR/.zshrc.d/gnu-make.zsh"
 
 # completions
-for fn in $(find $ZDOTDIR/completion -type f)
+# shellcheck disable=SC2044 # find -exec doesn't work with functions
+for fn in $(find "$ZDOTDIR/completion" -type f)
 do
   source_module "${fn:t:r} completions" "$fn"
 done
@@ -110,11 +111,14 @@ fi
 # SDKMAN! Homebrew
 if ! type brew &>/dev/null
 then
+  echo "OK" > /dev/null
 elif ! brew list sdkman-cli &>/dev/null
 then
+  echo "OK" > /dev/null
 else
   printf "+%s: " "sdkman"
-  export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+  SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+  export SDKMAN_DIR
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] \
     && source "${SDKMAN_DIR}/bin/sdkman-init.sh" \
     && echo "OK" || echo "FAIL"
