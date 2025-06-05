@@ -9,21 +9,39 @@ include ../make.d/help.mk
 
 ## Sources
 
+srcdir := $(realpath .)
+
 .PHONY: debug-sources
 debug-sources:
 	$(info Sources:)
+	$(info - srcdir: $(srcdir))
 	@:
 
 ## Artifacts
 
 ## Paths
 
+XDG_CONFIG_HOME ?= $(HOME)/.config
+tmux_config := $(HOME)/.tmux.conf
+
 .PHONY: debug-paths
 debug-paths:
 	$(info Paths:)
+	$(info - tmux_config: $(tmux_config))
+	$(info - XDG_CONFIG_HOME: $(XDG_CONFIG_HOME))
 	@:
 
 ## Programs
+
+INSTALL ?= install
+INSTALLFLAGS :=
+
+.PHONY: debug-programs
+debug-programs:
+	$(info Programs:)
+	$(info - INSTALL: $(INSTALL))
+	$(info - INSTALLFLAGS: $(INSTALLFLAGS))
+	@:
 
 #. DEVELOPMENT ENVIRONMENT TARGETS
 
@@ -41,25 +59,24 @@ all:
 clean:
 	@:
 
-# TODO KDK: Use `install` to install symlinks in $XDG_CONFIG_HOME or $HOME/.config
 .PHONY: install
 install: #> Install configuration
-	@:
+	$(INSTALL) $(INSTALLFLAGS) -d $(XDG_CONFIG_HOME)
+	ln -f -s $(srcdir)/tmux.conf $(tmux_config)
 
 .PHONY: test
 test:
 	@:
 
-# TODO KDK: Unlink
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	@:
+	$(RM) $(tmux_config)
 
 #. SUPPORT TARGETS
 
 .PHONY: debug
 .NOTPARALLEL: debug
-debug: _debug-prefix debug-paths debug-sources #> Show debugging information
+debug: _debug-prefix debug-paths debug-programs debug-sources #> Show debugging information
 	@:
 
 .PHONY: _debug-prefix
