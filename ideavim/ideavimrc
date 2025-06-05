@@ -1,0 +1,80 @@
+" Configuration for JetBrains IDEs
+
+"" Key-mapping actions
+
+" Look up actions via `IdeaVim: track action IDs` (double-shift to open search).
+" Or look up actions with `:actionlint`
+
+
+"" Inspiration
+
+" neovim emulation
+" https://github.com/cufarvid/lazy-idea/blob/main/.ideavimrc
+
+" Which-Key descriptions
+" https://gist.github.com/mikeslattery/d2f2562e5bbaa7ef036cf9f5a13deff5?permalink_comment_id=5404952#gistcomment-5404952
+
+
+"" Phase 1: Key bindings that plugins extend
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+let maplocalleader="\\"
+
+
+"" Phase 2: Plugins
+
+" https://github.com/TheBlob42/idea-which-key
+Plug 'TheBlob42/idea-which-key'
+
+" Enable plugins
+set which-key
+
+
+"" Phase 3: Configuration
+
+" Editor
+set number
+set relativenumber
+
+"" Which-Key
+
+" Show popup for everything
+let g:WhichKey_ShowVimActions="true"
+
+" Show popup quickly and wait indefinitely
+set notimeout
+set timeoutlen=5000
+let g:WhichKey_DefaultDelay=0
+
+
+"" Phase 4: Custom key bindings
+
+" https://github.com/JetBrains/ideavim?tab=readme-ov-file#finding-action-ids
+" https://github.com/TheBlob42/idea-which-key?tab=readme-ov-file#customization
+
+" Run
+map <leader>rc <Action>(RunClass)
+map <leader>rr <Action>(Run)
+
+let g:WhichKeyDesc_run        = "<leader>r  [r]un"
+let g:WhichKeyDesc_run_class  = "<leader>rc [c]lass"
+let g:WhichKeyDesc_run_repeat = "<leader>rr [r]epeat"
+
+" Views
+" Note: HideAllWindows actually toggles them
+map <leader>v\ <Action>(ActivateProjectToolWindow)
+map <leader>vv <Action>(HideAllWindows)
+
+let g:WhichKeyDesc_view        = "<leader>v  [v]iew"
+let g:WhichKeyDesc_view_toggle = "<leader>vv toggle tool windows"
+
+" Window
+map <leader>ww <Action>(NextSplitter)
+map <leader>wW <Action>(MoveEditorToOppositeTabGroup)
+
+let g:WhichKeyDesc_window             = "<leader>w  [w]indow"
+let g:WhichKeyDesc_window_move_caret  = "<leader>ww move caret to next [w]indow"
+let g:WhichKeyDesc_window_move_editor = "<leader>wW move editor to next [W]indow"
+
+" vim: set ft=vim

@@ -21,6 +21,8 @@ debug-programs:
 # https://stackoverflow.com/a/17845120/112682
 SUBDIRS := \
 	git \
+	ideavim \
+	karabiner \
 	tmux \
 	zsh
 
