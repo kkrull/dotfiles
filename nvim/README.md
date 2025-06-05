@@ -1,6 +1,6 @@
 # Neovim configuration (`kickstart.nvim` fork)
 
-Neovim configuration.  
+Neovim configuration.
 
 Forked from [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim).
 
