@@ -129,7 +129,7 @@ applications and inserting them in org documents"
   :group 'org-mac-link-grabber
   :type 'boolean)
 
-
+
 (defun omlg-grab-link ()
   "Prompt the user for an application to grab a link from, then go grab the link, and insert it at point"
   (interactive)
@@ -184,7 +184,7 @@ applications and inserting them in org documents"
     (kill-new rtn)
     rtn))
 
-
+
 
 ;; Handle links from Firefox.app
 ;;
@@ -241,7 +241,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-firefox-get-frontmost-url)))
 
-
+
 ;; Handle links from Google Firefox.app running the Vimperator extension
 ;; Grab the frontmost url from Firefox+Vimperator. Same limitations are
 ;; Firefox
@@ -286,7 +286,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-vimperator-get-frontmost-url)))
 
-
+
 ;; Handle links from Google Chrome.app
 ;; Grab the frontmost url from Google Chrome. Same limitations are
 ;; Firefox because Chrome doesn't publish an Applescript dictionary
@@ -331,7 +331,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-chrome-get-frontmost-url)))
 
-
+
 ;; Handle links from Safari.app
 ;; Grab the frontmost url from Safari.
 
@@ -362,7 +362,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-safari-get-frontmost-url)))
 
-
+
 ;;
 ;;
 ;; Handle links from together.app
@@ -396,7 +396,7 @@ applications and inserting them in org documents"
 (defun org-mac-together-insert-selected ()
   (interactive)
   (insert (org-mac-together-get-selected)))
-
+
 
 ;;
 ;;
@@ -426,7 +426,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-finder-item-get-selected)))
 
-
+
 ;;
 ;;
 ;; Handle links from AddressBook.app
@@ -461,7 +461,7 @@ applications and inserting them in org documents"
   (interactive)
   (insert (org-mac-addressbook-item-get-selected)))
 
-
+
 (provide 'org-mac-link-grabber)
 
 ;;; org-mac-link-grabber.el ends here

@@ -18,7 +18,7 @@
 ;; check version of tabbar
 (unless (and (boundp 'tabbar-version)
 	     (string< "1.9999" tabbar-version))
-  (message "Tabbar version too low. Uninstall %s." 
+  (message "Tabbar version too low. Uninstall %s."
 	   (locate-library "tabbar"))
   (let ((load-path (list default-directory)))
     (load "tabbar/tabbar.el")))
@@ -54,7 +54,7 @@ construct to be closed.")
 (defvar tabbar-new-tab-function nil
   "Function to call to create a new buffer in tabbar-mode.  Optional single
 argument is the MODE for the new buffer.")
-  
+
 ;; for buffer tabs, use the usual command to close/kill a buffer
 (defun tabbar-buffer-close-tab (tab)
   (let ((buffer (tabbar-tab-value tab))
@@ -152,7 +152,7 @@ to be closed.  If no tab is specified, (tabbar-selected-tab) is used"
     :group 'tabbar)
 
 
-;; do not let color themes override tabbar faces 
+;; do not let color themes override tabbar faces
 (aquamacs-set-defaults '((color-theme-illegal-faces "^\\(w3-\\|tabbar-\\)")))
 
 
@@ -189,15 +189,15 @@ KEYS defines the elements to use for `tabbar-key-binding-keys'."
 		   (interactive)
 		   (tabbar-select-tab-by-index ,(- ni 1))))
 	  ;; store label in property of command name symbol
-	  (put name 'label 
+	  (put name 'label
 	       (format "%c" (car keys)))
 	  (loop for key in keys do
-		(define-key tabbar-mode-map 
-		  (vector (append 
+		(define-key tabbar-mode-map
+		  (vector (append
 			   tabbar-key-binding-modifier-list
 			   (list key)))
 		  name)))))
- 
+
 (defun tabbar-select-tab-by-index (index)
   ;; (let ((vis-index (+ index (or (get (tabbar-current-tabset) 'start) 0))))
   (unless (> (length (tabbar-tabs (tabbar-current-tabset))) 1)
@@ -211,8 +211,8 @@ KEYS defines the elements to use for `tabbar-key-binding-keys'."
 				 (setq better-w w)))))
 		    'avoid-minibuf (selected-frame))
       (if better-w (select-window better-w))))
-     
-  (tabbar-window-select-a-tab 
+
+  (tabbar-window-select-a-tab
    (nth index (tabbar-tabs (tabbar-current-tabset)))))
 
 (defun tabbar-window-select-a-tab (tab)
@@ -220,9 +220,9 @@ KEYS defines the elements to use for `tabbar-key-binding-keys'."
   (let ((one-buffer-one-frame nil)
 	(buffer (tabbar-tab-value tab)))
     (when buffer
-      
+
       (set-window-dedicated-p (selected-window) nil)
-      (let ((prevtab (tabbar-get-tab (window-buffer (selected-window)) 
+      (let ((prevtab (tabbar-get-tab (window-buffer (selected-window))
 				     (tabbar-tab-tabset tab)))
 	    (marker (cond ((bobp) (point-min-marker))
 				((eobp) (point-max-marker))
@@ -232,14 +232,14 @@ KEYS defines the elements to use for `tabbar-key-binding-keys'."
 		  'tab-points))
       (switch-to-buffer buffer)
       (let ((new-pt (cdr (assq tab tab-points))))
-	(and new-pt 
+	(and new-pt
 	     (eq (marker-buffer new-pt) (window-buffer (selected-window)))
 	     (let ((pos (marker-position new-pt)))
 	       (unless (eq pos (point))
 		 (if transient-mark-mode
 		     (deactivate-mark))
 		 (goto-char pos))
-	       (set-marker new-pt nil) ;; delete marker 
+	       (set-marker new-pt nil) ;; delete marker
 	       ))))))
 ; (marker-insertion-type (cdr (car tab-points)))
 
@@ -293,7 +293,7 @@ KEYS defines the elements to use for `tabbar-key-binding-keys'."
 (defun tabbar-new-tab (&optional mode)
   "Creates a new tab, containing an empty buffer (with major-mode MODE
 if specified), in current window."
-  (interactive)			
+  (interactive)
   (let ((one-buffer-one-frame nil))
     (new-empty-buffer nil mode)))
 
@@ -505,7 +505,7 @@ or groups.  Call the function `tabbar-button-label' otherwise."
   )
 
 (defun tabbar-check-overflow (tabset &optional noscroll)
-  "Return t if the current tabbar is longer than the header line.  
+  "Return t if the current tabbar is longer than the header line.
 If NOSCROLL is non-nil, exclude the tabbar-scroll buttons in the
 check."
   (let ((tabs (tabbar-view tabset))
@@ -572,7 +572,7 @@ Call `tabbar-tab-label-function' to obtain a label for TAB."
 	   (mouse-face (if selected-p
 			   'tabbar-selected-highlight
 			 'tabbar-unselected-highlight))
-	 
+
 	   (text-face (if selected-p
 			  'tabbar-selected
 			'tabbar-unselected))
@@ -586,13 +586,13 @@ Call `tabbar-tab-label-function' to obtain a label for TAB."
 			'face text-face
 			'pointer 'arrow
 			'display (tabbar-normalize-image close-button-image 0 'nomask)))
-	 
+
 	   (display-label
 	    (propertize (if tabbar-tab-label-function
 			    (funcall tabbar-tab-label-function tab)
 			  tab)
 			'tabbar-tab tab
-			'local-map (tabbar-make-tab-keymap tab)	 
+			'local-map (tabbar-make-tab-keymap tab)
 			;;	  'help-echo 'tabbar-help-on-tab ;; no help echo: it's redundant
 			'mouse-face mouse-face
 			'face (cond ((and selected-p
@@ -610,7 +610,7 @@ Call `tabbar-tab-label-function' to obtain a label for TAB."
 	    (if (and tabbar-show-key-bindings (boundp 'tabbar-line-tabs) tabbar-line-tabs)
 		(let* ((mm (member tab tabbar-line-tabs) )
 		       ;; calc position (i.e., like position from cl-seq)
-		       (index (if mm (- (length tabbar-line-tabs) (length mm))))) 
+		       (index (if mm (- (length tabbar-line-tabs) (length mm)))))
 		  (if (and index (fboundp (tabbar-key-command (+ 1 index))))
 		      (propertize
 		       (get (tabbar-key-command (+ 1 index)) 'label)
@@ -618,7 +618,7 @@ Call `tabbar-tab-label-function' to obtain a label for TAB."
 		       'mouse-face mouse-face
 		       ;; same mouse-face leads to joint mouse activation for all elements
 		       'face (list 'tabbar-key-binding text-face) ;; does not work
-		       ) 
+		       )
 		    "")
 		  ) "")))
       (concat close-button display-label key-label tabbar-separator-value)))
@@ -774,7 +774,7 @@ NOSCROLL is non-nil, exclude the tabbar-scroll buttons."
 
 (defun tabbar-reformat-all-tabsets ()
   (tabbar-map-tabsets 'tabbar-reformat-tabset))
-   
+
 
 ;; to do:
 ;; tabbar-expand should really be done in `tabbar-line-tab' or afterwards,
@@ -804,25 +804,25 @@ buffer; see also `char-width'."
       (cond
        ((< sw width)
 	(let* ((l-l (max 4 (min (- 75 (/ (* tabbar-char-width n) 2) )
-				(floor (/ (* (frame-char-width) 
+				(floor (/ (* (frame-char-width)
 					     (- width sw)) 2)))))
-	       (sp-r  (propertize 
-		       " " 'display 
-		       `(space 
+	       (sp-r  (propertize
+		       " " 'display
+		       `(space
 			 :width
 			 ;; subtract width of numbers
-			 (, (max 4 (- l-l 
+			 (, (max 4 (- l-l
 				      (if tabbar-show-key-bindings
 					  7 0)))))))
-	       (sp-l  (propertize 
-		       " " 'display 
-		       `(space 
+	       (sp-l  (propertize
+		       " " 'display
+		       `(space
 			 :width
 			 ;; subtract the width of closer button. hard-coded for speed.
 			 (,(max 4 (- l-l 14)))))))
 	  (concat sp-l str sp-r)))
-       (t str)))) 
-          
+       (t str))))
+
 
 ;; function to unconditionally open a new tab
 (defun new-tab (&optional major-mode)
@@ -831,7 +831,7 @@ Turns on `tabbar-mode'."
   (interactive)
   (tabbar-mode 1)
   (tabbar-new-tab major-mode))
-  
+
 (defun new-tab-or-buffer (&optional mode)
   "Calls tabbar-new-tab-function if tabbar-mode is on; otherwise,
 creates a new buffer.  Mode for new buffer can optionally be specified."
@@ -917,10 +917,10 @@ The following options are available:
 
 ;; start out with hidden window
 (add-hook 'after-init-hook
-	  (lambda () 
+	  (lambda ()
 	    (if tabbar-mode
 		(add-to-list
-		 'header-line-inhibit-window-list 
+		 'header-line-inhibit-window-list
 		 (selected-window))) 'append))
 
 

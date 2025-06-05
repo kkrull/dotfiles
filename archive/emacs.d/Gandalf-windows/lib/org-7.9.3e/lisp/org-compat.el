@@ -110,7 +110,7 @@ any other entries, and any resulting duplicates will be removed entirely."
 	    t))
       t)))
 
-
+
 ;;;; Emacs/XEmacs compatibility
 
 ;; Keys

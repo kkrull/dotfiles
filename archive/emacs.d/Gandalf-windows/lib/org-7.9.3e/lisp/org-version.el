@@ -16,9 +16,9 @@
 ;;;###autoload
 (defvar org-odt-data-dir "/usr/share/emacs/etc/org"
   "The location of ODT styles.")
-
+
 (provide 'org-version)
-
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

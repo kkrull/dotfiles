@@ -123,7 +123,7 @@
 (declare-function longlines-mode "longlines" (&optional arg))
 (declare-function org-babel-trim "ob" (string &optional regexp))
 
-
+
 ;;; Bibtex data
 (defvar org-bibtex-types
   '((:article
@@ -289,7 +289,7 @@ This variable is relevant only if `org-bibtex-export-tags-as-keywords' is t."
   :version "24.1"
   :type 'string)
 
-
+
 ;;; Utility functions
 (defun org-bibtex-get (property)
   ((lambda (it) (when it (org-babel-trim it)))
@@ -433,7 +433,7 @@ With optional argument OPTIONAL, also prompt for optional fields."
              (not (org-bibtex-get org-bibtex-key-property)))
     (org-bibtex-autokey)))
 
-
+
 ;;; Bibtex link functions
 (org-add-link-type "bibtex" 'org-bibtex-open)
 (add-hook 'org-store-link-functions 'org-bibtex-store-link)
@@ -528,7 +528,7 @@ With optional argument OPTIONAL, also prompt for optional fields."
 ;; Finally add the link search function to the right hook.
 (add-hook 'org-execute-file-search-functions 'org-execute-file-search-in-bibtex)
 
-
+
 ;;; Bibtex <-> Org-mode headline translation functions
 (defun org-bibtex (&optional filename)
   "Export each headline in the current file to a bibtex entry.

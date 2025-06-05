@@ -104,7 +104,7 @@
 (declare-function org-solidify-link-text "org-exp" (s &optional alist))
 
 
-
+
 
 ;;; Internal Variables
 
@@ -356,7 +356,7 @@ default.  If you want the image to be captioned as \"Illustration
   "Temporary work directory for OpenDocument exporter.")
 
 
-
+
 ;;; User Configuration Variables
 
 (defgroup org-export-e-odt nil
@@ -935,7 +935,7 @@ style from the list."
 			       :value-type (const :tag "True" t))))))
 
 
-
+
 ;;; Internal functions
 
 ;;;; Date
@@ -1416,7 +1416,7 @@ original parsed data.  INFO is a plist holding export options."
     (buffer-substring-no-properties (point-min) (point-max))))
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Bold
@@ -3382,7 +3382,7 @@ contextual information."
 	   "OrgVerse" contents)))
 
 
-
+
 
 
 ;;; Interactive functions
@@ -3631,7 +3631,7 @@ Return output file's name."
        (org-export-to-buffer 'e-odt out-buf subtreep visible-only body-only)))))
 
 
-
+
 
 (defun org-e-odt-reachable-p (in-fmt out-fmt)
   "Return non-nil if IN-FMT can be converted to OUT-FMT."

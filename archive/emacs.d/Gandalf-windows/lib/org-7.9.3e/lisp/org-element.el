@@ -112,7 +112,7 @@
 
 (require 'org)
 
-
+
 ;;; Definitions And Rules
 ;;
 ;; Define elements, greater elements and specify recursive objects,
@@ -337,7 +337,7 @@ still has an entry since one of its properties (`:title') does.")
   "Alist between element types and location of secondary value.")
 
 
-
+
 ;;; Accessors and Setters
 ;;
 ;; Provide four accessors: `org-element-type', `org-element-property'
@@ -429,7 +429,7 @@ Return parent element."
     parent))
 
 
-
+
 ;;; Greater elements
 ;;
 ;; For each greater element type, we define a parser and an
@@ -1273,7 +1273,7 @@ CONTENTS is the contents of the element."
     (format "#+BEGIN_%s\n%s#+END_%s" block-type contents block-type)))
 
 
-
+
 ;;; Elements
 ;;
 ;; For each element, a parser and an interpreter are also defined.
@@ -2254,7 +2254,7 @@ CONTENTS is verse block contents."
   (format "#+BEGIN_VERSE\n%s#+END_VERSE" contents))
 
 
-
+
 ;;; Objects
 ;;
 ;; Unlike to elements, interstices can be found between objects.
@@ -3335,7 +3335,7 @@ CONTENTS is nil."
   (format "=%s=" (org-element-property :value verbatim)))
 
 
-
+
 ;;; Parsing Element Starting At Point
 ;;
 ;; `org-element--current-element' is the core function of this section.
@@ -3582,7 +3582,7 @@ CDR a plist of keywords and values."
       (list (point) output))))
 
 
-
+
 ;;; The Org Parser
 ;;
 ;; The two major functions here are `org-element-parse-buffer', which
@@ -3979,7 +3979,7 @@ OBJECTS is the previous candidates alist."
     next-candidates))
 
 
-
+
 ;;; Towards A Bijective Process
 ;;
 ;; The parse tree obtained with `org-element-parse-buffer' is really
@@ -4201,7 +4201,7 @@ indentation is not done with TAB characters."
 	(funcall build element (apply 'min ind-list) (not ignore-first))))))
 
 
-
+
 ;;; The Toolbox
 ;;
 ;; The first move is to implement a way to obtain the smallest element

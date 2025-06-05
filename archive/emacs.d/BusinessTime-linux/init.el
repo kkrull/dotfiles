@@ -71,7 +71,7 @@
     ("\\<[$!%&*-:[:alpha:][:digit:]]+!" . font-lock-warning-face)
     ("\\<[$!%&*-:[:alpha:][:digit:]]*mat\\>" . font-lock-keyword-face)
     ("\\<trace-[$!%&*-:[:alpha:][:digit:]]+\\>" . font-lock-warning-face)
-    
+
     ("\\<catch\\>" . font-lock-warning-face)
     ("\\<cond\\>" . font-lock-keyword-face)
     ("\\<cons\\>" . font-lock-keyword-face)
@@ -113,7 +113,7 @@
 
 
 ;;Text
-(add-hook 'text-mode-hook 
+(add-hook 'text-mode-hook
   (function
    (lambda ()
      (auto-fill-mode 1))))

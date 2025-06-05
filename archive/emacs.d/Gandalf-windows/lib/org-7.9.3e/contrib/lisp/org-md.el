@@ -32,7 +32,7 @@
 (require 'org-e-html)
 
 
-
+
 ;;; User-Configurable Variables
 
 (defgroup org-export-md nil
@@ -50,7 +50,7 @@ This variable can be set to either `atx' or `setext'."
 	  (const :tag "Use \"Setext\" style" setext)))
 
 
-
+
 ;;; Define Back-End
 
 (org-export-define-derived-backend md e-html
@@ -79,7 +79,7 @@ This variable can be set to either `atx' or `setext'."
 		    (verbatim . org-md-verbatim)))
 
 
-
+
 ;;; Filters
 
 (defun org-md-separate-elements (tree backend info)
@@ -101,7 +101,7 @@ Assume BACKEND is `md'."
   tree)
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Bold
@@ -402,7 +402,7 @@ as a communication channel."
   contents)
 
 
-
+
 ;;; Interactive function
 
 ;;;###autoload

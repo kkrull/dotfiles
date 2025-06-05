@@ -46,7 +46,7 @@
 
 
 
-
+
 
 
 ;;;; Define Back-End
@@ -117,7 +117,7 @@ See `org-export-options-alist' for more information on the
 structure of the values.")
 
 
-
+
 
 ;;; User Configurable Variables
 
@@ -289,7 +289,7 @@ These are the .aux, .log, .out, and .toc files."
   :group 'org-export-e-man
   :type 'boolean)
 
-
+
 
 ;; Preamble
 
@@ -301,7 +301,7 @@ These are the .aux, .log, .out, and .toc files."
              '("MAN" . org-element-export-block-parser))
 
 
-
+
 
 
 ;;; Internal Functions
@@ -354,7 +354,7 @@ This function shouldn't be used for floats.  See
         output
       (concat (format "%s\n.br\n" label) output))))
 
-
+
 
 
 ;;; Template
@@ -384,7 +384,7 @@ holding export options."
        ".TH \" \" \"1\" "))
      contents)))
 
-
+
 
 
 ;;; Transcode Functions
@@ -1223,7 +1223,7 @@ contextual information."
   (format ".RS\n.ft I\n%s\n.ft\n.RE" contents))
 
 
-
+
 ;;; Interactive functions
 
 (defun org-e-man-export-to-man

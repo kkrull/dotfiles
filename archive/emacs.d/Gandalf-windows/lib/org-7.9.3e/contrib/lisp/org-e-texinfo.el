@@ -61,7 +61,7 @@
 
 (defvar orgtbl-exp-regexp)
 
-
+
 ;;; Define Back-End
 
 (defvar org-e-texinfo-translate-alist
@@ -142,13 +142,13 @@ and title information beyond the initial variable.")
   "Alist between filters keywords and back-end specific filters.
   See `org-export-filters-alist' for more information")
 
-
+
 ;;; Internal Variables
 
 ;; Add TEXINFO to the list of available of available export blocks.
 (add-to-list 'org-element-block-name-alist
 	     '("TEXINFO" . org-element-export-block-parser))
-
+
 ;;; User Configurable Variables
 
 (defgroup org-export-e-texinfo nil
@@ -415,7 +415,7 @@ file name, %b by the file base name \(i.e without extension) and
   :type '(repeat :tag "Shell command sequence"
 		 (string :tag "Shell command")))
 
-
+
 ;;; Internal Functions
 
 (defun org-e-texinfo-filter-section-blank-lines (headline back-end info)
@@ -800,7 +800,7 @@ holding export options."
      "\n@bye")))
 
 
-
+
 ;;; Transcode Functions
 
 ;;; Babel Call
@@ -1683,7 +1683,7 @@ contextual information."
 	(setq contents (replace-match new-str nil t contents))))
     (format "\\begin{verse}\n%s\\end{verse}" contents)))
 
-
+
 ;;; Interactive functions
 
 (defun org-e-texinfo-export-to-texinfo

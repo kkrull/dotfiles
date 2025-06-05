@@ -106,7 +106,7 @@
   :options-alist ((:ascii-charset nil nil org-e-ascii-charset)))
 
 
-
+
 ;;; User Configurable Variables
 
 (defgroup org-export-e-ascii nil
@@ -331,7 +331,7 @@ in order to mimic default behaviour:
   :type 'function)
 
 
-
+
 ;;; Internal Functions
 
 ;; Internal functions fall into three categories.
@@ -754,7 +754,7 @@ INFO is a plist used as a communication channel."
       (trans (if utf8p "☒ " "[-] ")))))
 
 
-
+
 ;;; Template
 
 (defun org-e-ascii-template--document-title (info)
@@ -896,7 +896,7 @@ INFO is a plist used as a communication channel."
     (org-export-translate s charset info)))
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Babel Call
@@ -1712,7 +1712,7 @@ contextual information."
      (org-e-ascii--justify-string contents verse-width 'left)
      org-e-ascii-quote-margin)))
 
-
+
 ;;; Filter
 
 (defun org-e-ascii-filter-headline-blank-lines (headline back-end info)
@@ -1731,7 +1731,7 @@ For any other back-end, HEADLINE is returned as-is."
       (replace-regexp-in-string "\n\\(?:\n[ \t]*\\)*\\'" blanks headline))))
 
 
-
+
 ;;; Interactive function
 
 ;;;###autoload

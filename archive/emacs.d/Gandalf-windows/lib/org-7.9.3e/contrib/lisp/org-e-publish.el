@@ -45,7 +45,7 @@
 (declare-function org-e-latex-compile "org-e-latex" (texfile))
 
 
-
+
 ;;; Variables
 (defvar org-e-publish-initial-buffer nil
   "The buffer `org-e-publish' has been called from.")
@@ -318,7 +318,7 @@ You could use brackets to delimit on what part the link will be.
   :type 'string)
 
 
-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Timestamp-related functions
 
@@ -362,7 +362,7 @@ If there is no timestamp, create one."
       (org-e-publish-reset-cache))))
 
 
-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Getting project information out of `org-e-publish-project-alist'
 
@@ -536,7 +536,7 @@ matching filenames."
     (assoc project-name org-e-publish-project-alist)))
 
 
-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Pluggable publishing back-end functions
 
@@ -663,7 +663,7 @@ Return output file name."
 		 t)))
 
 
-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Publishing files, sets of files, and indices
 
@@ -879,7 +879,7 @@ It returns time in `current-time' format."
 	(nth 5 (file-attributes file))))))
 
 
-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Interactive publishing functions
 
@@ -946,7 +946,7 @@ the project."
 	       (buffer-file-name (buffer-base-buffer)))))))
 
 
-
+
 ;;; Index generation
 
 (defun org-e-publish-collect-index (tree backend info)
@@ -1045,7 +1045,7 @@ publishing directory."
       (write-file (expand-file-name "theindex.org" directory)))))
 
 
-
+
 ;;; Caching functions
 
 (defun org-e-publish-write-cache-file (&optional free-cache)

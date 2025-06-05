@@ -44,7 +44,7 @@
 
 (require 'org-export)
 
-
+
 ;;; Define Back-End
 
 (defvar org-e-groff-translate-alist
@@ -112,7 +112,7 @@
 See `org-export-options-alist' for more information on the
 structure of the values.")
 
-
+
 ;;; User Configurable Variables
 
 (defgroup org-export-e-groff nil
@@ -282,7 +282,7 @@ When nil, no transformation is made."
 
 ;;; Text markup
 
-(defcustom org-e-groff-text-markup-alist 
+(defcustom org-e-groff-text-markup-alist
    '((bold . "\\fB%s\\fP")
     (code . "\\fC%s\\fP")
     (italic . "\\fI%s\\fP")
@@ -520,7 +520,7 @@ These are the .aux, .log, .out, and .toc files."
   :group 'org-export-e-groff
   :type 'string)
 
-
+
 ;; Adding GROFF as a block parser to make sure that its contents
 ;; does not execute
 
@@ -531,7 +531,7 @@ These are the .aux, .log, .out, and .toc files."
 (defvar org-e-groff-special-content nil)
 
 
-
+
 ;;; Internal Functions
 
 (defun org-e-groff--caption/label-string (caption label info)
@@ -726,7 +726,7 @@ See `org-e-groff-text-markup-alist' for details."
      (when to-data
        (format ".IA \n%s\n.IE\n" to-data)))))
 
-
+
 ;;; Template
 
 (defun org-e-groff-template (contents info)
@@ -843,7 +843,7 @@ holding export options."
         (reverse org-e-groff-special-content) "\n")))))
 
 
-
+
 ;;; Transcode Functions
 
 ;;; Babel Call
@@ -1953,7 +1953,7 @@ CONTENTS is verse block contents. INFO is a plist holding
 contextual information."
   (format ".DS C\n.ft HI\n%s\n.ft\n.DE" contents))
 
-
+
 ;;; Interactive functions
 
 (defun org-e-groff-export-to-groff

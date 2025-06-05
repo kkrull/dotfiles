@@ -89,7 +89,7 @@
 (require 'org-e-latex)
 
 
-
+
 ;;; User-Configurable Variables
 
 (defgroup org-export-e-beamer nil
@@ -173,7 +173,7 @@ You might want to put e.g. \"allowframebreaks=0.9\" here."
   :type '(string :tag "Outline frame options"))
 
 
-
+
 ;;; Internal Variables
 
 (defconst org-e-beamer-column-widths
@@ -217,7 +217,7 @@ This is used internally to determine when a frame should have the
 \"fragile\" option.")
 
 
-
+
 ;;; Internal functions
 
 (defun org-e-beamer--normalize-argument (argument type)
@@ -253,7 +253,7 @@ brackets.  Return overlay specification, as a string, or nil."
 	(and (string-match "\\`<.*>\\'" value) value)))))
 
 
-
+
 ;;; Define Back-End
 
 (org-export-define-derived-backend e-beamer e-latex
@@ -278,7 +278,7 @@ brackets.  Return overlay specification, as a string, or nil."
 		    (template . org-e-beamer-template)))
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Bold
@@ -836,7 +836,7 @@ holding export options."
      "\\end{document}")))
 
 
-
+
 ;;; Minor Mode
 
 
@@ -898,7 +898,7 @@ value."
 	  'org-e-beamer-allowed-property-values)
 
 
-
+
 ;;; Commands
 
 ;;;###autoload

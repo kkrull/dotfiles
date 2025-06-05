@@ -384,7 +384,7 @@
 ;; [Version 1.8]: http://jblevins.org/projects/markdown-mode/rev-1-8
 ;; [Version 1.8.1]: http://jblevins.org/projects/markdown-mode/rev-1-8-1
 
-
+
 ;;; Code:
 
 (require 'easymenu)
@@ -818,7 +818,7 @@ text.")
    markdown-mode-font-lock-keywords-basic)
   "Default highlighting expressions for Markdown mode.")
 
-
+
 
 ;;; Markdown parsing functions ================================================
 
@@ -995,7 +995,7 @@ This helps improve font locking for block constructs such as pre blocks."
           (setq font-lock-end (point)))
         (setq font-lock-beg found)))))
 
-
+
 
 ;;; Syntax Table ==============================================================
 
@@ -1005,7 +1005,7 @@ This helps improve font locking for block constructs such as pre blocks."
     markdown-mode-syntax-table)
   "Syntax table for `markdown-mode'.")
 
-
+
 
 ;;; Element Insertion =========================================================
 
@@ -1332,7 +1332,7 @@ it in the usual way."
       (markdown-follow-wiki-link-at-point)
     (markdown-do-normal-return)))
 
-
+
 
 ;;; Keymap ====================================================================
 
@@ -1426,7 +1426,7 @@ it in the usual way."
     ["Version" markdown-show-version]
     ))
 
-
+
 
 ;;; References ================================================================
 
@@ -1943,7 +1943,7 @@ This is an exact copy of `line-number-at-pos' for use in emacs21."
   ;; inside in square brackets (e.g., link anchor text)
   (looking-back "\\[[^]]*"))
 
-
+
 
 ;;; Mode definition  ==========================================================
 

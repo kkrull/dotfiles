@@ -1,4 +1,5 @@
 # https://pre-commit.com/index.html#adding-pre-commit-plugins-to-your-project
+exclude: ^archive.*$
 repos:
   # https://github.com/streetsidesoftware/cspell-cli#setup-pre-commit-hook
   - repo: https://github.com/streetsidesoftware/cspell-cli

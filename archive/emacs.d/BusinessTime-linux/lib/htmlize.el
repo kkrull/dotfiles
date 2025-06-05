@@ -84,7 +84,7 @@
 ;; User quotes: "You sir, are a sick, sick, _sick_ person. :)"
 ;;                  -- Bill Perry, author of Emacs/W3
 
-
+
 ;;; Code:
 
 (require 'cl)
@@ -287,7 +287,7 @@ output.")
   "Hook run by `htmlize-file' after htmlizing a file, but before saving it.")
 
 (defvar htmlize-buffer-places)
-
+
 ;;; Some cross-Emacs compatibility.
 
 ;; I try to conditionalize on features rather than Emacs version, but
@@ -330,7 +330,7 @@ output.")
  (t
   (error "htmlize requires next-single-property-change or \
 next-single-char-property-change")))
-
+
 ;;; Transformation of buffer text: HTML escapes, untabification, etc.
 
 (defvar htmlize-basic-character-table
@@ -581,8 +581,8 @@ without modifying their meaning."
   (goto-char (point-min))
   (while (search-forward "Local Variables:" nil t)
     (replace-match "Local Variables&#58;" nil t)))
-  
-
+
+
 ;;; Color handling.
 
 (if (fboundp 'locate-file)
@@ -654,7 +654,7 @@ If no rgb.txt file is found, return nil."
 ;; missing, the value of the variable will be nil, and rgb.txt will
 ;; not be used.
 (defvar htmlize-color-rgb-hash (htmlize-get-color-rgb-hash))
-
+
 ;;; Face handling.
 
 (defun htmlize-face-specifies-property (face prop)
@@ -744,7 +744,7 @@ If no rgb.txt file is found, return nil."
 	  (t
 	   ;; We're getting the RGB components from Emacs.
 	   (let ((rgb
-		  ;; Here I cannot conditionalize on (fboundp ...) 
+		  ;; Here I cannot conditionalize on (fboundp ...)
 		  ;; because ps-print under some versions of GNU Emacs
 		  ;; defines its own dummy version of
 		  ;; `color-instance-rgb-components'.
@@ -1140,7 +1140,7 @@ property and by buffer overlays that specify `face'."
 	     ;; faces specified by text properties.
 	     (setq all-faces (nconc all-faces list)))
 	   all-faces))))
-
+
 ;; htmlize supports generating HTML in several flavors, some of which
 ;; use CSS, and others the <font> element.  We take an OO approach and
 ;; define "methods" that indirect to the functions that depend on
@@ -1148,7 +1148,7 @@ property and by buffer overlays that specify `face'."
 ;; `insert-head', `body-tag', and `insert-text'.  Not all output types
 ;; define all methods.
 ;;
-;; Methods are called either with (htmlize-method METHOD ARGS...) 
+;; Methods are called either with (htmlize-method METHOD ARGS...)
 ;; special form, or by accessing the function with
 ;; (htmlize-method-function 'METHOD) and calling (funcall FUNCTION).
 ;; The latter form is useful in tight loops because `htmlize-method'
@@ -1184,7 +1184,7 @@ it's called with the same value of KEY.  All other times, the cached
 	 (setq ,value ,generator)
 	 (setf (gethash ,key htmlize-memoization-table) ,value))
        ,value)))
-
+
 ;;; Default methods.
 
 (defun htmlize-default-doctype ()
@@ -1197,7 +1197,7 @@ it's called with the same value of KEY.  All other times, the cached
 (defun htmlize-default-body-tag (face-map)
   nil					; no doc-string
   "<body>")
-
+
 ;;; CSS based output support.
 
 ;; Internal function; not a method.
@@ -1273,7 +1273,7 @@ it's called with the same value of KEY.  All other times, the cached
   (dolist (fstruct fstruct-list)
     (ignore fstruct)			; shut up the byte-compiler
     (princ "</span>" buffer)))
-
+
 ;; `inline-css' output support.
 
 (defun htmlize-inline-css-body-tag (face-map)
@@ -1295,7 +1295,7 @@ it's called with the same value of KEY.  All other times, the cached
     (princ text buffer)
     (when style
       (princ "</span>" buffer))))
-
+
 ;;; `font' tag based output support.
 
 (defun htmlize-font-body-tag (face-map)
@@ -1303,7 +1303,7 @@ it's called with the same value of KEY.  All other times, the cached
     (format "<body text=\"%s\" bgcolor=\"%s\">"
 	    (htmlize-fstruct-foreground fstruct)
 	    (htmlize-fstruct-background fstruct))))
-       
+
 (defun htmlize-font-insert-text (text fstruct-list buffer)
   ;; In `font' mode, we use the traditional HTML means of altering
   ;; presentation: <font> tag for colors, <b> for bold, <u> for
@@ -1327,7 +1327,7 @@ it's called with the same value of KEY.  All other times, the cached
     (princ (car markup) buffer)
     (princ text buffer)
     (princ (cdr markup) buffer)))
-
+
 (defun htmlize-buffer-1 ()
   ;; Internal function; don't call it from outside this file.  Htmlize
   ;; current buffer, writing the resulting HTML to a new buffer, and
@@ -1490,7 +1490,7 @@ it's called with the same value of KEY.  All other times, the cached
      ;; just saves it to an external cache so it's not done twice.
      )))
 
-
+
 ;;;###autoload
 (defun htmlize-buffer (&optional buffer)
   "Convert BUFFER to HTML, preserving colors and decorations.

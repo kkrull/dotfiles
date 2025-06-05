@@ -34,7 +34,7 @@ used in the patches I am submitting and, which I hope, may be adopted by
 others when making their own contributions.
 
 * Org - Referencing systems, packages, modes and much else
- 
+
 Originally Org was a single mode and there was no ambiguity about what
 Org mode could refer to.  Things have changed rapidly though and it
 seems that Carsten now thinks of Org as the system encompassing the
@@ -116,7 +116,7 @@ have made them up of course).
      preference for this type of thing is that the user browses the
      customize groups.  If you want or need to refer to, say, a variable
      then document it as "the variable @code{org-startup-folded}"
- 
+
    + Entries in the concept index are normally all lower case unless
      some other rule dictates otherwise.
 

@@ -191,7 +191,7 @@ oldorg:	# do what the old Makefile did by default.
        (defun org-git-version () ,org-git-version))))
 
 (provide 'org-fixup)
-
+
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; coding: utf-8

@@ -129,7 +129,7 @@
 (declare-function outline-previous-heading "outline" ())
 
 
-
+
 ;;; Configuration variables
 
 (defgroup org-plain-lists nil
@@ -345,7 +345,7 @@ specifically, type `block' is determined by the variable
 `org-list-forbidden-blocks'.")
 
 
-
+
 ;;; Predicates and regexps
 
 (defconst org-list-end-re (if org-empty-line-terminates-plain-lists "^[ \t]*\n"
@@ -497,7 +497,7 @@ group 4: description tag")
        (match-string 2)))
 
 
-
+
 ;;; Structures and helper functions
 
 (defun org-list-context ()
@@ -838,7 +838,7 @@ This function modifies STRUCT."
 		  (cdr struct)))))
 
 
-
+
 ;;; Accessors
 
 (defsubst org-list-get-nth (n key struct)
@@ -1051,7 +1051,7 @@ that value."
       out)))
 
 
-
+
 ;;; Searching
 
 (defun org-list-search-generic (search re bound noerr)
@@ -1084,7 +1084,7 @@ Arguments REGEXP, BOUND and NOERROR are similar to those used in
 			   regexp (or bound (point-max)) noerror))
 
 
-
+
 ;;; Methods on structures
 
 (defsubst org-list-bullet-string (bullet)
@@ -1605,7 +1605,7 @@ bullets between START and END."
     (mapcar ind parents)))
 
 
-
+
 ;;; Repairing structures
 
 (defun org-list-use-alpha-bul-p (first struct prevs)
@@ -1985,7 +1985,7 @@ doesn't correspond anymore to the real list in buffer."
     (org-list-struct-apply-struct struct old-struct)))
 
 
-
+
 ;;; Misc Tools
 
 (defun org-apply-on-list (function init-value &rest args)
@@ -2053,7 +2053,7 @@ Possible values are: `folded', `children' or `subtree'.  See
     tcol))
 
 
-
+
 ;;; Interactive functions
 
 (defalias 'org-list-get-item-begin 'org-in-item-p)
@@ -2874,7 +2874,7 @@ COMPARE-FUNC to compare entries."
 	(message "Sorting items...done")))))
 
 
-
+
 ;;; Send and receive lists
 
 (defun org-list-parse-list (&optional delete)

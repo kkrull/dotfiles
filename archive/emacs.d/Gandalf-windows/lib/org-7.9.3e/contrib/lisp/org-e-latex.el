@@ -43,7 +43,7 @@
 (defvar orgtbl-exp-regexp)
 
 
-
+
 ;;; Define Back-End
 
 (org-export-define-backend e-latex
@@ -103,7 +103,7 @@
 		  (:latex-header-extra "LATEX_HEADER" nil nil newline)))
 
 
-
+
 ;;; Internal Variables
 
 (defconst org-e-latex-babel-language-alist
@@ -158,7 +158,7 @@
   "Alist between language code and corresponding Babel option.")
 
 
-
+
 ;;; User Configurable Variables
 
 (defgroup org-export-e-latex nil
@@ -797,7 +797,7 @@ These are the .aux, .log, .out, and .toc files."
   :type 'boolean)
 
 
-
+
 ;;; Internal Functions
 
 (defun org-e-latex--caption/label-string (caption label info)
@@ -990,7 +990,7 @@ just outside of it."
    ""))
 
 
-
+
 ;;; Template
 
 (defun org-e-latex-template (contents info)
@@ -1077,7 +1077,7 @@ holding export options."
      "\\end{document}")))
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Babel Call
@@ -2529,7 +2529,7 @@ contextual information."
      (format "\\begin{verse}\n%s\\end{verse}" contents))))
 
 
-
+
 ;;; Interactive functions
 
 ;;;###autoload

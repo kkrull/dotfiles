@@ -58,7 +58,7 @@
 ;;    specified by a suffix clolon (:) followed by a path.
 
 ;;; Code:
-
+
 (require 'org)
 (defcustom org-git-program "git"
   "Name of the git executable used to follow git links."
@@ -101,7 +101,7 @@
          (relpath (second dirlist)))
     (org-git-open-file-internal gitdir (concat commit ":" relpath))))
 
-
+
 ;; Utility functions (file names etc)
 
 (defun org-git-split-dirpath (dirpath)
@@ -187,7 +187,7 @@
 (defun org-git-insert-link-interactively (file searchstring &optional description)
   (interactive "FFile: \nsSearch string: \nsDescription: ")
   (insert (org-make-link-string (concat "git:" file "::" searchstring) description)))
-
+
 ;; Calling git
 (defun org-git-show (gitdir object buffer)
   "Show the output of git --git-dir=gitdir show object in buffer."

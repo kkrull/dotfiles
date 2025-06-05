@@ -480,7 +480,7 @@ status."
     (if org-toc-recenter-mode (format "on, line %s" org-toc-recenter) "off")
     (if org-toc-columns-shown "on" "off"))))
 
-
+
 ;;;;##########################################################################
 ;;;;  User Options, Variables
 ;;;;##########################################################################

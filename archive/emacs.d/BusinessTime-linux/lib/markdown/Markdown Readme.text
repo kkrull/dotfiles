@@ -3,7 +3,7 @@ Markdown
 
 Version 1.0.1 - Tue 14 Dec 2004
 
-by John Gruber  
+by John Gruber
 <http://daringfireball.net/>
 
 
@@ -15,7 +15,7 @@ allows you to write using an easy-to-read, easy-to-write plain text
 format, then convert it to structurally valid XHTML (or HTML).
 
 Thus, "Markdown" is two things: a plain text markup syntax, and a
-software tool, written in Perl, that converts the plain text markup 
+software tool, written in Perl, that converts the plain text markup
 to HTML.
 
 Markdown works both as a Movable Type plug-in and as a standalone Perl
@@ -32,12 +32,12 @@ Installation and Requirements
 -----------------------------
 
 Markdown requires Perl 5.6.0 or later. Welcome to the 21st Century.
-Markdown also requires the standard Perl library module `Digest::MD5`. 
+Markdown also requires the standard Perl library module `Digest::MD5`.
 
 
 ### Movable Type ###
 
-Markdown works with Movable Type version 2.6 or later (including 
+Markdown works with Movable Type version 2.6 or later (including
 MT 3.0 or later).
 
 1.  Copy the "Markdown.pl" file into your Movable Type "plugins"
@@ -86,7 +86,7 @@ Markdown works with Blosxom version 2.x.
 4.  If you'd like to apply Markdown formatting only to certain posts,
     rather than all of them, see Jason Clark's instructions for using
     Markdown in conjunction with Blosxom's Meta plugin:
-    
+
     <http://jclark.org/weblog/WebDev/Blosxom/Markdown.html>
 
 
@@ -186,11 +186,11 @@ Version History
 +	Tweaked the rules for link definitions so that they must occur
 	within three spaces of the left margin. Thus if you indent a link
 	definition by four spaces or a tab, it will now be a code block.
-	
+
 		   [a]: /url/  "Indented 3 spaces, this is a link def"
 
 		    [b]: /url/  "Indented 4 spaces, this is a code block"
-	
+
 	**IMPORTANT**: This may affect existing Markdown content if it
 	contains link definitions indented by 4 or more spaces.
 
@@ -309,8 +309,8 @@ Donations to support Markdown's development are happily accepted. See:
 Copyright and License
 ---------------------
 
-Copyright (c) 2003-2004 John Gruber   
-<http://daringfireball.net/>   
+Copyright (c) 2003-2004 John Gruber
+<http://daringfireball.net/>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

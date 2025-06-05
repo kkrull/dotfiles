@@ -103,7 +103,7 @@
 (defvar org-table-number-regexp)
 
 
-
+
 ;;; Internal Variables
 ;;
 ;; Among internal variables, the most important is
@@ -266,7 +266,7 @@ See `org-export-inline-image-p' for more information about
 rules.")
 
 
-
+
 ;;; User-configurable Variables
 ;;
 ;; Configuration for the masses.
@@ -690,7 +690,7 @@ standard mode."
   :type 'boolean)
 
 
-
+
 ;;; Defining New Back-ends
 
 (defmacro org-export-define-backend (backend translators &rest body)
@@ -949,7 +949,7 @@ structure of the values."
        ,@body)))
 
 
-
+
 ;;; The Communication Channel
 ;;
 ;; During export process, every function has access to a number of
@@ -1855,7 +1855,7 @@ tag."
     (planning (not (plist-get options :with-plannings)))))
 
 
-
+
 ;;; The Transcoder
 ;;
 ;; `org-export-data' reads a parse tree (obtained with, i.e.
@@ -2026,7 +2026,7 @@ Any element in `:ignore-list' will be skipped when using
   (plist-put info :ignore-list (cons element (plist-get info :ignore-list))))
 
 
-
+
 ;;; The Filter System
 ;;
 ;; Filters allow end-users to tweak easily the transcoded output.
@@ -2482,7 +2482,7 @@ Return the updated communication channel."
     (org-combine-plists info plist)))
 
 
-
+
 ;;; Core functions
 ;;
 ;; This is the room for the main function, `org-export-as', along with
@@ -2881,7 +2881,7 @@ file should have."
 			    (insert (make-string offset ?*))))))))))
     (buffer-string)))
 
-
+
 ;;; Tools For Back-Ends
 ;;
 ;; A whole set of tools is available to help build new exporters.  Any
@@ -4329,7 +4329,7 @@ translated string.  If no translation is found return S."
     (or (plist-get (cdr (assoc lang translations)) encoding) s)))
 
 
-
+
 ;;; The Dispatcher
 ;;
 ;; `org-export-dispatch' is the standard interactive way to start an

@@ -54,7 +54,7 @@
 (autoload 'url-file-local-copy "url-handlers")
 (autoload 'url-generic-parse-url "url-parse")
 
-
+
 
 ;;; Variables:
 
@@ -101,7 +101,7 @@ you need to unpack it."
   "Remove org-latest.tar.gz after updates?"
   :type 'boolean)
 
-
+
 
 ;;; Frontend
 
@@ -128,7 +128,7 @@ Also, generate autoloads and evtl. compile the sources."
             (org-track-compile-org))
         (error (message "%s" (error-message-string err)))))))
 
-
+
 
 ;;; tar related functions
 
@@ -167,7 +167,7 @@ subdirectory org-mode/ to DIRECTORY."
     (if org-track-remove-package
         (delete-file target))))
 
-
+
 
 ;;; Compile Org-mode sources
 

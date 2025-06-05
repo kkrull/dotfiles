@@ -40,7 +40,7 @@
 (eval-when-compile (require 'cl) (require 'table))
 
 
-
+
 ;;; Function Declarations
 
 (declare-function org-id-find-id-file "org-id" (id))
@@ -129,7 +129,7 @@
    (:mathjax "MATHJAX" nil "" space)))
 
 
-
+
 ;;; Internal Variables
 
 ;; FIXME: it already exists in org-e-html.el
@@ -244,7 +244,7 @@ This variable is obsolete since Org version 7.7.
 Please set `org-e-html-divs' instead.")
 
 
-
+
 ;;; User Configuration Variables
 
 (defgroup org-export-e-html nil
@@ -963,7 +963,7 @@ CSS classes, then this prefix can be very useful."
   :type 'string)
 
 
-
+
 ;;; Internal Functions
 
 (defun org-e-html-format-inline-image (src &optional
@@ -1259,7 +1259,7 @@ This function shouldn't be used for floats.  See
   output)
 
 
-
+
 ;;; Template
 
 (defun org-e-html-meta-info (info)
@@ -1654,7 +1654,7 @@ replace all non-ascii characters with its numeric reference."
      code lang refs retain-labels num-start textarea-p)))
 
 
-
+
 ;;; Transcode Functions
 
 ;;;; Bold
@@ -2908,7 +2908,7 @@ contextual information."
    verse-block (format "<p class=\"verse\">\n%s</p>" contents)))
 
 
-
+
 
 ;;; Filter Functions
 
@@ -2996,7 +2996,7 @@ Return output file's name."
      'e-html file subtreep visible-only body-only ext-plist)))
 
 
-
+
 ;;; FIXME
 
 ;;;; org-format-table-html

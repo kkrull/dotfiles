@@ -1916,7 +1916,7 @@ When nil, `q' will kill the single agenda buffer."
   :version "24.3"
   :type 'boolean)
 
-
+
 ;;;###autoload
 (defun org-toggle-sticky-agenda (&optional arg)
   "Toggle `org-agenda-sticky'."

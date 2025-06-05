@@ -74,7 +74,7 @@ Can link to more than one message, if so all matching messages are shown."
   (notmuch-show (org-link-unescape search)))
 
 
-
+
 
 (org-add-link-type "notmuch-search" 'org-notmuch-search-open)
 (add-hook 'org-store-link-functions 'org-notmuch-search-store-link)
