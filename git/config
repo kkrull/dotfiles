@@ -14,4 +14,4 @@ name = Kyle Krull # Email changes often; configure per-repository
 useConfigOnly = true
 
 [includeIf "gitdir:~/Work/_git/"]
-  path = ~/.gitconfig.d/rn.inc
+  path = ~/.config/git/config.d/rn.inc
