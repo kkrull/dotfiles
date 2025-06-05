@@ -2,25 +2,37 @@ $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell
 dictionaries: []
 dictionaryDefinitions: []
 enableFiletypes:
-  - github-actions-workflow
-  - json
   - makefile
   - markdown
   - plaintext
   - shellscript
   - text
-  - yaml
 ignorePaths:
-  - .envrc.local
   - .gitignore
   - cspell.config.yaml
 ignoreWords: []
-import: []
+import:
+  - ../cspell.config.yaml
 version: "0.2"
 words:
-  - automount
-  - chsh
+  - argcomplete
+  - AUTOUPDATE
+  - chruby
   - direnv
-  - kkrull
-  - Krull
-  - shellcheck
+  - fpath
+  - GOPATH
+  - homebrewdep
+  - jenv
+  - libexec
+  - linuxbrew
+  - Makefiles
+  - pipx
+  - pyenv
+  - robbyrussell
+  - rustup
+  - SDKMAN
+  - sfdx
+  - shellenv
+  - sode
+  - venvs
+  - ZDOTDIR

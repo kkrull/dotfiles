@@ -1,5 +1,6 @@
-# https://github.com/koalaman/shellcheck/wiki/Directive
-# https://www.shellcheck.net/wiki/Ignore
+# <https://github.com/koalaman/shellcheck/wiki/Directive>
+
+# <https://www.shellcheck.net/wiki/Ignore>
 
 shell=bash #zsh not directly supported, but overlaps a lot with bash
 disable=SC1090,SC1091 #Unable to follow non-constant source
