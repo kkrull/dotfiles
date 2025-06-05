@@ -1,0 +1,5 @@
+# https://neovide.dev/config-file.html
+[font]
+normal = ["0xProto Nerd Font Mono"]
+size = 17.0
+style = "Normal"

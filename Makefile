@@ -23,6 +23,7 @@ SUBDIRS := \
 	git \
 	ideavim \
 	karabiner \
+	neovide \
 	tmux \
 	zsh
 
