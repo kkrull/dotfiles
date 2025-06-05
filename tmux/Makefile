@@ -1,6 +1,4 @@
-#. ==dotfiles/zsh==
-
-## Project
+#. ==dotfiles/tmux==
 
 .PHONY: default
 default: all
@@ -11,24 +9,18 @@ include ../make.d/help.mk
 
 ## Sources
 
-srcdir := $(abspath .)
-
 .PHONY: debug-sources
 debug-sources:
 	$(info Sources:)
-	$(info - srcdir: $(srcdir))
 	@:
 
 ## Artifacts
 
 ## Paths
 
-env_dest := $(HOME)/.zshenv
-
 .PHONY: debug-paths
 debug-paths:
 	$(info Paths:)
-	$(info - env_dest: $(env_dest))
 	@:
 
 ## Programs
@@ -52,17 +44,16 @@ clean:
 # TODO KDK: Use `install` to install symlinks in $XDG_CONFIG_HOME or $HOME/.config
 .PHONY: install
 install: #> Install configuration
-	$(file >$(env_dest),ZDOTDIR=$(srcdir))
-	$(file >>$(env_dest),source $$ZDOTDIR/.zshenv)
-	@echo Created $(env_dest)
+	@:
 
 .PHONY: test
 test:
 	@:
 
+# TODO KDK: Unlink
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
-	rm -f "$(env_dest)"
+	@:
 
 #. SUPPORT TARGETS
 
@@ -73,5 +64,5 @@ debug: _debug-prefix debug-paths debug-sources #> Show debugging information
 
 .PHONY: _debug-prefix
 _debug-prefix:
-	$(info ==dotfiles/zsh==)
+	$(info ==dotfiles/tmux==)
 	@:
