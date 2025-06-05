@@ -1,27 +1,38 @@
 # https://pre-commit.com/index.html#adding-pre-commit-plugins-to-your-project
 exclude: ^archive.*$
 repos:
-  # https://github.com/streetsidesoftware/cspell-cli#setup-pre-commit-hook
-  - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v8.7.0
-    hooks:
-      - id: cspell
-
-  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: "2.7.3"
-    hooks:
-      - id: editorconfig-checker
-
   # https://github.com/DavidAnson/markdownlint-cli2#pre-commit
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.13.0
+    rev: v0.18.1
     hooks:
       - id: markdownlint-cli2
 
+  # https://github.com/editorconfig-checker/editorconfig-checker.python?tab=readme-ov-file#usage-with-the-pre-commit-git-hooks-framework
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: "3.2.1"
+    hooks:
+      - id: editorconfig-checker
+
+  # https://github.com/mrtazz/checkmake#pre-commit-usage
+  - repo: https://github.com/mrtazz/checkmake.git
+    rev: 0.2.2
+    hooks:
+      - id: checkmake
+        alias: checkmake
+        exclude: .*[.]mk$
+        name: checkmake [Makefile]
+      - id: checkmake
+        alias: checkmake-module
+        exclude: Makefile$
+        name: checkmake [Makefile includes]
+        args:
+        - --config=.checkmake-module.ini
+
   # https://pre-commit.com/hooks.html
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
+      - id: check-json
       - id: check-yaml
       - id: trailing-whitespace
 
@@ -30,3 +41,9 @@ repos:
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
+
+  # https://github.com/streetsidesoftware/cspell-cli#setup-pre-commit-hook
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v9.0.1
+    hooks:
+      - id: cspell

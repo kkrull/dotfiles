@@ -19,8 +19,10 @@ import: []
 version: "0.2"
 words:
   - automount
+  - checkmake
   - chsh
   - direnv
   - kkrull
   - Krull
+  - minphony
   - shellcheck
