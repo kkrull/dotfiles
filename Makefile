@@ -24,6 +24,7 @@ SUBDIRS := \
 	ideavim \
 	karabiner \
 	neovide \
+	nvim \
 	tmux \
 	zsh
 
