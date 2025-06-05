@@ -24,7 +24,9 @@ words:
   - datadirpkg
   - direnv
   - envrc
+  - ideavim
   - INSTALLFLAGS
+  - karabiner
   - kkrull
   - Krull
   - libexecdirpkg
