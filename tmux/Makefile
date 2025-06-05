@@ -22,7 +22,7 @@ debug-sources:
 ## Paths
 
 XDG_CONFIG_HOME ?= $(HOME)/.config
-tmux_config := $(XDG_CONFIG_HOME)/tmux
+tmux_config := $(HOME)/.tmux.conf
 
 .PHONY: debug-paths
 debug-paths:
@@ -62,7 +62,7 @@ clean:
 .PHONY: install
 install: #> Install configuration
 	$(INSTALL) $(INSTALLFLAGS) -d $(XDG_CONFIG_HOME)
-	ln -f -s $(srcdir) $(tmux_config)
+	ln -f -s $(srcdir)/tmux.conf $(tmux_config)
 
 .PHONY: test
 test:
