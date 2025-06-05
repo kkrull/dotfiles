@@ -1,7 +1,6 @@
 # https://git-scm.com/docs/git-config#_configuration_file
 [core]
 editor = /usr/bin/vim
-excludesfile = ~/.gitignore
 pager = less -x1,5
 
 [init]
