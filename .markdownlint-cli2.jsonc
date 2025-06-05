@@ -1,0 +1,24 @@
+{
+  //https://github.com/DavidAnson/markdownlint-cli2#markdownlint-cli2jsonc
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/main/schema/markdownlint-cli2-config-schema.json",
+  "config": {
+    "line-length": false,
+    "no-duplicate-heading": {
+      "siblings_only": true
+    },
+    "no-emphasis-as-heading": false,
+    "ol-prefix": {
+      "style": "one_or_ordered"
+    },
+    "single-h1": false,
+    "ul-style": {
+      "style": "consistent"
+    }
+  },
+  "frontMatter": "^%[\\s\\S][^#]*",
+  "ignores": [
+    ".shellcheckrc",
+    "**/*.1.md",
+    "**/*.7.md"
+  ]
+}
