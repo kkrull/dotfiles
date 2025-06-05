@@ -9,6 +9,7 @@ enableFiletypes:
   - text
 ignorePaths:
   - .gitignore
+  - .zshrc.d/rn/alias.zsh
   - cspell.config.yaml
 ignoreWords: []
 import:
@@ -26,6 +27,7 @@ words:
   - libexec
   - linuxbrew
   - Makefiles
+  - mybatis
   - pipx
   - pyenv
   - robbyrussell

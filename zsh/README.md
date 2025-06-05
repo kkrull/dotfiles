@@ -28,6 +28,16 @@ Documentation:
 - `nvm`: <https://github.com/nvm-sh/nvm#installing-and-updating>
 - `zsh-nvm`: <https://github.com/lukechilds/zsh-nvm>
 
+### `zsh-syntax-highlighting`
+
+Install with
+
+```sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Source: <https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md>
+
 ## Environment Variables
 
 ### `DOTFILES_SILENT`

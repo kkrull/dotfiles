@@ -1,6 +1,7 @@
 if [[ -d /opt/homebrew ]]
 then
-  path=(/opt/homebrew/bin "$path")
+  # shellcheck disable=SC2206 # not compatible with zsh array-style path
+  path=(/opt/homebrew/bin $path)
 fi
 
 if type brew &>/dev/null

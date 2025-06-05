@@ -38,9 +38,10 @@ source_module "homebrewdep-go" "$ZDOTDIR/.zshrc.d/homebrewdep-go.zsh"
 source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
 source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
 source_module "linuxbrew" "$ZDOTDIR/.zshrc.d/linuxbrew.zsh"
+source_module "mybatis" "$ZDOTDIR/.zshrc.d/mybatis.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
 source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
-plugins+=(zsh-nvm)
+plugins+=(zsh-nvm zsh-syntax-highlighting)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 #source_module "python3" "$ZDOTDIR/.zshrc.d/python3.zsh"
@@ -49,7 +50,9 @@ source_module "rust" "$ZDOTDIR/.zshrc.d/rust.zsh"
 source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
+source_module "work" "$ZDOTDIR/.zshrc.d/work.zsh"
 source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
+#source_module "rn/alias" "$ZDOTDIR/.zshrc.d/rn/alias.zsh"
 
 # $plugins dependencies
 source "$ZSH/oh-my-zsh.sh"

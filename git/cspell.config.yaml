@@ -16,3 +16,5 @@ import:
 version: "0.2"
 words:
   - excludesfile
+  - gitdir
+  - nowarn
