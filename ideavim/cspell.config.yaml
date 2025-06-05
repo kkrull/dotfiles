@@ -1,0 +1,24 @@
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+dictionaries: []
+dictionaryDefinitions: []
+enableFiletypes:
+  - makefile
+  - markdown
+  - plaintext
+  - shellscript
+  - text
+ignorePaths:
+  - .gitignore
+  - cspell.config.yaml
+ignoreWords: []
+import:
+  - ../cspell.config.yaml
+version: "0.2"
+words:
+  - epeat
+  - mapleader
+  - maplocalleader
+  - nnoremap
+  - notimeout
+  - relativenumber
+  - timeoutlen
