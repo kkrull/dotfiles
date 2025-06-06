@@ -33,4 +33,5 @@ words:
   - Makefiles
   - minphony
   - neovide
+  - nvim
   - shellcheck

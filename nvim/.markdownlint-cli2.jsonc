@@ -1,0 +1,11 @@
+{
+  //https://github.com/DavidAnson/markdownlint-cli2#markdownlint-cli2jsonc
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/main/schema/markdownlint-cli2-config-schema.json",
+  "config": {
+    "extends": "../.markdownlint-cli2.jsonc"
+  },
+  "frontMatter": "^%[\\s\\S][^#]*",
+  "ignores": [
+    "LICENSE.md"
+  ]
+}

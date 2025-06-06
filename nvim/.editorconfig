@@ -1,0 +1,5 @@
+# https://editorconfig.org
+root = false
+
+[doc/kickstart.txt]
+indent_size = unset
