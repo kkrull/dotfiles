@@ -1,4 +1,4 @@
-# Configuration for `git`
+# Configuration for IdeaVIM
 
 ## Task Automation
 

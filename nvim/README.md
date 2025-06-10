@@ -1,4 +1,4 @@
-# Neovim configuration (`kickstart.nvim` fork)
+# Configuration for Neovim
 
 Neovim configuration.
 
