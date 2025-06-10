@@ -1,4 +1,4 @@
-# Configuration for `git`
+# Configuration for `neovide`
 
 ## Task Automation
 

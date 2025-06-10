@@ -1,12 +1,13 @@
-# Dotfiles
+# Configuration
 
-Configuration for shells and other things I use on the command line.
+Configuration for programs I use on the command line.
 
 ## Contents
 
 - [`archive/`](./archive/README.md)
 - [`doc/`](./doc/README.md)
 - [`git/`](./git/README.md)
+- [`glow/`](./glow/README.md)
 - [`ideavim/`](./ideavim/README.md)
 - [`karabiner/`](./karabiner/README.md)
 - [`neovide/`](./neovide/README.md)
@@ -16,4 +17,4 @@ Configuration for shells and other things I use on the command line.
 
 ## Installation and removal
 
-Try the `Makefile` and `README` in each tool's directory.
+Try the `Makefile` and `README.md` in each tool's directory.

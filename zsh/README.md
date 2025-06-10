@@ -1,4 +1,4 @@
-# `zsh` dotfiles
+# Configuration for `zsh`
 
 ## Compatibility
 

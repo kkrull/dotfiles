@@ -16,8 +16,8 @@ In Terminal.app, make sure:
 
 ### `make install`
 
-Back up any existing `.tmux.conf` in your home directory, then make a symbolic link to this one.
+Make a symbolic link to this one that Tmux will recognize.
 
-### `make remove`
+### `make uninstall`
 
 Remove `.tmux.conf` in your home directory.

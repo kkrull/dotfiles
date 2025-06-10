@@ -21,6 +21,7 @@ debug-programs:
 # https://stackoverflow.com/a/17845120/112682
 SUBDIRS := \
 	git \
+	glow \
 	ideavim \
 	karabiner \
 	neovide \
