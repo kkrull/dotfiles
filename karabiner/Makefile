@@ -33,14 +33,9 @@ debug-paths:
 
 ## Programs
 
-INSTALL ?= install
-INSTALLFLAGS :=
-
 .PHONY: debug-programs
 debug-programs:
 	$(info Programs:)
-	$(info - INSTALL: $(INSTALL))
-	$(info - INSTALLFLAGS: $(INSTALLFLAGS))
 	@:
 
 #. DEVELOPMENT ENVIRONMENT TARGETS
@@ -61,7 +56,6 @@ clean:
 
 .PHONY: install
 install: #> Install configuration
-	$(INSTALL) $(INSTALLFLAGS) -d $(XDG_CONFIG_HOME)
 	ln -f -s $(srcdir) $(karabiner_config)
 
 .PHONY: test
