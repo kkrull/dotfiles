@@ -31,9 +31,6 @@ debug-paths:
 
 ## Programs
 
-INSTALL ?= install
-INSTALLFLAGS :=
-
 .PHONY: debug-programs
 debug-programs:
 	$(info Programs:)
