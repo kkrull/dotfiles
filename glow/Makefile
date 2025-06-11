@@ -55,8 +55,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir) $(glow_config)
+install: $(glow_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -65,6 +65,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(glow_config)
+
+$(glow_config):
+	ln -f -s $(srcdir) $(glow_config)
 
 #. SUPPORT TARGETS
 

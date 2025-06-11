@@ -58,8 +58,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir)/tmux.conf $(tmux_config)
+install: $(tmux_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -68,6 +68,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(tmux_config)
+
+$(tmux_config):
+	ln -f -s $(srcdir)/tmux.conf $(tmux_config)
 
 #. SUPPORT TARGETS
 

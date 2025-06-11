@@ -55,8 +55,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir) $(nvim_config)
+install: $(nvim_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -65,6 +65,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(nvim_config)
+
+$(nvim_config):
+	ln -f -s $(srcdir) $(nvim_config)
 
 #. SUPPORT TARGETS
 

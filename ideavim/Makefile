@@ -55,8 +55,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir) $(ideavim_config)
+install: $(ideavim_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -65,6 +65,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(ideavim_config)
+
+$(ideavim_config):
+	ln -f -s $(srcdir) $(ideavim_config)
 
 #. SUPPORT TARGETS
 

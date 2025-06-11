@@ -55,8 +55,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir) $(karabiner_config)
+install: $(karabiner_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -65,6 +65,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(karabiner_config)
+
+$(karabiner_config):
+	ln -f -s $(srcdir) $(karabiner_config)
 
 #. SUPPORT TARGETS
 

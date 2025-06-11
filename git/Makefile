@@ -55,8 +55,8 @@ clean:
 	@:
 
 .PHONY: install
-install: #> Install configuration
-	ln -f -s $(srcdir) $(git_config)
+install: $(git_config) #> Install configuration
+	@:
 
 .PHONY: test
 test:
@@ -65,6 +65,9 @@ test:
 .PHONY: uninstall
 uninstall: #> Uninstall configuration
 	$(RM) $(git_config)
+
+$(git_config):
+	ln -f -s $(srcdir) $(git_config)
 
 #. SUPPORT TARGETS
 
