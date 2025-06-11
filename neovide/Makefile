@@ -66,8 +66,11 @@ test:
 uninstall: #> Uninstall configuration
 	$(RM) $(neovide_config)
 
-$(neovide_config):
+$(neovide_config): | $(XDG_CONFIG_HOME)
 	ln -f -s $(srcdir) $(neovide_config)
+
+$(XDG_CONFIG_HOME):
+	@mkdir -p $(XDG_CONFIG_HOME)
 
 #. SUPPORT TARGETS
 

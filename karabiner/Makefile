@@ -66,8 +66,11 @@ test:
 uninstall: #> Uninstall configuration
 	$(RM) $(karabiner_config)
 
-$(karabiner_config):
+$(karabiner_config): | $(XDG_CONFIG_HOME)
 	ln -f -s $(srcdir) $(karabiner_config)
+
+$(XDG_CONFIG_HOME):
+	@mkdir -p $(XDG_CONFIG_HOME)
 
 #. SUPPORT TARGETS
 

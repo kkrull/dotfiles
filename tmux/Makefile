@@ -21,14 +21,12 @@ debug-sources:
 
 ## Paths
 
-XDG_CONFIG_HOME ?= $(HOME)/.config
 tmux_config := $(HOME)/.tmux.conf
 
 .PHONY: debug-paths
 debug-paths:
 	$(info Paths:)
 	$(info - tmux_config: $(tmux_config))
-	$(info - XDG_CONFIG_HOME: $(XDG_CONFIG_HOME))
 	@:
 
 ## Programs

@@ -66,8 +66,11 @@ test:
 uninstall: #> Uninstall configuration
 	$(RM) $(nvim_config)
 
-$(nvim_config):
+$(nvim_config): | $(XDG_CONFIG_HOME)
 	ln -f -s $(srcdir) $(nvim_config)
+
+$(XDG_CONFIG_HOME):
+	@mkdir -p $(XDG_CONFIG_HOME)
 
 #. SUPPORT TARGETS
 
