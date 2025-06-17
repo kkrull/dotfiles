@@ -6,7 +6,7 @@ Cursors/
 Data/
 Effects/
 FXChains/
-KeyMaps/
+#KeyMaps/
 LangPack/
 MIDINoteNames/
 MetadataCaches/
