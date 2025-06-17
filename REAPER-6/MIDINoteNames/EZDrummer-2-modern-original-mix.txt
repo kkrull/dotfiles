@@ -1,0 +1,109 @@
+# MIDI note/CC name map
+124 Hats Open 5
+123 Hats Open 1
+122 Hats Closed Edge
+108 HANDS
+107 FEETS
+106 CYMBALS
+105 HAT HANDS
+104 MISC
+103 SNARES
+102 TOMS
+101 HAT FEETS
+100 KICKS
+83 Ride Mute Hit
+82 Racktom 1 Rimshot
+80 Racktom 2 Rimshot
+78 Racktom 3 Rimshot
+75 Floortom 1 Rimshot
+73 Floortom 2 Rimshot(*)
+63 Hats Tight Tip
+62 Hats Tight Edge
+60 Hats Open 4
+59 Ride Edge
+58 Cymbal 3 Mute Hit
+57 Cymbal 3 Crash
+56 Cymbal 1 Mute Hit
+55 Cymbal 1 Crash
+54 Cymbal 4 Mute Hit
+53 Ride Bell
+52 Cymbal 4 Crash
+51 Ride Bow
+50 Cymbal 2 Mute Hit
+49 Cymbal 2 Crash
+48 Racktom 1 Center
+47 Racktom 2 Center
+46 Hats GM
+45 Racktom 3 Center
+43 Floortom 1 Center
+42 Hats Closed Tip
+41 Floortom 2 Center
+40 Snare Rimshot
+38 Snare Center
+37 Snare Sidestick
+36 Kick Hit
+35 Kick Alt
+26 Hats Open 3
+25 Hats Open 2
+24 Hats Open 1
+23 Hats Open Pedal
+22 Hats Closed Edge
+21 Hats Closed Pedal
+17 Hats Open 5
+3 Tambourine Shake Hit
+2 Shaker Shake Hit
+1 Oneshot Hit
+NO 36
+NO 35
+NO 100
+NO 23
+NO 21
+NO 101
+NO 107
+NO 73
+NO 41
+NO 75
+NO 43
+NO 78
+NO 45
+NO 80
+NO 47
+NO 82
+NO 48
+NO 102
+NO 37
+NO 40
+NO 38
+NO 103
+NO 3
+NO 2
+NO 1
+NO 104
+NO 63
+NO 62
+NO 124
+NO 17
+NO 60
+NO 26
+NO 25
+NO 24
+NO 123
+NO 46
+NO 42
+NO 22
+NO 122
+NO 105
+NO 83
+NO 59
+NO 51
+NO 53
+NO 54
+NO 52
+NO 58
+NO 57
+NO 50
+NO 49
+NO 56
+NO 55
+NO 106
+NO 108
