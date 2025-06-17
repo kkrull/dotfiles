@@ -16,7 +16,7 @@ ProjectBays/
 ProjectTemplates/
 QueuedRenders/
 Scripts/
-TrackTemplates/
+#TrackTemplates/
 UserPlugins/
 presets/
 reaper-auplugins_arm64-bc.ini
