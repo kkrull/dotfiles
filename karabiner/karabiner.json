@@ -60,6 +60,16 @@
           "simple_modifications": [
             {
               "from": {
+                "key_code": "application"
+              },
+              "to": [
+                {
+                  "key_code": "right_option"
+                }
+              ]
+            },
+            {
+              "from": {
                 "key_code": "left_command"
               },
               "to": [
@@ -85,16 +95,6 @@
               "to": [
                 {
                   "key_code": "right_command"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "application"
-              },
-              "to": [
-                {
-                  "key_code": "right_option"
                 }
               ]
             }
