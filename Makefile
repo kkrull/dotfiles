@@ -27,6 +27,7 @@ SUBDIRS := \
 	neovide \
 	nvim \
 	tmux \
+	wezterm \
 	zsh
 
 .PHONY: $(SUBDIRS)
