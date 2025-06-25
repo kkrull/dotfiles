@@ -6,4 +6,12 @@ local config = wezterm.config_builder()
 config.color_scheme = "Aardvark Blue"
 config.font = wezterm.font("0xProto Nerd Font Mono", { weight = "Bold" })
 config.font_size = 14
+config.keys = {
+  -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
+  -- Make Option-Right equivalent to Alt-f; forward-word
+  -- https://github.com/wezterm/wezterm/issues/253#issuecomment-672007120
+  {key="LeftArrow", mods="OPT", action=wezterm.action{SendString="\x1bb"}},
+  {key="RightArrow", mods="OPT", action=wezterm.action{SendString="\x1bf"}},
+}
+
 return config
