@@ -3,7 +3,11 @@
 local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
-config.color_scheme = "Aardvark Blue"
+-- config.color_scheme = "Aardvark Blue"
+config.color_scheme = "Grandshell (terminal.sexy)"
+-- config.color_scheme = "Medallion (Gogh)"
+-- config.color_scheme = "Mona Lisa (Gogh)"
+-- config.color_scheme = "Tomorrow Night Eighties (Gogh)"
 config.font = wezterm.font("0xProto Nerd Font Mono", { weight = "Bold" })
 config.font_size = 14
 config.keys = {
