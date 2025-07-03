@@ -261,6 +261,10 @@
       "keyCode" : 123,
       "modifierFlags" : 786432
     },
+    "maximize" : {
+      "keyCode" : 36,
+      "modifierFlags" : 917504
+    },
     "moveDown" : {
       "keyCode" : 38,
       "modifierFlags" : 786432
