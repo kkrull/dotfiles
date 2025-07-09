@@ -27,27 +27,28 @@ function run_initializer() {
 ## Main
 
 # Updates to fpath (tab completion) and path
-source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
-source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
+# source_module "chruby" "$ZDOTDIR/.zshrc.d/chruby.zsh"
+# source_module "dotnet" "$ZDOTDIR/.zshrc.d/dotnet.zsh"
 source_module "git" "$ZDOTDIR/.zshrc.d/git.zsh"
 source_module "gpg" "$ZDOTDIR/.zshrc.d/gpg.zsh"
 source_module "home-bin" "$ZDOTDIR/.zshrc.d/home-bin.zsh"
 source_module "homebrew" "$ZDOTDIR/.zshrc.d/homebrew.zsh"
 source_module "homebrew (standard user)" "$ZDOTDIR/.zshrc.d/homebrew-standard-user.zsh"
 source_module "homebrewdep-go" "$ZDOTDIR/.zshrc.d/homebrewdep-go.zsh"
-source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
+# source_module "jenv" "$ZDOTDIR/.zshrc.d/jenv.zsh"
 source_module "less" "$ZDOTDIR/.zshrc.d/less.zsh"
 source_module "linuxbrew" "$ZDOTDIR/.zshrc.d/linuxbrew.zsh"
 source_module "mybatis" "$ZDOTDIR/.zshrc.d/mybatis.zsh"
 source_module "mysql-client" "$ZDOTDIR/.zshrc.d/mysql-client.zsh"
-source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
-plugins+=(zsh-nvm zsh-syntax-highlighting)
+# source_module "nvm" "$ZDOTDIR/.zshrc.d/nvm.zsh"
+# plugins+=(zsh-nvm)
+plugins+=(zsh-syntax-highlighting)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
-#source_module "python3" "$ZDOTDIR/.zshrc.d/python3.zsh"
-source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
+# source_module "python3" "$ZDOTDIR/.zshrc.d/python3.zsh"
+# source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
 source_module "rust" "$ZDOTDIR/.zshrc.d/rust.zsh"
-source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
+# source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
 source_module "vim" "$ZDOTDIR/.zshrc.d/vim.zsh"
 source_module "work" "$ZDOTDIR/.zshrc.d/work.zsh"
@@ -98,10 +99,10 @@ source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.z
 source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
 # pyenv
-if type pyenv >/dev/null
-then
-  eval "$(pyenv init - zsh)"
-fi
+# if type pyenv >/dev/null
+# then
+#   eval "$(pyenv init - zsh)"
+# fi
 
 # SDKMAN! *nix
 SDKMAN_DIR="$HOME/.sdkman"
