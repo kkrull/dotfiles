@@ -60,8 +60,9 @@ source_module "zsh" "$ZDOTDIR/.zshrc.d/zsh.zsh"
 source "$ZSH/oh-my-zsh.sh"
 
 # $fpath dependencies: https://stackoverflow.com/a/63661686/112682
+printf "+%s: " "compinit"
 autoload -Uz compinit
-compinit
+compinit && echo "OK" || echo "FAIL"
 
 ## compinit dependencies
 
@@ -77,14 +78,19 @@ done
 # jenv
 if type jenv >/dev/null
 then
+  printf "+%s: " "jenv (init)"
   eval "$(jenv init -)" #Must be done here, instead of in a separate file
-  jenv enable-plugin export > /dev/null #VSCode extensions need JDK_HOME to be set
+
+  #VSCode extensions need JDK_HOME to be set
+  jenv enable-plugin export > /dev/null \
+    && echo "OK" || echo "FAIL"
 fi
 
 # nvm
 if type nvm >/dev/null
 then
-  nvm use default
+  printf "+%s: " "nvm (use)"
+  nvm use default && echo "OK" || echo "FAIL"
 fi
 
 # oh-my-zsh
