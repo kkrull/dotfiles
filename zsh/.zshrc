@@ -97,7 +97,7 @@ fi
 unsetopt AUTO_CD
 
 # terraform
-source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
+# source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.zsh"
 
 ## End matter
 
