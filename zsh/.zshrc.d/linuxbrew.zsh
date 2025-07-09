@@ -1,2 +1,7 @@
-[[ -d "/home/linuxbrew" ]] && \
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+if [[ ! -d "/home/linuxbrew" ]]
+then
+  return 0
+fi
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
