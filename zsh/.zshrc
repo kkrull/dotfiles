@@ -46,7 +46,7 @@ plugins+=(zsh-syntax-highlighting)
 source_module "oh-my-zsh" "$ZDOTDIR/.zshrc.d/oh-my-zsh.zsh"
 source_module "podman" "$ZDOTDIR/.zshrc.d/podman.zsh"
 # source_module "python3" "$ZDOTDIR/.zshrc.d/python3.zsh"
-# source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
+source_module "pyenv" "$ZDOTDIR/.zshrc.d/pyenv.zsh"
 source_module "rust" "$ZDOTDIR/.zshrc.d/rust.zsh"
 # source_module "sfdx" "$ZDOTDIR/.zshrc.d/sfdx.zsh"
 source_module "ssh-agent" "$ZDOTDIR/.zshrc.d/ssh-agent.zsh"
@@ -105,10 +105,11 @@ source_module "terraform completions" "$ZDOTDIR/.zshrc.d/terraform-completions.z
 source_module "direnv (init)" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
 # pyenv
-# if type pyenv >/dev/null
-# then
-#   eval "$(pyenv init - zsh)"
-# fi
+if type pyenv >/dev/null
+then
+  printf "+%s: " "pyenv (init)"
+  eval "$(pyenv init - zsh)" && echo "OK" || echo "FAIL"
+fi
 
 # SDKMAN! *nix
 SDKMAN_DIR="$HOME/.sdkman"
