@@ -108,7 +108,7 @@ source_module "direnv" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 SDKMAN_DIR="$HOME/.sdkman"
 if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]
 then
-  printf "+%s: " "sdkman"
+  printf "+%s: " "sdkman (*nix)"
   export SDKMAN_DIR
   source "$SDKMAN_DIR/bin/sdkman-init.sh" && echo "OK" || echo "FAIL"
 fi
@@ -121,7 +121,7 @@ elif ! brew list sdkman-cli &>/dev/null
 then
   echo "OK" > /dev/null
 else
-  printf "+%s: " "sdkman"
+  printf "+%s: " "sdkman (homebrew)"
   SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
   export SDKMAN_DIR
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] \
