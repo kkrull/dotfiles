@@ -1,0 +1,20 @@
+SCR 4 0 RS1ee9bb229dabffe151848d7efa3c10f748e1a1cf "Custom: lyrics.lua" Cockos/lyrics.lua
+SCR 4 32060 RS7d3c_1ee9bb229dabffe151848d7efa3c10f748e1a1cf "Custom: lyrics.lua" Cockos/lyrics.lua
+SCR 4 0 RS1cbf05b0c4f875518496f34a5ce45adefe05cb67 "Custom: Default_6.0_theme_adjuster.lua" Cockos/Default_6.0_theme_adjuster.lua
+KEY 1 69 40153 0
+KEY 0 91 40172 0
+KEY 0 93 40173 0
+KEY 17 68 40279 0
+KEY 16 91 40783 0
+KEY 16 93 40786 0
+KEY 32 93 41040 0
+KEY 32 91 41043 0
+KEY 0 91 1 102
+KEY 0 93 1 102
+KEY 16 91 1 102
+KEY 16 93 1 102
+KEY 17 68 1 102
+KEY 32 91 1 102
+KEY 32 93 1 102
+KEY 1 27 40401 32060
+KEY 0 126 40477 32060
