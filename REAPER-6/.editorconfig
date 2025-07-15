@@ -1,0 +1,10 @@
+# https://editorconfig.org
+root = false
+
+[KeyMaps/*]
+end_of_line = unset
+insert_final_newline = unset
+
+[TrackTemplates/*]
+end_of_line = unset
+insert_final_newline = unset
