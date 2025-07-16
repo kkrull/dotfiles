@@ -104,6 +104,12 @@ unsetopt AUTO_CD
 # direnv (yes this has to be at the end)
 source_module "direnv (init)" "$ZDOTDIR/.zshrc.d/direnv.zsh"
 
+# nvm
+printf "+%s: " "nvm (init)"
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && echo "OK" || echo "FAIL"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # pyenv
 if type pyenv >/dev/null
 then
