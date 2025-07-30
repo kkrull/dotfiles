@@ -74,7 +74,7 @@
       "float" : 0.3
     },
     "footprintAnimationDurationMultiplier" : {
-      "float" : 0.75
+      "float" : 0
     },
     "footprintBorderWidth" : {
       "float" : 2
@@ -92,7 +92,7 @@
       "float" : 0
     },
     "hapticFeedbackOnSnap" : {
-      "int" : 2
+      "int" : 0
     },
     "hideMenubarIcon" : {
       "bool" : false
@@ -104,10 +104,10 @@
       "int" : 0
     },
     "landscapeSnapAreas" : {
-      "string" : "[1,{\"action\":15},2,{\"action\":2},5,{\"compound\":-3},6,{\"action\":13},8,{\"action\":14},3,{\"action\":16},7,{\"compound\":-4},4,{\"compound\":-2}]"
+
     },
     "launchOnLogin" : {
-      "bool" : false
+      "bool" : true
     },
     "minimumWindowHeight" : {
       "float" : 0
@@ -233,7 +233,7 @@
       "int" : 0
     },
     "windowSnapping" : {
-      "int" : 1
+      "int" : 2
     }
   },
   "shortcuts" : {
@@ -245,14 +245,6 @@
       "keyCode" : 125,
       "modifierFlags" : 786432
     },
-    "bottomLeft" : {
-      "keyCode" : 6,
-      "modifierFlags" : 786432
-    },
-    "bottomRight" : {
-      "keyCode" : 7,
-      "modifierFlags" : 786432
-    },
     "larger" : {
       "keyCode" : 24,
       "modifierFlags" : 786432
@@ -260,10 +252,6 @@
     "leftHalf" : {
       "keyCode" : 123,
       "modifierFlags" : 786432
-    },
-    "maximize" : {
-      "keyCode" : 36,
-      "modifierFlags" : 917504
     },
     "moveDown" : {
       "keyCode" : 38,
@@ -280,6 +268,14 @@
     "moveUp" : {
       "keyCode" : 40,
       "modifierFlags" : 786432
+    },
+    "nextDisplay" : {
+      "keyCode" : 124,
+      "modifierFlags" : 1835008
+    },
+    "previousDisplay" : {
+      "keyCode" : 123,
+      "modifierFlags" : 1835008
     },
     "reflowTodo" : {
       "keyCode" : 45,
@@ -299,14 +295,6 @@
     },
     "topHalf" : {
       "keyCode" : 126,
-      "modifierFlags" : 786432
-    },
-    "topLeft" : {
-      "keyCode" : 12,
-      "modifierFlags" : 786432
-    },
-    "topRight" : {
-      "keyCode" : 13,
       "modifierFlags" : 786432
     }
   },
