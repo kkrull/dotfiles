@@ -9,7 +9,7 @@ config.color_scheme = "Grandshell (terminal.sexy)"
 -- config.color_scheme = "Mona Lisa (Gogh)"
 -- config.color_scheme = "Tomorrow Night Eighties (Gogh)"
 config.font = wezterm.font("0xProto Nerd Font Mono", { weight = "Bold" })
-config.font_size = 14
+config.font_size = 17
 config.keys = {
   -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
   -- Make Option-Right equivalent to Alt-f; forward-word
