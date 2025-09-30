@@ -54,12 +54,12 @@ let g:WhichKey_DefaultDelay=0
 " https://github.com/TheBlob42/idea-which-key?tab=readme-ov-file#customization
 
 " Run
-map <leader>rc <Action>(RunClass)
 map <leader>rr <Action>(Run)
+map <leader>rt <Action>(RunClass)
 
 let g:WhichKeyDesc_run        = "<leader>r  [r]un"
-let g:WhichKeyDesc_run_class  = "<leader>rc [c]lass"
 let g:WhichKeyDesc_run_repeat = "<leader>rr [r]epeat"
+let g:WhichKeyDesc_run_class  = "<leader>rt [t]his (class/function)"
 
 " Views
 " Note: HideAllWindows actually toggles them
