@@ -59,7 +59,7 @@ map <leader>rt <Action>(RunClass)
 
 let g:WhichKeyDesc_run        = "<leader>r  [r]un"
 let g:WhichKeyDesc_run_repeat = "<leader>rr [r]epeat"
-let g:WhichKeyDesc_run_class  = "<leader>rt [t]his (class/function)"
+let g:WhichKeyDesc_run_class  = "<leader>rt [t]his"
 
 " Views
 " Note: HideAllWindows actually toggles them
