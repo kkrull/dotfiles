@@ -4,7 +4,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 -- config.color_scheme = "Aardvark Blue"
-config.color_scheme = "Grandshell (terminal.sexy)"
+config.color_scheme = 'Arthur (Gogh)'
+-- config.color_scheme = 'ayu'
+-- config.color_scheme = "Grandshell (terminal.sexy)"
 -- config.color_scheme = "Medallion (Gogh)"
 -- config.color_scheme = "Mona Lisa (Gogh)"
 -- config.color_scheme = "Tomorrow Night Eighties (Gogh)"
