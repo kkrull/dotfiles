@@ -3,13 +3,11 @@
 local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
--- config.color_scheme = "Aardvark Blue"
-config.color_scheme = 'Arthur (Gogh)'
--- config.color_scheme = 'ayu'
--- config.color_scheme = "Grandshell (terminal.sexy)"
--- config.color_scheme = "Medallion (Gogh)"
--- config.color_scheme = "Mona Lisa (Gogh)"
--- config.color_scheme = "Tomorrow Night Eighties (Gogh)"
+-- config.color_scheme = 'One Half Black (Gogh)'
+config.color_scheme = 'Vibrant Ink (Gogh)'
+-- config.color_scheme = 'Violet Dark'
+-- config.color_scheme = 'VisiBone (terminal.sexy)'
+-- config.color_scheme = 'Warm Neon (Gogh)'
 config.font = wezterm.font("0xProto Nerd Font Mono", { weight = "Bold" })
 config.font_size = 17
 config.keys = {
