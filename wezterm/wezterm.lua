@@ -4,7 +4,10 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 -- config.color_scheme = 'One Half Black (Gogh)'
-config.color_scheme = 'Vibrant Ink (Gogh)'
+-- config.color_scheme = 'tokyonight'
+config.color_scheme = 'tokyonight_moon'
+-- config.color_scheme = 'tokyonight-storm'
+-- config.color_scheme = 'Vibrant Ink (Gogh)'
 -- config.color_scheme = 'Violet Dark'
 -- config.color_scheme = 'VisiBone (terminal.sexy)'
 -- config.color_scheme = 'Warm Neon (Gogh)'
