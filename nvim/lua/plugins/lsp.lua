@@ -11,7 +11,6 @@ return {
     },
   },
   {
-    -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and other tools with Mason
