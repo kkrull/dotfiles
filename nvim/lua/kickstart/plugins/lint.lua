@@ -25,6 +25,16 @@ return {
           end
         end,
       })
+
+      vim.api.nvim_create_user_command('Lint', function()
+        require('lint').try_lint()
+      end, {})
+
+      local wk = require 'which-key'
+      wk.add {
+        { '<leader>l', group = '[L]int' },
+      }
+      vim.keymap.set('n', '<leader>lb', 'Lint', { desc = '[L]int [B]uffer' })
     end,
   },
 }
