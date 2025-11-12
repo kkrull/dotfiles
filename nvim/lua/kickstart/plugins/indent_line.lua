@@ -1,8 +1,8 @@
 -- Add indentation guides even on blank lines
 return {
   {
+    -- `:help ibl`
     'lukas-reineke/indent-blankline.nvim',
-    -- See `:help ibl`
     main = 'ibl',
     opts = {},
   },
