@@ -5,8 +5,12 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       -- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#usage
+      -- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
+      -- Note: Linters can be installed with `:Mason`
+      -- See available filetypes: https://vi.stackexchange.com/a/5782/19161
       local lint = require 'lint'
       lint.linters_by_ft = {
+        make = { 'checkmake' },
         markdown = { 'markdownlint-cli2' },
       }
 
