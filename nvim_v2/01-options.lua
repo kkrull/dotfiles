@@ -1,3 +1,6 @@
+-- Vim options, some (like mapleader) of which need to be set before plugins
+-- are loaded (memoizing whatever their present value is).
+
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -6,6 +9,10 @@ vim.opt.termguicolors = true
 
 -- command preview
 vim.opt.inccommand = "split"
+
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- line numbers
 vim.opt.number = true

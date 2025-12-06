@@ -1,4 +1,4 @@
-require("options")
+require("01-options")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,10 +16,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Set configuration before plugins load (and remember) it
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 
 -- Load lazy.nvim and any immediately-loaded plugins (like colorschemes)
 require("lazy").setup({
