@@ -49,6 +49,7 @@ words:
   - expandtab
   - eymaps
   - folke
+  - getchar
   - gitsigns
   - gopls
   - hange
@@ -135,6 +136,7 @@ words:
   - updatetime
   - urround
   - verstr
+  - virtualedit
   - vimdoc
   - williamboman
   - winblend
