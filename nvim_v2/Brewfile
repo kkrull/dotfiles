@@ -1,0 +1,8 @@
+brew "curl"
+brew "fd"
+brew "luajit"
+brew "neovim"
+brew "ripgrep"
+brew "wget"
+
+cask "font-0xproto-nerd-font"
