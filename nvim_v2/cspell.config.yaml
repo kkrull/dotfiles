@@ -46,6 +46,7 @@ words:
   - eplace
   - eset
   - esume
+  - expandtab
   - eymaps
   - folke
   - gitsigns
