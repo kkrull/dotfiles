@@ -19,16 +19,16 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load lazy.nvim and any immediately-loaded plugins (like colorschemes)
 require("lazy").setup({
-  spec = {
-    { import = "plugin" },
+  checker = {
+    enabled = false
   },
   install = {
     colorscheme = { "folke/tokyonight.nvim" }
   },
-  checker = {
-    enabled = false
-  },
   rocks = {
     enabled = false,
+  },
+  spec = {
+    { import = "plugin" },
   },
 })
