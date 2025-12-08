@@ -1,3 +1,6 @@
+-- Built-in commands
+-- https://neovim.io/doc/user/quickref.html
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
