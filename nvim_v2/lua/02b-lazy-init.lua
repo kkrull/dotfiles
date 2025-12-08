@@ -3,6 +3,9 @@
 -- spec: https://github.com/folke/lazy.nvim/blob/main/lua/lazy/types.lua#L84
 -- opts: https://github.com/folke/lazy.nvim/blob/main/lua/lazy/core/config.lua#L7
 require("lazy").setup({
+  require 'plugin.tokyonight',
+  require 'plugin.which-key',
+}, {
   checker = {
     enabled = false
   },
@@ -11,9 +14,6 @@ require("lazy").setup({
   },
   rocks = {
     enabled = false,
-  },
-  spec = {
-    { import = "plugin" },
   },
 })
 
