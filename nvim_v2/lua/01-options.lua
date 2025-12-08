@@ -36,3 +36,4 @@ vim.opt.virtualedit = "block"
 -- wrapping
 vim.opt.wrap = true
 
+-- vim: ts=2 sts=2 sw=2 et
