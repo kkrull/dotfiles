@@ -1,3 +1,4 @@
+require("01-keymaps")
 require("01-options")
 require("02a-lazy-bootstrap")
 require("02b-lazy-init")
