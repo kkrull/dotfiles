@@ -5,6 +5,7 @@
 require('lazy').setup({
   require 'plugin.mini',
   require 'plugin.neo-tree',
+  require 'plugin.nvim-treesitter',
   require 'plugin.telescope',
   require 'plugin.tokyonight',
   require 'plugin.which-key',
