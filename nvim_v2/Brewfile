@@ -3,6 +3,7 @@ brew "fd"
 brew "luajit"
 brew "neovim"
 brew "ripgrep"
+brew "tree-sitter-cli"
 brew "wget"
 
 cask "font-0xproto-nerd-font"
