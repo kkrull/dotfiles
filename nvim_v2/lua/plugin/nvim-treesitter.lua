@@ -21,6 +21,7 @@ return {
       require('nvim-treesitter').install({
         'c',
         'lua',
+        'make',
         'vim',
         'vimdoc',
       })
