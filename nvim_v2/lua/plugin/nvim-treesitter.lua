@@ -14,6 +14,9 @@ return {
     --
     -- Neatly summarized here:
     -- https://github.com/nvim-treesitter/nvim-treesitter/discussions/7535#discussioncomment-12842161
+    --
+    -- Finally, features are disabled by default (!!) and have to be enabled by filetype plugins.
+    -- See `/ftplugin/*` and `:h filetype-plugin` for details.
     config = function(_, opts)
       require('nvim-treesitter').install({
         'c',
@@ -21,20 +24,6 @@ return {
         'vim',
         'vimdoc',
       })
-
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = { 'lua' },
-        callback = function()
-          -- syntax highlighting, provided by Neovim
-          vim.treesitter.start()
-          -- folds, provided by Neovim
-          vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-          vim.wo.foldmethod = 'expr'
-          -- indentation, provided by nvim-treesitter
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end,
-  })
-
     end,
 
     -- Does not support lazy-loading
