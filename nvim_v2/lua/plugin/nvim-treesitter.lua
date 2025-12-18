@@ -17,6 +17,7 @@ return {
     --
     -- Finally, features are disabled by default (!!) and have to be enabled by filetype plugins.
     -- See `/ftplugin/*` and `:h filetype-plugin` for details.
+    -- Also see `:setfiletype <ctrl-d>` for a list of known filetypes
     config = function(_, opts)
       require('nvim-treesitter').install({
         'c',
