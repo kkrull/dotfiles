@@ -7,6 +7,10 @@ require('lazy').setup({
   checker = {
     enabled = false
   },
+  defaults = {
+    -- Set to `false` to use the latest; some plugins do not keep stable up-to-date
+    version = '*'
+  },
   install = {
     colorscheme = { 'folke/tokyonight.nvim' }
   },
