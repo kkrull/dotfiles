@@ -1,6 +1,6 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "mini.nvim": { "branch": "main", "commit": "6bd3a01aaf7d248aea1b78aacdd5d44bffa002c1" },
+  "mini.nvim": { "branch": "main", "commit": "a995fe9cd4193fb492b5df69175a351a74b3d36b" },
   "neo-tree.nvim": { "branch": "main", "commit": "f3df514fff2bdd4318127c40470984137f87b62e" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-treesitter": { "branch": "main", "commit": "4fc09bee78e91bf4ba471cdab4bf9dfa37fde51c" },
