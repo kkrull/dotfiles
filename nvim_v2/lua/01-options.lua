@@ -10,6 +10,9 @@ vim.opt.termguicolors = true
 -- command preview
 vim.opt.inccommand = 'split'
 
+-- folding
+vim.opt.foldlevelstart = 99 -- start with all folds open
+
 -- leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
