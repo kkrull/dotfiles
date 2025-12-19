@@ -48,7 +48,10 @@ words:
   - esume
   - expandtab
   - eymaps
+  - foldexpr
+  - foldmethod
   - folke
+  - ftplugin
   - getchar
   - gitsigns
   - gopls
@@ -59,6 +62,7 @@ words:
   - ignorecase
   - iles
   - inccommand
+  - indentexpr
   - inko
   - isort
   - isually
@@ -110,6 +114,7 @@ words:
   - saghen
   - saiw
   - scrolloff
+  - setfiletype
   - setloclist
   - shiftwidth
   - showmode
@@ -136,8 +141,8 @@ words:
   - updatetime
   - urround
   - verstr
-  - virtualedit
   - vimdoc
+  - virtualedit
   - williamboman
   - winblend
   - wincmd
