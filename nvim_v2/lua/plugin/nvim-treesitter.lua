@@ -19,10 +19,12 @@ return {
     -- See `/ftplugin/*` and `:h filetype-plugin` for details.
     -- Also see `:setfiletype <ctrl-d>` for a list of known filetypes
     config = function(_, opts)
-      require('nvim-treesitter').install({
+      -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#setup
+      local ts = require('nvim-treesitter')
+      ts.setup(opts)
+      ts.install({
         'c',
         'lua',
-        'make',
         'vim',
         'vimdoc',
       })
