@@ -28,6 +28,22 @@ return {
         'vim',
         'vimdoc',
       })
+
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('ui.treesitter', { clear = true }),
+        pattern = { '*' },
+        callback = function(event)
+          local lang = event.match
+
+          -- Install the parser, if not already installed
+          local ok, task = pcall(ts.install, { lang }, { summary = true })
+          if not ok then return end
+
+          -- Enable syntax highlighting
+          ok, _ = pcall(vim.treesitter.start, event.buf, lang)
+          if not ok then return end
+        end
+      })
     end,
 
     -- Does not support lazy-loading
